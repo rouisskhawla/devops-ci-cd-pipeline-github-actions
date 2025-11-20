@@ -1,4 +1,4 @@
-name: Java CI
+name:  CI CD pipeline 
 
 on:
   push:
@@ -59,3 +59,21 @@ jobs:
       run: |
         docker push ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
 
+
+  deploy-staging:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Deploy to Staging Environment
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: ${{ secrets.STAGING_HOST }}
+          username: ${{ secrets.STAGING_USER }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: ${{ secrets.STAGING_PORT }}
+          script: |
+            mkdir -p ~/devops-ci-cd-github-actions
+            scp -P ${{ secrets.STAGING_PORT }} -o StrictHostKeyChecking=no docker-compose.yml ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }}:~/devops-ci-cd-github-actions
+            docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+            docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
+            docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
