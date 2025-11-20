@@ -108,12 +108,15 @@ jobs:
       
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
-
+        
   deploy-staging:
     needs: docker
     runs-on: self-hosted
     steps:
-      - name: Deploy to Staging via Docker Compose
+      - name: Checkout repository
+        uses: actions/checkout@v3
+  
+      - name: Deploy to Staging via SSH
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.STAGING_HOST }}
@@ -121,9 +124,9 @@ jobs:
           key: ${{ secrets.STAGING_SSH_KEY }}
           port: ${{ secrets.STAGING_PORT }}
           script: |
-            cd $GITHUB_WORKSPACE
             mkdir -p ~/devops-ci-cd-github-actions
-            scp -P ${{ secrets.STAGING_PORT }} -o StrictHostKeyChecking=no docker-compose.yml \
+            scp -P ${{ secrets.STAGING_PORT }} -o StrictHostKeyChecking=no \
+                $GITHUB_WORKSPACE/docker-compose.yml \
                 ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }}:~/devops-ci-cd-github-actions
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
             docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
