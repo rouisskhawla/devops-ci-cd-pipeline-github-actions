@@ -102,9 +102,10 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --cache-from=type=local,src=/tmp/.docker-cache \
-                       --tag ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest .
-
+          JAR_FILE=$(ls target/*.jar | head -n 1)
+          docker build --build-arg JAR_FILE=$JAR_FILE \
+                       -t ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest .
+      
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
 
