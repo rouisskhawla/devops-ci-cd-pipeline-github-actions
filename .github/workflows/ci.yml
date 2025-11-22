@@ -7,9 +7,21 @@ on:
 jobs:
   test:
     runs-on: self-hosted
+    outputs:
+      version: ${{ steps.set-version.outputs.version }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+
+      - name: Set Git user
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+
+      - name: Determine version
+        id: set-version
+        run: |
+          ./scripts/version.sh patch snapshot
 
       - name: Set up JDK 17
         uses: actions/setup-java@v3
@@ -112,11 +124,15 @@ jobs:
         with:
           name: built-jar
 
-      - name: Build Docker image
+      - name: Build & Push Docker image
         run: |
           JAR_FILE=$(ls *.jar | head -n 1)
-          docker build --build-arg JAR_FILE=$JAR_FILE \
-                       -t ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest .
+          VERSION_TAG=${{ needs.version.outputs.version }}
+          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions
+          docker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .
+          docker push $IMAGE_NAME:$VERSION_TAG
+          docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest
+          docker push $IMAGE_NAME:latest
 
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
