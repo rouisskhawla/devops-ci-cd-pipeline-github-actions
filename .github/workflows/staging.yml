@@ -6,7 +6,6 @@ on:
     types:
       - completed
 
-
 jobs:
   deploy-staging:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
@@ -34,7 +33,6 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           source: "docker-compose.yml"
           target: "~/devops-ci-cd-github-actions/"
-
   
       - name: Deploy to Staging via SSH
         uses: appleboy/ssh-action@v0.1.9
@@ -47,3 +45,4 @@ jobs:
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
             docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+
