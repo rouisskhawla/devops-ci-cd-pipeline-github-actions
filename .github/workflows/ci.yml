@@ -21,6 +21,7 @@ jobs:
       - name: Determine version
         id: set-version
         run: |
+          chmod +x scripts/version.sh
           ./scripts/version.sh patch snapshot
 
       - name: Set up JDK 17
