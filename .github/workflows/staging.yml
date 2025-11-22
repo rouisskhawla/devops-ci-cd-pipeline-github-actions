@@ -6,7 +6,6 @@ on:
 
 jobs:
   deploy-staging:
-    needs: docker
     runs-on: self-hosted
     steps:
       - name: Checkout repository
