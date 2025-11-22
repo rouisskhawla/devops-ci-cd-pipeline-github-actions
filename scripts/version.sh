@@ -1,21 +1,17 @@
 #!/bin/bash
 set -e
 
-# Default: increment PATCH
-BUMP=${1:-patch}   # Options: patch (default), minor, major
-RELEASE_TYPE=${2:-snapshot} # snapshot or release
+BUMP=${1:-patch}
+RELEASE_TYPE=${2:-snapshot}
 
-# Get last tag
-LAST_TAG=$(git describe --tags --match "v*" --abbrev=0 2>/dev/null || echo "v0.0.0")
+LAST_TAG=$(git tag --sort=-creatordate | grep '^v' | head -n1 || echo "v0.0.0")
 echo "Last tag: $LAST_TAG"
 
-# Remove leading 'v' and split into MAJOR.MINOR.PATCH
 VERSION_NO_V=${LAST_TAG#v}
 MAJOR=$(echo $VERSION_NO_V | cut -d. -f1)
 MINOR=$(echo $VERSION_NO_V | cut -d. -f2)
 PATCH=$(echo $VERSION_NO_V | cut -d. -f3 | cut -d- -f1)
 
-# Bump version
 case $BUMP in
   major)
     MAJOR=$((MAJOR+1))
@@ -35,7 +31,6 @@ case $BUMP in
     ;;
 esac
 
-# Create new version string
 if [[ "$RELEASE_TYPE" == "release" ]]; then
   NEW_VERSION="v${MAJOR}.${MINOR}.${PATCH}"
 else
@@ -44,10 +39,6 @@ fi
 
 echo "New version: $NEW_VERSION"
 
-# Optionally, create git tag if release
-if [[ "$RELEASE_TYPE" == "release" ]]; then
-  git tag -a "$NEW_VERSION" -m "Release $NEW_VERSION"
-fi
+git tag -a "$NEW_VERSION" -m "${RELEASE_TYPE^} $NEW_VERSION"
 
-# Output version for GitHub Actions
 echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
