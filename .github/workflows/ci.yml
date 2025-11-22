@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          tags: true
 
       - name: Set Git user
         run: |
@@ -136,7 +139,7 @@ jobs:
           JAR_FILE=$(ls *.jar | head -n 1)
           VERSION_TAG=${{ needs.version.outputs.version }}
           IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions
-          
+
           docker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .
           docker push $IMAGE_NAME:$VERSION_TAG
           docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest
