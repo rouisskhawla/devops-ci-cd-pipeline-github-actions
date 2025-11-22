@@ -3,7 +3,7 @@ set -e
 
 BUMP=${1:-patch}
 RELEASE_TYPE=${2:-snapshot}
-
+git fetch --tags
 LAST_TAG=$(git tag --sort=-creatordate | grep '^v' | head -n1)
 if [[ -z "$LAST_TAG" ]]; then
   LAST_TAG="v0.0.0"
@@ -30,4 +30,5 @@ fi
 
 echo "New version: $NEW_VERSION"
 git tag -a "$NEW_VERSION" -m "${RELEASE_TYPE^} $NEW_VERSION"
+git push origin "$NEW_VERSION"
 echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT

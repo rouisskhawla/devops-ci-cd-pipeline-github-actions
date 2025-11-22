@@ -16,12 +16,14 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Set Git user
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          
+
       - name: Determine version
         id: set-version
         run: |
