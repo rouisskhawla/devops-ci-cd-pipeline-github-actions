@@ -78,6 +78,13 @@ jobs:
 
       - name: Maven Package
         run: mvn clean package --no-transfer-progress
+      
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: built-jar
+          path: target/*.jar
+
 
   docker:
     needs: package
@@ -100,12 +107,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-docker-
 
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: built-jar
+
       - name: Build Docker image
         run: |
-          JAR_FILE=$(ls target/*.jar | head -n 1)
+          JAR_FILE=$(ls *.jar | head -n 1)
           docker build --build-arg JAR_FILE=$JAR_FILE \
                        -t ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest .
-      
+
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
        
