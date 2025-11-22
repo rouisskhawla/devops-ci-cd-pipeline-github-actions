@@ -125,6 +125,7 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           script: |
             mkdir -p ~/devops-ci-cd-github-actions
+            ls -al $GITHUB_WORKSPACE
             scp -P ${{ secrets.STAGING_PORT }} -o StrictHostKeyChecking=no \
                 $GITHUB_WORKSPACE/devops-ci-cd-pipeline-github-actions/docker-compose.yml \
                 ${{ secrets.STAGING_USER }}@${{ secrets.STAGING_HOST }}:~/devops-ci-cd-github-actions
