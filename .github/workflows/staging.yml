@@ -1,4 +1,4 @@
-name: Deploy to Staging VM
+name: Deploy Snapshot to Staging VM
 
 on:
   workflow_run:
@@ -43,6 +43,6 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           script: |        
             export APP_IMAGE_TAG=latest-snapshot
+            docker pull  ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
-            docker pull username/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
