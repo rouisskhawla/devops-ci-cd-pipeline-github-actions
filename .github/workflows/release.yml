@@ -17,5 +17,5 @@ jobs:
         with:
           workflow: "CI Pipeline"
           ref: main
-          inputs:
+          inputs: |
             release_mode: ${{ github.event.inputs.release_mode }}
