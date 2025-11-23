@@ -14,10 +14,17 @@ LAST_RELEASE_VERSION=${LAST_RELEASE_TAG#v}
 
 LAST_SNAPSHOT_FILE="snapshot-version.txt"
 
-if [[ ! -f "$LAST_SNAPSHOT_FILE" ]]; then
-  echo "BASE_VERSION=$LAST_RELEASE_VERSION" > "$LAST_SNAPSHOT_FILE"
-  echo "COUNTER=0" >> "$LAST_SNAPSHOT_FILE"
+if [[ -f "$LAST_SNAPSHOT_FILE" ]]; then
+  source $LAST_SNAPSHOT_FILE
+  if [[ "$BASE_VERSION" != "$BASE_VERSION" ]]; then
+    COUNTER=1
+  else
+    COUNTER=$((COUNTER+1))
+  fi
+else
+  COUNTER=1
 fi
+
 
 if [[ "$RELEASE_TYPE" == "release" ]]; then
   MAJOR=$(echo $LAST_RELEASE_VERSION | cut -d. -f1)
