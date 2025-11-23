@@ -2,7 +2,12 @@ name: Release Build Trigger
 
 on:
   workflow_dispatch:
-  
+    inputs:
+      release_mode:
+        type: boolean
+        required: true
+        default: true
+
 jobs:
   trigger-ci-release:
     runs-on: self-hosted
@@ -11,6 +16,6 @@ jobs:
         uses: peter-evans/workflow-dispatch@v2
         with:
           workflow: "CI Pipeline"
-          ref: "main"
+          ref: main
           inputs:
-            release_mode: "true"
+            release_mode: ${{ github.event.inputs.release_mode }}
