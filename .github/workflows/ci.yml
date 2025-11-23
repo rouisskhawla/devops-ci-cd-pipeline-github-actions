@@ -1,16 +1,23 @@
 name: CI Pipeline
 
 on:
+  workflow_dispatch:
+    inputs:
+      release_mode:
+        type: boolean
+        required: false
+        default: false
   push:
     branches: [ main ]
 
-jobs:
 
+jobs:
   version:
     runs-on: self-hosted
     outputs:
       version: ${{ steps.set-version.outputs.version }}
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -28,7 +35,11 @@ jobs:
         id: set-version
         run: |
           chmod +x scripts/version.sh
-          ./scripts/version.sh patch snapshot
+          if [[ "${{ github.event.inputs.release_mode }}" == "true" ]]; then
+              ./scripts/version.sh patch release
+          else
+              ./scripts/version.sh patch snapshot
+          fi
 
   test:
     needs: version

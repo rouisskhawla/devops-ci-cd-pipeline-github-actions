@@ -1,0 +1,16 @@
+name: Release Build Trigger
+
+on:
+  workflow_dispatch:
+
+jobs:
+  trigger-ci-release:
+    runs-on: self-hosted
+    steps:
+      - name: Trigger CI Pipeline in RELEASE mode
+        uses: peter-evans/workflow-dispatch@v1
+        with:
+          workflow: "CI Pipeline"
+          ref: main
+          inputs:
+            release_mode: "true"
