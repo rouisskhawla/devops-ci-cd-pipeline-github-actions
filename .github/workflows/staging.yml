@@ -43,6 +43,6 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           script: |        
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
-            docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:latest-snapshot
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
 
