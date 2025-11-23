@@ -4,20 +4,20 @@ on:
   workflow_dispatch:
     inputs:
       release_mode:
+        description: 'Set to true for release builds'
         type: boolean
         required: false
         default: false
   push:
     branches: [ main ]
 
-
 jobs:
   version:
     runs-on: self-hosted
     outputs:
       version: ${{ steps.set-version.outputs.version }}
+      is_snapshot: ${{ steps.set-version.outputs.is_snapshot }}
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
@@ -36,11 +36,13 @@ jobs:
         run: |
           chmod +x scripts/version.sh
           if [[ "${{ github.event.inputs.release_mode }}" == "true" ]]; then
-              ./scripts/version.sh patch release
+            ./scripts/version.sh patch release
+            echo "is_snapshot=false" >> $GITHUB_OUTPUT
           else
-              ./scripts/version.sh patch snapshot
+            ./scripts/version.sh patch snapshot
+            echo "is_snapshot=true" >> $GITHUB_OUTPUT
           fi
-
+          
   test:
     needs: version
     runs-on: self-hosted

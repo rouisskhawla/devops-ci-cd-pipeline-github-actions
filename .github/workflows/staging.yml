@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy-staging:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.is_snapshot == 'true' }}
     runs-on: self-hosted
     steps:
       - name: Checkout repository
