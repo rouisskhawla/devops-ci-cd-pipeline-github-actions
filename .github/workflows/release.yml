@@ -17,7 +17,7 @@ jobs:
       with:
         dispatch-method: workflow_dispatch
         owner: rouisskhawla
-        repo: rouisskhawla/devops-ci-cd-pipeline-github-actions
+        repo: devops-ci-cd-pipeline-github-actions
         workflow: ci.yml
         ref: main
         workflow-inputs: '{ "release_mode": "true" }'
@@ -26,3 +26,4 @@ jobs:
         starting-delay-ms: 200
         max-attempts: 5
         time-multiple: 2
+
