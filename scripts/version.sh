@@ -14,6 +14,11 @@ BASE_VERSION=${LAST_RELEASE_TAG#v}
 
 LAST_SNAPSHOT_FILE="snapshot-version.txt"
 
+if [[ ! -f "$LAST_SNAPSHOT_FILE" ]]; then
+  echo "BASE_VERSION=0.0.1" > $LAST_SNAPSHOT_FILE
+  echo "COUNTER=0" >> $LAST_SNAPSHOT_FILE
+fi
+
 if [[ "$RELEASE_TYPE" == "release" ]]; then
   MAJOR=$(echo $BASE_VERSION | cut -d. -f1)
   MINOR=$(echo $BASE_VERSION | cut -d. -f2)
