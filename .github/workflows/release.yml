@@ -13,9 +13,9 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Trigger CI Pipeline in RELEASE mode
-        uses: peter-evans/workflow-dispatch@v3
+        uses: gh-actions/dispatch-workflow@v1
         with:
-          workflow: "CI Pipeline"
+          workflow: "CI Pipeline" 
           ref: main
           inputs: |
-            release_mode: ${{ github.event.inputs.release_mode }}
+            release_mode: true
