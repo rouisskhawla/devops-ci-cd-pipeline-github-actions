@@ -155,7 +155,7 @@ jobs:
           IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions
           docker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .
           docker push $IMAGE_NAME:$VERSION_TAG
-          if [[ "$VERSION_TAG" == *SNAPSHOT ]]; then
+          if [[ "$VERSION_TAG" == *SNAPSHOT* ]]; then
             docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest-snapshot
             docker push $IMAGE_NAME:latest-snapshot
           else
