@@ -23,7 +23,11 @@ esac
 if [[ "$RELEASE_TYPE" == "release" ]]; then
   NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}"
 else
-  NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}-snapshot"
+  NEW_VERSION="${MAJOR}.${MINOR}.${PATCH}-SNAPSHOT"
 fi
+
+TAG_NAME="v$NEW_VERSION"
+git tag -a "$TAG_NAME" -m "${RELEASE_TYPE^} $TAG_NAME"
+git push origin "$TAG_NAME"
 
 echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
