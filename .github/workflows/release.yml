@@ -12,10 +12,14 @@ jobs:
   trigger-ci-release:
     runs-on: self-hosted
     steps:
-      - name: Trigger CI Pipeline in RELEASE mode
-        uses: gh-actions/dispatch-workflow@v1
-        with:
-          workflow: "CI Pipeline" 
-          ref: main
-          inputs: |
-            release_mode: true
+    - name: Trigger CI Pipeline
+      uses: lasith-kg/dispatch-workflow@v1
+      with:
+        dispatch-method: workflow_dispatch
+        owner: ${{ github.repository_owner }}
+        repo: ${{ github.repository }}
+        workflow: ci.yml
+        ref: main
+        token: ${{ secrets.PAT }}
+        workflow-inputs: |
+          { "release_mode": "true" }
