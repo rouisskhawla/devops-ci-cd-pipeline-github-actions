@@ -124,7 +124,13 @@ jobs:
             ${{ runner.os }}-maven-
 
       - name: Maven Package
-        run: mvn clean package --no-transfer-progress
+        run: |
+            mvn clean package --no-transfer-progress
+            VERSION=${{ needs.version.outputs.version }}
+            JAR=$(ls target/*.jar | head -n 1)
+            VERSION_JAR="target/devops-ci-cd-pipeline-github-actions-${VERSION}.jar"
+            mv "$JAR" "$VERSION_JAR"
+            echo "jar=$VERSION_JAR" >> $GITHUB_OUTPUT
       
       - name: Upload artifact
         uses: actions/upload-artifact@v4
