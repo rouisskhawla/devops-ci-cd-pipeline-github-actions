@@ -29,7 +29,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: snapshot-info
-          path: .
+          path: snapshot
+        continue-on-error: true
 
       - name: Set Git user
         run: |
