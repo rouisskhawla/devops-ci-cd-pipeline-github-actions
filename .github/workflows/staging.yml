@@ -3,31 +3,18 @@ name: Deploy Snapshot to Staging VM
 on:
   workflow_run:
     workflows: ["CI Pipeline"]
-    types: [completed]
+    types:
+      - completed
 
 jobs:
   deploy-staging:
+    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.is_snapshot == 'true' }}
     runs-on: self-hosted
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-
     steps:
-      - name: Download version artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: version-info
-
-      - name: Read version info
-        run: |
-          VERSION=$(cat version.txt)
-          SNAP=$(cat is_snapshot.txt)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-          echo "IS_SNAPSHOT=$SNAP" >> $GITHUB_ENV
-
-      - name: Validate snapshot
-        if: env.IS_SNAPSHOT != 'true'
-        run: echo "Not a snapshot build. Skipping staging deploy." && exit 1
-
-      - name: Ensure staging directory
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Prepare staging directory
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.STAGING_HOST }}
@@ -36,8 +23,8 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           script: |
             mkdir -p ~/devops-ci-cd-github-actions
-
-      - name: Copy docker-compose
+            
+      - name: Copy docker-compose to staging VM
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.STAGING_HOST }}
@@ -46,16 +33,16 @@ jobs:
           port: ${{ secrets.STAGING_PORT }}
           source: "docker-compose.yml"
           target: "~/devops-ci-cd-github-actions/"
-
-      - name: Deploy snapshot
+  
+      - name: Deploy to Staging via SSH
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.STAGING_HOST }}
           username: ${{ secrets.STAGING_USER }}
           key: ${{ secrets.STAGING_SSH_KEY }}
           port: ${{ secrets.STAGING_PORT }}
-          script: |
-            export APP_IMAGE_TAG=${{ env.VERSION }}
-            docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+          script: |        
+            export APP_IMAGE_TAG=latest-snapshot
+            docker pull  ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
