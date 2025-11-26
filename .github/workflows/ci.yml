@@ -194,3 +194,18 @@ jobs:
               "is_snapshot": "true"
             }
           token: ${{ secrets.PAT_GITHUB }}
+ 
+      - name: Trigger Deploy to Production
+        if: ${{ needs.version.outputs.is_snapshot == 'false' }}
+        uses: lasith-kg/dispatch-workflow@v1
+        with:
+          dispatch-method: workflow_dispatch
+          owner: rouisskhawla
+          repo: devops-ci-cd-pipeline-github-actions
+          workflow: production.yml
+          ref: main
+          workflow-inputs: |
+            {
+              "version": "${{ needs.version.outputs.version }}"
+            }
+          token: ${{ secrets.PAT_GITHUB }}
