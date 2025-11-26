@@ -1,0 +1,8 @@
+﻿2025-11-26T18:43:59.9214181Z ##[group]Run docker/login-action@v3
+2025-11-26T18:43:59.9215321Z with:
+2025-11-26T18:43:59.9216494Z   username: ***
+2025-11-26T18:43:59.9217249Z   password: ***
+2025-11-26T18:43:59.9217704Z   logout: true
+2025-11-26T18:43:59.9218208Z ##[endgroup]
+2025-11-26T18:44:00.6876206Z Logging into docker.io...
+2025-11-26T18:44:05.1831573Z Login Succeeded!

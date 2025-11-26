@@ -1,0 +1,54 @@
+﻿2025-11-26T18:50:20.6505564Z ##[group]Run appleboy/ssh-action@v0.1.9
+2025-11-26T18:50:20.6505961Z with:
+2025-11-26T18:50:20.6506279Z   host: ***
+2025-11-26T18:50:20.6506547Z   username: ***
+2025-11-26T18:50:20.6508503Z   key: ***
+
+2025-11-26T18:50:20.6508793Z   port: ***
+2025-11-26T18:50:20.6509882Z   script: export APP_IMAGE_TAG=latest-snapshot
+docker pull  ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+
+2025-11-26T18:50:20.6511109Z   sync: false
+2025-11-26T18:50:20.6511351Z   use_insecure_cipher: false
+2025-11-26T18:50:20.6511589Z   timeout: 30s
+2025-11-26T18:50:20.6511802Z   command_timeout: 10m
+2025-11-26T18:50:20.6512044Z   proxy_port: ***
+2025-11-26T18:50:20.6512261Z   proxy_timeout: 30s
+2025-11-26T18:50:20.6512485Z   proxy_use_insecure_cipher: false
+2025-11-26T18:50:20.6512756Z   script_stop: false
+2025-11-26T18:50:20.6512962Z   debug: false
+2025-11-26T18:50:20.6513444Z ##[endgroup]
+2025-11-26T18:50:20.6538434Z ##[command]/usr/bin/docker run --name e32b84fa49ea742623447cb8ad93b6b82a0ab5_9d9cdf --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SCRIPT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_DEBUG" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:fa49ea742623447cb8ad93b6b82a0ab5
+2025-11-26T18:50:21.2769619Z ======CMD======
+2025-11-26T18:50:21.2770191Z export APP_IMAGE_TAG=latest-snapshot
+2025-11-26T18:50:21.2771024Z docker pull  ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+2025-11-26T18:50:21.2771729Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+2025-11-26T18:50:21.2772368Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+2025-11-26T18:50:21.2772771Z 
+2025-11-26T18:50:21.2772927Z ======END======
+2025-11-26T18:50:23.7718599Z out: latest-snapshot: Pulling from ***/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:23.7719895Z out: 7e49dc6156b0: Already exists
+2025-11-26T18:50:23.7872865Z out: e106dd8ed6ad: Already exists
+2025-11-26T18:50:23.8036098Z out: f28a3134bb3a: Already exists
+2025-11-26T18:50:23.8265906Z out: 837687f10a1f: Already exists
+2025-11-26T18:50:23.8450831Z out: 2581bc3ff3b6: Already exists
+2025-11-26T18:50:23.8633168Z out: 3d8340c256a8: Pulling fs layer
+2025-11-26T18:50:53.1837853Z out: 3d8340c256a8: Verifying Checksum
+2025-11-26T18:50:53.2019286Z out: 3d8340c256a8: Download complete
+2025-11-26T18:50:53.9310131Z out: 3d8340c256a8: Pull complete
+2025-11-26T18:50:54.0585819Z out: Digest: sha256:bc3db7d18643e7d0c82647da1e2fd066305af6e7778fccd0d1bbce55cec9c05f
+2025-11-26T18:50:54.1015141Z out: Status: Downloaded newer image for ***/devops-ci-cd-pipeline-github-actions:latest-snapshot
+2025-11-26T18:50:54.1352690Z out: docker.io/***/devops-ci-cd-pipeline-github-actions:latest-snapshot
+2025-11-26T18:50:56.1454291Z err: Stopping devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... 
+2025-11-26T18:50:57.8150231Z err: Stopping devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... done
+2025-11-26T18:50:57.8481784Z err: Removing devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... 
+2025-11-26T18:50:57.8879819Z err: Removing devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... done
+2025-11-26T18:50:57.8880652Z err: Removing network devops-ci-cd-github-actions_default
+2025-11-26T18:50:59.2052522Z err: Creating network "devops-ci-cd-github-actions_default" with the default driver
+2025-11-26T18:50:59.7570147Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... 
+2025-11-26T18:51:01.4562134Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... done
+2025-11-26T18:51:01.6498004Z ==============================================
+2025-11-26T18:51:01.6500288Z ✅ Successfully executed commands to all host.
+2025-11-26T18:51:01.6500744Z ==============================================

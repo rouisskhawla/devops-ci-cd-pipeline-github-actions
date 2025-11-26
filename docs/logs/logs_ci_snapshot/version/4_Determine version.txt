@@ -1,0 +1,12 @@
+﻿2025-11-26T18:32:30.2806469Z ##[group]Run chmod +x scripts/version.sh
+2025-11-26T18:32:30.2807135Z [36;1mchmod +x scripts/version.sh[0m
+2025-11-26T18:32:30.2807407Z [36;1mif [[ "" == "true" ]]; then[0m
+2025-11-26T18:32:30.2807805Z [36;1m  ./scripts/version.sh patch release[0m
+2025-11-26T18:32:30.2808255Z [36;1m  echo "is_snapshot=false" >> $GITHUB_OUTPUT[0m
+2025-11-26T18:32:30.2808604Z [36;1melse[0m
+2025-11-26T18:32:30.2808891Z [36;1m  ./scripts/version.sh patch snapshot[0m
+2025-11-26T18:32:30.2809268Z [36;1m  echo "is_snapshot=true" >> $GITHUB_OUTPUT[0m
+2025-11-26T18:32:30.2809590Z [36;1mfi[0m
+2025-11-26T18:32:30.2824442Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:32:30.2825088Z ##[endgroup]
+2025-11-26T18:32:30.9444401Z Calculated version: 0.0.2-SNAPSHOT.1

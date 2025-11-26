@@ -1,0 +1,68 @@
+﻿2025-11-26T18:44:33.3957764Z ##[group]Run JAR_FILE=$(ls *.jar | head -n 1)
+2025-11-26T18:44:33.3959478Z [36;1mJAR_FILE=$(ls *.jar | head -n 1)[0m
+2025-11-26T18:44:33.3960042Z [36;1mVERSION_TAG=0.0.2-SNAPSHOT.1[0m
+2025-11-26T18:44:33.3960963Z [36;1mIMAGE_NAME=***/devops-ci-cd-pipeline-github-actions[0m
+2025-11-26T18:44:33.3961720Z [36;1mdocker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .[0m
+2025-11-26T18:44:33.3962424Z [36;1mdocker push $IMAGE_NAME:$VERSION_TAG[0m
+2025-11-26T18:44:33.3962958Z [36;1mif [[ "$VERSION_TAG" == *SNAPSHOT* ]]; then[0m
+2025-11-26T18:44:33.3963551Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T18:44:33.3964169Z [36;1m  docker push $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T18:44:33.3964617Z [36;1melse[0m
+2025-11-26T18:44:33.3965059Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest[0m
+2025-11-26T18:44:33.3965591Z [36;1m  docker push $IMAGE_NAME:latest[0m
+2025-11-26T18:44:33.3966011Z [36;1mfi[0m
+2025-11-26T18:44:33.4004254Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:44:33.4004764Z ##[endgroup]
+2025-11-26T18:44:33.4449656Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T18:44:33.4451164Z             Install the buildx component to build images with BuildKit:
+2025-11-26T18:44:33.4452076Z             https://docs.docker.com/go/buildx/
+2025-11-26T18:44:33.4452512Z 
+2025-11-26T18:44:33.7662528Z Sending build context to Docker daemon  32.36MB
+2025-11-26T18:44:33.7663314Z 
+2025-11-26T18:44:33.7712356Z Step 1/5 : FROM eclipse-temurin:17-jdk-jammy
+2025-11-26T18:44:33.7726145Z  ---> 5fa3725ef065
+2025-11-26T18:44:33.7727887Z Step 2/5 : ARG JAR_FILE= *.jar
+2025-11-26T18:44:33.7765763Z  ---> Using cache
+2025-11-26T18:44:33.7766457Z  ---> 56c91e328879
+2025-11-26T18:44:33.7767630Z Step 3/5 : COPY ${JAR_FILE} app.jar
+2025-11-26T18:44:34.9071458Z  ---> 762180fb361b
+2025-11-26T18:44:34.9072291Z Step 4/5 : ENTRYPOINT ["java","-jar","/app.jar"]
+2025-11-26T18:44:35.0449434Z  ---> Running in 02da22b48a4c
+2025-11-26T18:44:35.1428080Z  ---> Removed intermediate container 02da22b48a4c
+2025-11-26T18:44:35.1428970Z  ---> b3fe7962b6ff
+2025-11-26T18:44:35.1429539Z Step 5/5 : EXPOSE 8082
+2025-11-26T18:44:35.2227865Z  ---> Running in ac108d1e2e08
+2025-11-26T18:44:35.3349528Z  ---> Removed intermediate container ac108d1e2e08
+2025-11-26T18:44:35.3350569Z  ---> eed85fe5d35c
+2025-11-26T18:44:35.3512715Z Successfully built eed85fe5d35c
+2025-11-26T18:44:35.4215347Z Successfully tagged ***/devops-ci-cd-pipeline-github-actions:0.0.2-SNAPSHOT.1
+2025-11-26T18:44:35.4691268Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T18:44:35.9400652Z 0dc984c9a94a: Preparing
+2025-11-26T18:44:35.9401317Z d1d6e1a741f5: Preparing
+2025-11-26T18:44:35.9402149Z ed45db2cd56b: Preparing
+2025-11-26T18:44:35.9404310Z 23408c2e9b9e: Preparing
+2025-11-26T18:44:35.9405024Z b160c82ed31f: Preparing
+2025-11-26T18:44:35.9405835Z 73974f74b436: Preparing
+2025-11-26T18:44:35.9406269Z 73974f74b436: Waiting
+2025-11-26T18:44:36.8942562Z b160c82ed31f: Layer already exists
+2025-11-26T18:44:36.9192957Z d1d6e1a741f5: Layer already exists
+2025-11-26T18:44:36.9581414Z 23408c2e9b9e: Layer already exists
+2025-11-26T18:44:39.6759216Z ed45db2cd56b: Layer already exists
+2025-11-26T18:44:40.0418167Z 73974f74b436: Layer already exists
+2025-11-26T18:49:40.9413839Z 0dc984c9a94a: Pushed
+2025-11-26T18:49:46.1555996Z 0.0.2-SNAPSHOT.1: digest: sha256:bc3db7d18643e7d0c82647da1e2fd066305af6e7778fccd0d1bbce55cec9c05f size: 1581
+2025-11-26T18:49:46.3268511Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T18:49:46.7621549Z 0dc984c9a94a: Preparing
+2025-11-26T18:49:46.7625327Z d1d6e1a741f5: Preparing
+2025-11-26T18:49:46.7626355Z ed45db2cd56b: Preparing
+2025-11-26T18:49:46.7626963Z 23408c2e9b9e: Preparing
+2025-11-26T18:49:46.7627344Z b160c82ed31f: Preparing
+2025-11-26T18:49:46.7627649Z 73974f74b436: Preparing
+2025-11-26T18:49:46.7628228Z 73974f74b436: Waiting
+2025-11-26T18:49:47.7280398Z 23408c2e9b9e: Layer already exists
+2025-11-26T18:49:47.7623670Z d1d6e1a741f5: Layer already exists
+2025-11-26T18:49:47.8038807Z b160c82ed31f: Layer already exists
+2025-11-26T18:49:47.8283854Z ed45db2cd56b: Layer already exists
+2025-11-26T18:49:47.8687861Z 0dc984c9a94a: Layer already exists
+2025-11-26T18:49:48.1976733Z 73974f74b436: Layer already exists
+2025-11-26T18:49:50.5742186Z latest-snapshot: digest: sha256:bc3db7d18643e7d0c82647da1e2fd066305af6e7778fccd0d1bbce55cec9c05f size: 1581

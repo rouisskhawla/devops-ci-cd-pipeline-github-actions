@@ -1,0 +1,252 @@
+﻿2025-11-26T18:32:43.2804026Z Current runner version: '2.329.0'
+2025-11-26T18:32:43.2812603Z Runner name: 'khawla'
+2025-11-26T18:32:43.2813508Z Runner group name: 'Default'
+2025-11-26T18:32:43.2814654Z Machine name: 'khawla'
+2025-11-26T18:32:43.2820633Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T18:32:43.2824830Z Actions: write
+2025-11-26T18:32:43.2825434Z ArtifactMetadata: write
+2025-11-26T18:32:43.2826012Z Attestations: write
+2025-11-26T18:32:43.2826536Z Checks: write
+2025-11-26T18:32:43.2826986Z Contents: write
+2025-11-26T18:32:43.2827434Z Deployments: write
+2025-11-26T18:32:43.2827858Z Discussions: write
+2025-11-26T18:32:43.2828272Z Issues: write
+2025-11-26T18:32:43.2828673Z Metadata: read
+2025-11-26T18:32:43.2829061Z Models: read
+2025-11-26T18:32:43.2829457Z Packages: write
+2025-11-26T18:32:43.2829853Z Pages: write
+2025-11-26T18:32:43.2830202Z PullRequests: write
+2025-11-26T18:32:43.2830994Z RepositoryProjects: write
+2025-11-26T18:32:43.2831579Z SecurityEvents: write
+2025-11-26T18:32:43.2832342Z Statuses: write
+2025-11-26T18:32:43.2832924Z ##[endgroup]
+2025-11-26T18:32:43.2835641Z Secret source: Actions
+2025-11-26T18:32:43.2836320Z Prepare workflow directory
+2025-11-26T18:32:43.3405062Z Prepare all required actions
+2025-11-26T18:32:43.3453328Z Getting action download info
+2025-11-26T18:32:44.3197281Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T18:32:46.4718436Z Download action repository 'actions/setup-java@v3' (SHA:17f84c3641ba7b8f6deff6309fc4c864478f5d62)
+2025-11-26T18:32:49.1625892Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-11-26T18:32:52.4028302Z Complete job name: test
+2025-11-26T18:32:52.4926737Z ##[group]Run actions/checkout@v3
+2025-11-26T18:32:52.4927278Z with:
+2025-11-26T18:32:52.4927666Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.4928558Z   token: ***
+2025-11-26T18:32:52.4928834Z   ssh-strict: true
+2025-11-26T18:32:52.4929121Z   persist-credentials: true
+2025-11-26T18:32:52.4929458Z   clean: true
+2025-11-26T18:32:52.4929726Z   sparse-checkout-cone-mode: true
+2025-11-26T18:32:52.4930026Z   fetch-depth: 1
+2025-11-26T18:32:52.4930280Z   fetch-tags: false
+2025-11-26T18:32:52.4930568Z   lfs: false
+2025-11-26T18:32:52.4930800Z   submodules: false
+2025-11-26T18:32:52.4931033Z   set-safe-directory: true
+2025-11-26T18:32:52.4931445Z ##[endgroup]
+2025-11-26T18:32:52.6426454Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.6428816Z ##[group]Getting Git version info
+2025-11-26T18:32:52.6429772Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:32:52.6917090Z [command]/usr/bin/git version
+2025-11-26T18:32:52.6973865Z git version 2.43.0
+2025-11-26T18:32:52.7006891Z ##[endgroup]
+2025-11-26T18:32:52.7040570Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/b41f8e11-d258-4729-898d-77250778f527' before making global git config changes
+2025-11-26T18:32:52.7041828Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:32:52.7049328Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.7107975Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T18:32:52.7131944Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.7163642Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T18:32:52.7167292Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T18:32:52.7199346Z refs/heads/main
+2025-11-26T18:32:52.7215100Z [command]/usr/bin/git checkout --detach
+2025-11-26T18:32:52.7264054Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T18:32:52.7265841Z M	scripts/version.sh
+2025-11-26T18:32:52.7326104Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T18:32:52.7361505Z Deleted branch main (was 4974515).
+2025-11-26T18:32:52.7449378Z ##[endgroup]
+2025-11-26T18:32:52.7450360Z [command]/usr/bin/git submodule status
+2025-11-26T18:32:52.7756020Z ##[group]Cleaning the repository
+2025-11-26T18:32:52.7758996Z [command]/usr/bin/git clean -ffdx
+2025-11-26T18:32:52.7799854Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T18:32:52.7845276Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T18:32:52.7848791Z ##[endgroup]
+2025-11-26T18:32:52.7853814Z ##[group]Disabling automatic garbage collection
+2025-11-26T18:32:52.7863738Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T18:32:52.7903261Z ##[endgroup]
+2025-11-26T18:32:52.7904000Z ##[group]Setting up auth
+2025-11-26T18:32:52.7908164Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:32:52.7946547Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:32:52.8329521Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:32:52.8381017Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:32:52.8863171Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T18:32:52.8951062Z ##[endgroup]
+2025-11-26T18:32:52.8952182Z ##[group]Fetching the repository
+2025-11-26T18:32:52.8966925Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +9ed62df52a1e564e14ff9f8a03b7306b4fe84f77:refs/remotes/origin/main
+2025-11-26T18:32:53.5589746Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T18:32:53.5667565Z From https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:53.5669484Z  + 4974515...9ed62df 9ed62df52a1e564e14ff9f8a03b7306b4fe84f77 -> origin/main  (forced update)
+2025-11-26T18:32:53.5728915Z ##[endgroup]
+2025-11-26T18:32:53.5729849Z ##[group]Determining the checkout info
+2025-11-26T18:32:53.5730774Z ##[endgroup]
+2025-11-26T18:32:53.5731393Z ##[group]Checking out the ref
+2025-11-26T18:32:53.5739787Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T18:32:53.5835286Z Warning: you are leaving 1 commit behind, not connected to
+2025-11-26T18:32:53.5836611Z any of your branches:
+2025-11-26T18:32:53.5838235Z 
+2025-11-26T18:32:53.5839145Z   4974515 Update snapshot version
+2025-11-26T18:32:53.5839559Z 
+2025-11-26T18:32:53.5839949Z If you want to keep it by creating a new branch, this may be a good time
+2025-11-26T18:32:53.5840467Z to do so with:
+2025-11-26T18:32:53.5840653Z 
+2025-11-26T18:32:53.5840900Z  git branch <new-branch-name> 4974515
+2025-11-26T18:32:53.5841206Z 
+2025-11-26T18:32:53.5850547Z Switched to a new branch 'main'
+2025-11-26T18:32:53.5851350Z branch 'main' set up to track 'origin/main'.
+2025-11-26T18:32:53.5862556Z ##[endgroup]
+2025-11-26T18:32:53.5927303Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T18:32:53.5978233Z '9ed62df52a1e564e14ff9f8a03b7306b4fe84f77'
+2025-11-26T18:32:53.6559727Z ##[group]Run actions/setup-java@v3
+2025-11-26T18:32:53.6560284Z with:
+2025-11-26T18:32:53.6560641Z   java-version: 17
+2025-11-26T18:32:53.6560944Z   distribution: temurin
+2025-11-26T18:32:53.6561266Z   java-package: jdk
+2025-11-26T18:32:53.6562020Z   check-latest: false
+2025-11-26T18:32:53.6562419Z   server-id: github
+2025-11-26T18:32:53.6562774Z   server-username: GITHUB_ACTOR
+2025-11-26T18:32:53.6563195Z   server-password: GITHUB_TOKEN
+2025-11-26T18:32:53.6563559Z   overwrite-settings: true
+2025-11-26T18:32:53.6563899Z   job-status: success
+2025-11-26T18:32:53.6564538Z   token: ***
+2025-11-26T18:32:53.6564824Z ##[endgroup]
+2025-11-26T18:32:54.1444982Z ##[group]Installed distributions
+2025-11-26T18:32:54.1533898Z Resolved Java 17.0.17+10 from tool-cache
+2025-11-26T18:32:54.1534757Z Setting Java 17.0.17+10 as the default
+2025-11-26T18:32:54.1572746Z Creating toolchains.xml for JDK version 17 from temurin
+2025-11-26T18:32:54.2879082Z Overwriting existing file /home/worldsoft/.m2/toolchains.xml
+2025-11-26T18:32:54.2910957Z 
+2025-11-26T18:32:54.2914851Z Java configuration:
+2025-11-26T18:32:54.2916917Z   Distribution: temurin
+2025-11-26T18:32:54.2917790Z   Version: 17.0.17+10
+2025-11-26T18:32:54.2918759Z   Path: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:54.2919608Z 
+2025-11-26T18:32:54.2920686Z ##[endgroup]
+2025-11-26T18:32:54.2951499Z Creating settings.xml with server-id: github
+2025-11-26T18:32:54.2964687Z Overwriting existing file /home/worldsoft/.m2/settings.xml
+2025-11-26T18:32:54.5744120Z ##[group]Run actions/cache@v3
+2025-11-26T18:32:54.5744538Z with:
+2025-11-26T18:32:54.5744865Z   path: ~/.m2/repository
+2025-11-26T18:32:54.5745386Z   key: Linux-maven-af12029ea62135e05bf90af9ff60957ef28b9be185dac9f2508243c385424aa7
+2025-11-26T18:32:54.5745952Z   restore-keys: Linux-maven-
+
+2025-11-26T18:32:54.5746287Z   enableCrossOsArchive: false
+2025-11-26T18:32:54.5746598Z   fail-on-cache-miss: false
+2025-11-26T18:32:54.5746894Z   lookup-only: false
+2025-11-26T18:32:54.5747153Z env:
+2025-11-26T18:32:54.5747675Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:54.5757474Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:54.5758202Z ##[endgroup]
+2025-11-26T18:32:55.5867370Z Cache not found for input keys: Linux-maven-af12029ea62135e05bf90af9ff60957ef28b9be185dac9f2508243c385424aa7, Linux-maven-
+2025-11-26T18:32:55.5993776Z ##[group]Run mvn clean test --no-transfer-progress
+2025-11-26T18:32:55.5994195Z [36;1mmvn clean test --no-transfer-progress[0m
+2025-11-26T18:32:55.6036774Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:32:55.6037255Z env:
+2025-11-26T18:32:55.6037827Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:55.6038560Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:55.6039944Z ##[endgroup]
+2025-11-26T18:33:08.2337723Z [INFO] Scanning for projects...
+2025-11-26T18:33:09.6551942Z [INFO] 
+2025-11-26T18:33:09.6553895Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T18:33:09.6555478Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T18:33:09.6566555Z [INFO]   from pom.xml
+2025-11-26T18:33:09.6573131Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T18:33:11.3513806Z [INFO] 
+2025-11-26T18:33:11.3523754Z [INFO] --- clean:3.3.2:clean (default-clean) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:11.8330092Z [INFO] 
+2025-11-26T18:33:11.8332846Z [INFO] --- resources:3.3.1:resources (default-resources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:12.0405063Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T18:33:12.0692084Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T18:33:12.0837297Z [INFO] 
+2025-11-26T18:33:12.0838374Z [INFO] --- compiler:3.13.0:compile (default-compile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:12.5048356Z [INFO] Recompiling the module because of changed source code.
+2025-11-26T18:33:12.5241559Z [INFO] Compiling 5 source files with javac [debug parameters release 17] to target/classes
+2025-11-26T18:33:16.4101960Z [INFO] 
+2025-11-26T18:33:16.4104969Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:16.4214911Z [INFO] skip non existing resourceDirectory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/src/test/resources
+2025-11-26T18:33:16.4221881Z [INFO] 
+2025-11-26T18:33:16.4223190Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:16.4510372Z [INFO] Recompiling the module because of changed dependency.
+2025-11-26T18:33:16.4533586Z [INFO] Compiling 3 source files with javac [debug parameters release 17] to target/test-classes
+2025-11-26T18:33:17.8776514Z [INFO] 
+2025-11-26T18:33:17.8778043Z [INFO] --- surefire:3.2.5:test (default-test) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:33:18.7285111Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-11-26T18:33:18.8988604Z [INFO] 
+2025-11-26T18:33:18.8991075Z [INFO] -------------------------------------------------------
+2025-11-26T18:33:18.8992951Z [INFO]  T E S T S
+2025-11-26T18:33:18.8997722Z [INFO] -------------------------------------------------------
+2025-11-26T18:33:20.6323544Z [INFO] Running com.devops.demo.DemoApplicationTests
+2025-11-26T18:33:21.0595977Z 19:33:21.033 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.devops.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T18:33:21.3554451Z 19:33:21.254 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.DemoApplicationTests
+2025-11-26T18:33:22.0582791Z   .   ____          _            __ _ _
+2025-11-26T18:33:22.0585476Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T18:33:22.0588361Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T18:33:22.0589125Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T18:33:22.0589703Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T18:33:22.0590262Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T18:33:22.0590728Z 
+2025-11-26T18:33:22.0591327Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T18:33:22.0591752Z 
+2025-11-26T18:33:22.1592926Z 2025-11-26T19:33:22.139+01:00  INFO 118925 --- [           main] com.devops.demo.DemoApplicationTests     : Starting DemoApplicationTests using Java 17.0.17 with PID 118925 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T18:33:22.1596920Z 2025-11-26T19:33:22.141+01:00  INFO 118925 --- [           main] com.devops.demo.DemoApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T18:33:25.8882746Z 2025-11-26T19:33:25.810+01:00  INFO 118925 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T18:33:28.2172923Z 2025-11-26T19:33:28.139+01:00  INFO 118925 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-26T18:33:28.3168240Z 2025-11-26T19:33:28.280+01:00  INFO 118925 --- [           main] com.devops.demo.DemoApplicationTests     : Started DemoApplicationTests in 6.714 seconds (process running for 9.037)
+2025-11-26T18:33:29.1140114Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-11-26T18:33:33.8870922Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.19 s -- in com.devops.demo.DemoApplicationTests
+2025-11-26T18:33:33.8921442Z [INFO] Running com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:33:33.8926248Z 2025-11-26T19:33:33.836+01:00  INFO 118925 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.devops.demo.controller.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T18:33:33.9929898Z 2025-11-26T19:33:33.900+01:00  INFO 118925 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:33:33.9932703Z   .   ____          _            __ _ _
+2025-11-26T18:33:33.9933425Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T18:33:33.9934105Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T18:33:33.9934803Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T18:33:33.9935452Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T18:33:33.9936111Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T18:33:33.9936567Z 
+2025-11-26T18:33:33.9937046Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T18:33:33.9937619Z 
+2025-11-26T18:33:33.9941127Z 2025-11-26T19:33:33.964+01:00  INFO 118925 --- [           main] c.d.d.controller.CustomerControllerTest  : Starting CustomerControllerTest using Java 17.0.17 with PID 118925 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T18:33:33.9946118Z 2025-11-26T19:33:33.965+01:00  INFO 118925 --- [           main] c.d.d.controller.CustomerControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T18:33:34.7947003Z 2025-11-26T19:33:34.744+01:00  INFO 118925 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T18:33:35.6030948Z 2025-11-26T19:33:35.538+01:00  INFO 118925 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-26T18:33:35.6035252Z 2025-11-26T19:33:35.539+01:00  INFO 118925 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-26T18:33:35.6037723Z 2025-11-26T19:33:35.546+01:00  INFO 118925 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2025-11-26T18:33:35.6039855Z 2025-11-26T19:33:35.579+01:00  INFO 118925 --- [           main] c.d.d.controller.CustomerControllerTest  : Started CustomerControllerTest in 1.669 seconds (process running for 12.967)
+2025-11-26T18:33:36.1515802Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.305 s -- in com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:33:36.1519586Z [INFO] Running com.devops.demo.service.CustomerServiceTest
+2025-11-26T18:33:36.2516783Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.099 s -- in com.devops.demo.service.CustomerServiceTest
+2025-11-26T18:33:36.3409102Z [INFO] 
+2025-11-26T18:33:36.3410466Z [INFO] Results:
+2025-11-26T18:33:36.3411113Z [INFO] 
+2025-11-26T18:33:36.3412542Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+2025-11-26T18:33:36.3414307Z [INFO] 
+2025-11-26T18:33:36.3487958Z [INFO] ------------------------------------------------------------------------
+2025-11-26T18:33:36.3488779Z [INFO] BUILD SUCCESS
+2025-11-26T18:33:36.3490490Z [INFO] ------------------------------------------------------------------------
+2025-11-26T18:33:36.3593492Z [INFO] Total time:  28.553 s
+2025-11-26T18:33:36.3595855Z [INFO] Finished at: 2025-11-26T19:33:36+01:00
+2025-11-26T18:33:36.3597021Z [INFO] ------------------------------------------------------------------------
+2025-11-26T18:33:36.5949803Z Post job cleanup.
+2025-11-26T18:33:36.8942926Z [command]/usr/bin/tar --posix -cf cache.tgz --exclude cache.tgz -P -C /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions --files-from manifest.txt -z
+2025-11-26T18:33:44.2805719Z Failed to save: Unable to reserve cache with key Linux-maven-af12029ea62135e05bf90af9ff60957ef28b9be185dac9f2508243c385424aa7, another job may be creating this cache.
+2025-11-26T18:33:44.3080726Z Post job cleanup.
+2025-11-26T18:33:44.4959380Z Post job cleanup.
+2025-11-26T18:33:44.6694387Z [command]/usr/bin/git version
+2025-11-26T18:33:44.6754248Z git version 2.43.0
+2025-11-26T18:33:44.6837977Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/66edde5b-9bcf-4def-8a66-a9025fadc930' before making global git config changes
+2025-11-26T18:33:44.6840296Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:33:44.6842917Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:33:44.6899544Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:33:44.6948509Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:33:44.7359209Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:33:44.7395633Z http.https://github.com/.extraheader
+2025-11-26T18:33:44.7413340Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-26T18:33:44.7459805Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:33:44.8036010Z Cleaning up orphan processes

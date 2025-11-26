@@ -1,0 +1,27 @@
+﻿2025-11-26T19:13:17.2631705Z ##[group]Run actions/setup-java@v3
+2025-11-26T19:13:17.2632151Z with:
+2025-11-26T19:13:17.2632341Z   java-version: 17
+2025-11-26T19:13:17.2632571Z   distribution: temurin
+2025-11-26T19:13:17.2632800Z   java-package: jdk
+2025-11-26T19:13:17.2633013Z   check-latest: false
+2025-11-26T19:13:17.2633222Z   server-id: github
+2025-11-26T19:13:17.2633529Z   server-username: GITHUB_ACTOR
+2025-11-26T19:13:17.2633816Z   server-password: GITHUB_TOKEN
+2025-11-26T19:13:17.2634060Z   overwrite-settings: true
+2025-11-26T19:13:17.2634293Z   job-status: success
+2025-11-26T19:13:17.2634686Z   token: ***
+2025-11-26T19:13:17.2634893Z ##[endgroup]
+2025-11-26T19:13:17.5578502Z ##[group]Installed distributions
+2025-11-26T19:13:17.5671094Z Resolved Java 17.0.17+10 from tool-cache
+2025-11-26T19:13:17.5672829Z Setting Java 17.0.17+10 as the default
+2025-11-26T19:13:17.5691282Z Creating toolchains.xml for JDK version 17 from temurin
+2025-11-26T19:13:17.6747779Z Overwriting existing file /home/worldsoft/.m2/toolchains.xml
+2025-11-26T19:13:17.6762101Z 
+2025-11-26T19:13:17.6764229Z Java configuration:
+2025-11-26T19:13:17.6767005Z   Distribution: temurin
+2025-11-26T19:13:17.6769098Z   Version: 17.0.17+10
+2025-11-26T19:13:17.6770281Z   Path: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:13:17.6771075Z 
+2025-11-26T19:13:17.6771992Z ##[endgroup]
+2025-11-26T19:13:17.6803451Z Creating settings.xml with server-id: github
+2025-11-26T19:13:17.6828555Z Overwriting existing file /home/worldsoft/.m2/settings.xml

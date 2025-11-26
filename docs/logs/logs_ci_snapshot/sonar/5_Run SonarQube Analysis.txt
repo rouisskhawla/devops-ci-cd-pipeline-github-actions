@@ -1,0 +1,230 @@
+﻿2025-11-26T18:36:50.2756279Z ##[group]Run mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=devops-ci-cd-pipeline-github-actions
+2025-11-26T18:36:50.2758059Z [36;1mmvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=devops-ci-cd-pipeline-github-actions[0m
+2025-11-26T18:36:50.2781312Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:36:50.2781839Z env:
+2025-11-26T18:36:50.2782491Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:36:50.2783510Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:36:50.2785135Z   SONAR_TOKEN: ***
+2025-11-26T18:36:50.2785668Z   SONAR_HOST_URL: ***
+2025-11-26T18:36:50.2786072Z ##[endgroup]
+2025-11-26T18:37:04.2485478Z [INFO] Scanning for projects...
+2025-11-26T18:37:05.3209964Z [INFO] 
+2025-11-26T18:37:05.3210598Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T18:37:05.3217208Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T18:37:05.3217834Z [INFO]   from pom.xml
+2025-11-26T18:37:05.3218291Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T18:37:06.3660542Z [INFO] 
+2025-11-26T18:37:06.3662954Z [INFO] --- resources:3.3.1:resources (default-resources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:06.7828582Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T18:37:06.7965858Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T18:37:06.8120633Z [INFO] 
+2025-11-26T18:37:06.8189856Z [INFO] --- compiler:3.13.0:compile (default-compile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:07.0537702Z [INFO] Recompiling the module because of changed source code.
+2025-11-26T18:37:07.0625315Z [INFO] Compiling 5 source files with javac [debug parameters release 17] to target/classes
+2025-11-26T18:37:08.8728984Z [INFO] 
+2025-11-26T18:37:08.8730389Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:08.8813824Z [INFO] skip non existing resourceDirectory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/src/test/resources
+2025-11-26T18:37:08.8815784Z [INFO] 
+2025-11-26T18:37:08.8816977Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:08.9108189Z [INFO] Recompiling the module because of changed dependency.
+2025-11-26T18:37:08.9120559Z [INFO] Compiling 3 source files with javac [debug parameters release 17] to target/test-classes
+2025-11-26T18:37:09.9412072Z [INFO] 
+2025-11-26T18:37:09.9414698Z [INFO] --- surefire:3.2.5:test (default-test) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:10.7507013Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-11-26T18:37:10.8677611Z [INFO] 
+2025-11-26T18:37:10.8681047Z [INFO] -------------------------------------------------------
+2025-11-26T18:37:10.8682067Z [INFO]  T E S T S
+2025-11-26T18:37:10.8682767Z [INFO] -------------------------------------------------------
+2025-11-26T18:37:12.2890800Z [INFO] Running com.devops.demo.DemoApplicationTests
+2025-11-26T18:37:12.6081527Z 19:37:12.526 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.devops.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T18:37:12.8029306Z 19:37:12.711 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.DemoApplicationTests
+2025-11-26T18:37:13.3042724Z   .   ____          _            __ _ _
+2025-11-26T18:37:13.3045813Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T18:37:13.3047835Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T18:37:13.3048782Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T18:37:13.3050255Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T18:37:13.3050932Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T18:37:13.3051332Z 
+2025-11-26T18:37:13.3051754Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T18:37:13.3052138Z 
+2025-11-26T18:37:13.4044033Z 2025-11-26T19:37:13.352+01:00  INFO 120877 --- [           main] com.devops.demo.DemoApplicationTests     : Starting DemoApplicationTests using Java 17.0.17 with PID 120877 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T18:37:13.4050158Z 2025-11-26T19:37:13.357+01:00  INFO 120877 --- [           main] com.devops.demo.DemoApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T18:37:15.9121000Z 2025-11-26T19:37:15.847+01:00  INFO 120877 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T18:37:17.8380628Z 2025-11-26T19:37:17.823+01:00  INFO 120877 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-26T18:37:18.0393461Z 2025-11-26T19:37:17.997+01:00  INFO 120877 --- [           main] com.devops.demo.DemoApplicationTests     : Started DemoApplicationTests in 5.002 seconds (process running for 6.805)
+2025-11-26T18:37:18.6481489Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-11-26T18:37:19.4352149Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.087 s -- in com.devops.demo.DemoApplicationTests
+2025-11-26T18:37:19.4395691Z [INFO] Running com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:37:19.4439265Z 2025-11-26T19:37:19.384+01:00  INFO 120877 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.devops.demo.controller.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T18:37:19.4444495Z 2025-11-26T19:37:19.439+01:00  INFO 120877 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:37:19.5434797Z   .   ____          _            __ _ _
+2025-11-26T18:37:19.5436679Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T18:37:19.5439295Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T18:37:19.5442261Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T18:37:19.5442992Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T18:37:19.5443910Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T18:37:19.5444279Z 
+2025-11-26T18:37:19.5444568Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T18:37:19.5444933Z 
+2025-11-26T18:37:19.5447199Z 2025-11-26T19:37:19.486+01:00  INFO 120877 --- [           main] c.d.d.controller.CustomerControllerTest  : Starting CustomerControllerTest using Java 17.0.17 with PID 120877 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T18:37:19.5451826Z 2025-11-26T19:37:19.487+01:00  INFO 120877 --- [           main] c.d.d.controller.CustomerControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T18:37:20.2466650Z 2025-11-26T19:37:20.221+01:00  INFO 120877 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T18:37:21.0639738Z 2025-11-26T19:37:21.000+01:00  INFO 120877 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-26T18:37:21.0642725Z 2025-11-26T19:37:21.001+01:00  INFO 120877 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-26T18:37:21.0644386Z 2025-11-26T19:37:21.009+01:00  INFO 120877 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-11-26T18:37:21.0646571Z 2025-11-26T19:37:21.041+01:00  INFO 120877 --- [           main] c.d.d.controller.CustomerControllerTest  : Started CustomerControllerTest in 1.592 seconds (process running for 9.866)
+2025-11-26T18:37:21.7125040Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.316 s -- in com.devops.demo.controller.CustomerControllerTest
+2025-11-26T18:37:21.7128955Z [INFO] Running com.devops.demo.service.CustomerServiceTest
+2025-11-26T18:37:21.8127533Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s -- in com.devops.demo.service.CustomerServiceTest
+2025-11-26T18:37:21.8812922Z [INFO] 
+2025-11-26T18:37:21.8813688Z [INFO] Results:
+2025-11-26T18:37:21.8815487Z [INFO] 
+2025-11-26T18:37:21.8817793Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+2025-11-26T18:37:21.8819192Z [INFO] 
+2025-11-26T18:37:21.8865080Z [INFO] 
+2025-11-26T18:37:21.8866574Z [INFO] --- jar:3.4.1:jar (default-jar) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:22.4631597Z [INFO] Building jar: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar
+2025-11-26T18:37:22.5526053Z [INFO] 
+2025-11-26T18:37:22.5527302Z [INFO] --- spring-boot:3.3.0:repackage (repackage) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:23.1390137Z [INFO] Replacing main artifact /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+2025-11-26T18:37:23.1401970Z [INFO] The original artifact has been renamed to /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar.original
+2025-11-26T18:37:23.1404339Z [INFO] 
+2025-11-26T18:37:23.1411479Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T18:37:23.1412727Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T18:37:23.1414108Z [INFO]   from pom.xml
+2025-11-26T18:37:23.1414646Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T18:37:23.1751208Z [INFO] 
+2025-11-26T18:37:23.1754462Z [INFO] --- sonar:5.3.0.6276:sonar (default-cli) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T18:37:23.4290634Z [WARNING] Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:5.3.0.6276'.
+2025-11-26T18:37:23.4622221Z [INFO] Java 17.0.17 Eclipse Adoptium (64-bit)
+2025-11-26T18:37:23.4623426Z [INFO] Linux 6.6.87.2-microsoft-standard-WSL2 (amd64)
+2025-11-26T18:37:26.2550314Z [INFO] Communicating with SonarQube Server 9.9.8.100196
+2025-11-26T18:37:27.3558734Z [INFO] Load global settings
+2025-11-26T18:37:27.5370768Z [INFO] Load global settings (done) | time=181ms
+2025-11-26T18:37:27.5411490Z [INFO] Server id: 147B411E-AZpoa4nNNNKRTpWlQmJf
+2025-11-26T18:37:27.5523385Z [INFO] User cache: /home/worldsoft/.sonar/cache
+2025-11-26T18:37:27.5592960Z [INFO] Load/download plugins
+2025-11-26T18:37:27.5597521Z [INFO] Load plugins index
+2025-11-26T18:37:27.7260035Z [INFO] Load plugins index (done) | time=167ms
+2025-11-26T18:37:27.7911603Z [INFO] Load/download plugins (done) | time=231ms
+2025-11-26T18:37:28.7729858Z [INFO] Process project properties
+2025-11-26T18:37:28.7951711Z [INFO] Process project properties (done) | time=22ms
+2025-11-26T18:37:28.7999502Z [INFO] Execute project builders
+2025-11-26T18:37:28.8030921Z [INFO] Execute project builders (done) | time=3ms
+2025-11-26T18:37:28.8094205Z [INFO] Project key: devops-ci-cd-pipeline-github-actions
+2025-11-26T18:37:28.8095803Z [INFO] Base dir: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:37:28.8097816Z [INFO] Working dir: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/sonar
+2025-11-26T18:37:28.8251442Z [INFO] Load project settings for component key: 'devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:37:28.9095286Z [INFO] Load project settings for component key: 'devops-ci-cd-pipeline-github-actions' (done) | time=84ms
+2025-11-26T18:37:29.2276165Z [INFO] Auto-configuring with CI 'Github Actions'
+2025-11-26T18:37:29.2317839Z [INFO] Load quality profiles
+2025-11-26T18:37:29.4133242Z [INFO] Load quality profiles (done) | time=181ms
+2025-11-26T18:37:29.4218717Z [INFO] Load active rules
+2025-11-26T18:37:36.8546993Z [INFO] Load active rules (done) | time=7432ms
+2025-11-26T18:37:36.8609994Z [INFO] Load analysis cache
+2025-11-26T18:37:36.9223545Z [INFO] Load analysis cache (285 bytes) | time=61ms
+2025-11-26T18:37:36.9915614Z [INFO] Load project repositories
+2025-11-26T18:37:37.0232319Z [INFO] Load project repositories (done) | time=32ms
+2025-11-26T18:37:37.0850375Z [INFO] Indexing files...
+2025-11-26T18:37:37.0863369Z [INFO] Project configuration:
+2025-11-26T18:37:37.2784926Z [INFO] 9 files indexed
+2025-11-26T18:37:37.2785803Z [INFO] 0 files ignored because of scm ignore settings
+2025-11-26T18:37:37.2810298Z [INFO] Quality profile for java: Sonar way
+2025-11-26T18:37:37.2812032Z [INFO] Quality profile for xml: Sonar way
+2025-11-26T18:37:37.2813001Z [INFO] ------------- Run sensors on module devops-ci-cd-pipeline-github-actions
+2025-11-26T18:37:37.4623849Z [INFO] Load metrics repository
+2025-11-26T18:37:37.5210934Z [INFO] Load metrics repository (done) | time=58ms
+2025-11-26T18:37:39.1839365Z [INFO] Sensor JavaSensor [java]
+2025-11-26T18:37:39.1908528Z [INFO] Configured Java source version (sonar.java.source): 17
+2025-11-26T18:37:39.1967614Z [INFO] JavaClasspath initialization
+2025-11-26T18:37:39.2062551Z [INFO] JavaClasspath initialization (done) | time=9ms
+2025-11-26T18:37:39.2063529Z [INFO] JavaTestClasspath initialization
+2025-11-26T18:37:39.2113953Z [INFO] JavaTestClasspath initialization (done) | time=5ms
+2025-11-26T18:37:39.2267097Z [INFO] Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+2025-11-26T18:37:39.2309454Z [INFO] Using ECJ batch to parse 5 Main java source files with batch size 102 KB.
+2025-11-26T18:37:39.5733696Z [INFO] Starting batch processing.
+2025-11-26T18:37:39.9620597Z [INFO] The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+2025-11-26T18:37:40.7758331Z [INFO] 100% analyzed
+2025-11-26T18:37:40.7760177Z [INFO] Batch processing: Done.
+2025-11-26T18:37:40.7784339Z [INFO] Did not optimize analysis for any files, performed a full analysis for all 5 files.
+2025-11-26T18:37:40.7814467Z [INFO] Using ECJ batch to parse 3 Test java source files with batch size 102 KB.
+2025-11-26T18:37:40.7878573Z [INFO] Starting batch processing.
+2025-11-26T18:37:41.1070910Z [INFO] 100% analyzed
+2025-11-26T18:37:41.1073894Z [INFO] Batch processing: Done.
+2025-11-26T18:37:41.1081563Z [INFO] Did not optimize analysis for any files, performed a full analysis for all 3 files.
+2025-11-26T18:37:41.1084321Z [INFO] No "Generated" source files to scan.
+2025-11-26T18:37:41.1086109Z [INFO] Sensor JavaSensor [java] (done) | time=1925ms
+2025-11-26T18:37:41.1088488Z [INFO] Sensor JaCoCo XML Report Importer [jacoco]
+2025-11-26T18:37:41.1118127Z [INFO] 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+2025-11-26T18:37:41.1138508Z [INFO] No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+2025-11-26T18:37:41.1141893Z [INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=5ms
+2025-11-26T18:37:41.1143335Z [INFO] Sensor CSS Rules [javascript]
+2025-11-26T18:37:41.1153035Z [INFO] No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+2025-11-26T18:37:41.1154137Z [INFO] Sensor CSS Rules [javascript] (done) | time=1ms
+2025-11-26T18:37:41.1154988Z [INFO] Sensor C# Project Type Information [csharp]
+2025-11-26T18:37:41.1168158Z [INFO] Sensor C# Project Type Information [csharp] (done) | time=2ms
+2025-11-26T18:37:41.1169167Z [INFO] Sensor C# Analysis Log [csharp]
+2025-11-26T18:37:41.1402120Z [INFO] Sensor C# Analysis Log [csharp] (done) | time=23ms
+2025-11-26T18:37:41.1403226Z [INFO] Sensor C# Properties [csharp]
+2025-11-26T18:37:41.1404483Z [INFO] Sensor C# Properties [csharp] (done) | time=0ms
+2025-11-26T18:37:41.1405496Z [INFO] Sensor SurefireSensor [java]
+2025-11-26T18:37:41.1435283Z [INFO] parsing [/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/surefire-reports]
+2025-11-26T18:37:41.2478065Z [INFO] Sensor SurefireSensor [java] (done) | time=106ms
+2025-11-26T18:37:41.2483289Z [INFO] Sensor HTML [web]
+2025-11-26T18:37:41.2523292Z [INFO] Sensor HTML [web] (done) | time=4ms
+2025-11-26T18:37:41.2524355Z [INFO] Sensor XML Sensor [xml]
+2025-11-26T18:37:41.2623112Z [INFO] 1 source file to be analyzed
+2025-11-26T18:37:41.4870266Z [INFO] 1/1 source file has been analyzed
+2025-11-26T18:37:41.4871113Z [INFO] Sensor XML Sensor [xml] (done) | time=235ms
+2025-11-26T18:37:41.4873672Z [INFO] Sensor TextAndSecretsSensor [text]
+2025-11-26T18:37:41.5071334Z [INFO] 9 source files to be analyzed
+2025-11-26T18:37:41.5216423Z [INFO] 9/9 source files have been analyzed
+2025-11-26T18:37:41.5217398Z [INFO] Sensor TextAndSecretsSensor [text] (done) | time=35ms
+2025-11-26T18:37:41.5219634Z [INFO] Sensor VB.NET Project Type Information [vbnet]
+2025-11-26T18:37:41.5235722Z [INFO] Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+2025-11-26T18:37:41.5236773Z [INFO] Sensor VB.NET Analysis Log [vbnet]
+2025-11-26T18:37:41.5435676Z [INFO] Sensor VB.NET Analysis Log [vbnet] (done) | time=19ms
+2025-11-26T18:37:41.5436706Z [INFO] Sensor VB.NET Properties [vbnet]
+2025-11-26T18:37:41.5439009Z [INFO] Sensor VB.NET Properties [vbnet] (done) | time=1ms
+2025-11-26T18:37:41.5441209Z [INFO] Sensor IaC Docker Sensor [iac]
+2025-11-26T18:37:41.5497032Z [INFO] 0 source files to be analyzed
+2025-11-26T18:37:41.6281873Z [INFO] 0/0 source files have been analyzed
+2025-11-26T18:37:41.6285051Z [INFO] Sensor IaC Docker Sensor [iac] (done) | time=84ms
+2025-11-26T18:37:41.6326206Z [INFO] ------------- Run sensors on project
+2025-11-26T18:37:41.6799420Z [INFO] Sensor Analysis Warnings import [csharp]
+2025-11-26T18:37:41.6805054Z [INFO] Sensor Analysis Warnings import [csharp] (done) | time=1ms
+2025-11-26T18:37:41.6805907Z [INFO] Sensor Zero Coverage Sensor
+2025-11-26T18:37:41.7014440Z [INFO] Sensor Zero Coverage Sensor (done) | time=20ms
+2025-11-26T18:37:41.7015383Z [INFO] Sensor Java CPD Block Indexer
+2025-11-26T18:37:41.7190352Z [INFO] Sensor Java CPD Block Indexer (done) | time=18ms
+2025-11-26T18:37:41.7232316Z [INFO] SCM Publisher SCM provider for this project is: git
+2025-11-26T18:37:41.7243535Z [INFO] SCM Publisher 9 source files to be analyzed
+2025-11-26T18:37:41.7266831Z [WARNING] Shallow clone detected, no blame information will be provided. You can convert to non-shallow with 'git fetch --unshallow'.
+2025-11-26T18:37:41.7300494Z [INFO] SCM Publisher 0/9 source files have been analyzed (done) | time=5ms
+2025-11-26T18:37:41.7302302Z [WARNING] Missing blame information for the following files:
+2025-11-26T18:37:41.7303347Z [WARNING]   * src/main/java/com/devops/demo/entity/Customer.java
+2025-11-26T18:37:41.7305235Z [WARNING]   * src/main/java/com/devops/demo/service/CustomerService.java
+2025-11-26T18:37:41.7307625Z [WARNING]   * src/test/java/com/devops/demo/controller/CustomerControllerTest.java
+2025-11-26T18:37:41.7309765Z [WARNING]   * src/main/java/com/devops/demo/repository/CustomerRepository.java
+2025-11-26T18:37:41.7312625Z [WARNING]   * src/main/java/com/devops/demo/controller/Controller.java
+2025-11-26T18:37:41.7316039Z [WARNING]   * src/test/java/com/devops/demo/DemoApplicationTests.java
+2025-11-26T18:37:41.7317682Z [WARNING]   * src/test/java/com/devops/demo/service/CustomerServiceTest.java
+2025-11-26T18:37:41.7320206Z [WARNING]   * src/main/java/com/devops/demo/DemoApplication.java
+2025-11-26T18:37:41.7322038Z [WARNING]   * pom.xml
+2025-11-26T18:37:41.7323849Z [WARNING] This may lead to missing/broken features in SonarQube
+2025-11-26T18:37:41.7354405Z [INFO] CPD Executor 2 files had no CPD blocks
+2025-11-26T18:37:41.7355209Z [INFO] CPD Executor Calculating CPD for 3 files
+2025-11-26T18:37:41.7449126Z [INFO] CPD Executor CPD calculation finished (done) | time=8ms
+2025-11-26T18:37:41.8527252Z [INFO] Analysis report generated in 91ms, dir size=145.9 kB
+2025-11-26T18:37:41.8831076Z [INFO] Analysis report compressed in 29ms, zip size=31.2 kB
+2025-11-26T18:37:41.9591329Z [INFO] Analysis report uploaded in 76ms
+2025-11-26T18:37:41.9612167Z [INFO] ANALYSIS SUCCESSFUL, you can find the results at: ***/dashboard?id=devops-ci-cd-pipeline-github-actions
+2025-11-26T18:37:41.9614783Z [INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+2025-11-26T18:37:41.9616388Z [INFO] More about the report processing at ***/api/ce/task?id=AZrBdQJGy1QrJJHrTrBz
+2025-11-26T18:37:41.9759892Z [INFO] Analysis total time: 14.044 s
+2025-11-26T18:37:41.9770129Z [INFO] ------------------------------------------------------------------------
+2025-11-26T18:37:41.9771204Z [INFO] BUILD SUCCESS
+2025-11-26T18:37:41.9773146Z [INFO] ------------------------------------------------------------------------
+2025-11-26T18:37:41.9775434Z [INFO] Total time:  37.988 s
+2025-11-26T18:37:41.9777822Z [INFO] Finished at: 2025-11-26T19:37:41+01:00
+2025-11-26T18:37:41.9778794Z [INFO] ------------------------------------------------------------------------

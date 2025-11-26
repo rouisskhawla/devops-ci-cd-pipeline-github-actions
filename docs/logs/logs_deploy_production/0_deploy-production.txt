@@ -1,0 +1,315 @@
+﻿2025-11-26T19:38:34.6048955Z Current runner version: '2.329.0'
+2025-11-26T19:38:34.6053836Z Runner name: 'khawla'
+2025-11-26T19:38:34.6054357Z Runner group name: 'Default'
+2025-11-26T19:38:34.6055049Z Machine name: 'khawla'
+2025-11-26T19:38:34.6058046Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T19:38:34.6060464Z Actions: write
+2025-11-26T19:38:34.6060996Z ArtifactMetadata: write
+2025-11-26T19:38:34.6061423Z Attestations: write
+2025-11-26T19:38:34.6061829Z Checks: write
+2025-11-26T19:38:34.6062218Z Contents: write
+2025-11-26T19:38:34.6062616Z Deployments: write
+2025-11-26T19:38:34.6063025Z Discussions: write
+2025-11-26T19:38:34.6063424Z Issues: write
+2025-11-26T19:38:34.6063815Z Metadata: read
+2025-11-26T19:38:34.6064207Z Models: read
+2025-11-26T19:38:34.6064601Z Packages: write
+2025-11-26T19:38:34.6065002Z Pages: write
+2025-11-26T19:38:34.6065396Z PullRequests: write
+2025-11-26T19:38:34.6065820Z RepositoryProjects: write
+2025-11-26T19:38:34.6066277Z SecurityEvents: write
+2025-11-26T19:38:34.6066798Z Statuses: write
+2025-11-26T19:38:34.6067212Z ##[endgroup]
+2025-11-26T19:38:34.6068862Z Secret source: Actions
+2025-11-26T19:38:34.6069373Z Prepare workflow directory
+2025-11-26T19:38:34.6761662Z Prepare all required actions
+2025-11-26T19:38:34.6796179Z Getting action download info
+2025-11-26T19:38:35.4034922Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T19:38:37.0537989Z Download action repository 'appleboy/ssh-action@v0.1.9' (SHA:5f64c95280a8e7632da28096e00ccaecb296d200)
+2025-11-26T19:38:38.3808917Z Download action repository 'appleboy/scp-action@v0.1.7' (SHA:917f8b81dfc1ccd331fef9e2d61bdc6c8be94634)
+2025-11-26T19:38:39.2397239Z Complete job name: deploy-***
+2025-11-26T19:38:39.2606553Z ##[group]Build container for action use: '/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile'.
+2025-11-26T19:38:39.2624994Z ##[command]/usr/bin/docker build -t e32b84:55cfc8c8de144901914b6816603a064d -f "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile" "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9"
+2025-11-26T19:38:39.2749030Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T19:38:39.2750256Z             Install the buildx component to build images with BuildKit:
+2025-11-26T19:38:39.2750629Z             https://docs.docker.com/go/buildx/
+2025-11-26T19:38:39.2750899Z 
+2025-11-26T19:38:39.2811326Z Sending build context to Docker daemon  310.3kB
+2025-11-26T19:38:39.2811539Z 
+2025-11-26T19:38:39.2816273Z Step 1/4 : FROM ghcr.io/appleboy/drone-ssh:1.6.12
+2025-11-26T19:38:40.8432751Z 1.6.12: Pulling from appleboy/drone-ssh
+2025-11-26T19:38:41.2567705Z f56be85fc***e: Pulling fs layer
+2025-11-26T19:38:41.2568451Z b1fe783373e5: Pulling fs layer
+2025-11-26T19:38:41.2568807Z 2f37dd8f8965: Pulling fs layer
+2025-11-26T19:38:43.8089277Z b1fe783373e5: Download complete
+2025-11-26T19:38:46.5388188Z 2f37dd8f8965: Verifying Checksum
+2025-11-26T19:38:46.5388680Z 2f37dd8f8965: Download complete
+2025-11-26T19:38:47.9799390Z f56be85fc***e: Verifying Checksum
+2025-11-26T19:38:47.9802238Z f56be85fc***e: Download complete
+2025-11-26T19:38:48.1121721Z f56be85fc***e: Pull complete
+2025-11-26T19:38:48.2190198Z b1fe783373e5: Pull complete
+2025-11-26T19:38:48.2811681Z 2f37dd8f8965: Pull complete
+2025-11-26T19:38:48.3006668Z Digest: sha256:38a5e2aee3808ce1eec4faa933ada29db7044659***9eb6163006667809a6afa0
+2025-11-26T19:38:48.3069581Z Status: Downloaded newer image for ghcr.io/appleboy/drone-ssh:1.6.12
+2025-11-26T19:38:48.3105651Z  ---> 6b9c264b6e97
+2025-11-26T19:38:48.3834666Z Step 2/4 : COPY entrypoint.sh /entrypoint.sh
+2025-11-26T19:38:48.3835114Z  ---> a0252f335a0b
+2025-11-26T19:38:48.3835644Z Step 3/4 : RUN chmod +x /entrypoint.sh
+2025-11-26T19:38:48.4213320Z  ---> Running in 8b5d39909ba0
+2025-11-26T19:38:49.0256116Z  ---> Removed intermediate container 8b5d39909ba0
+2025-11-26T19:38:49.0257346Z  ---> b14620f6e7f1
+2025-11-26T19:38:49.0257543Z Step 4/4 : ENTRYPOINT ["/entrypoint.sh"]
+2025-11-26T19:38:49.0603424Z  ---> Running in ccbd3aae52e5
+2025-11-26T19:38:49.1046033Z  ---> Removed intermediate container ccbd3aae52e5
+2025-11-26T19:38:49.1046541Z  ---> 436a963419fe
+2025-11-26T19:38:49.1048160Z Successfully built 436a963419fe
+2025-11-26T19:38:49.1126114Z Successfully tagged e32b84:55cfc8c8de144901914b6816603a064d
+2025-11-26T19:38:49.1151504Z ##[endgroup]
+2025-11-26T19:38:49.1172106Z ##[group]Build container for action use: '/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7/Dockerfile'.
+2025-11-26T19:38:49.1173096Z ##[command]/usr/bin/docker build -t e32b84:2a4db08cd0fe4728aa87fead2a5449c3 -f "/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7/Dockerfile" "/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7"
+2025-11-26T19:38:49.1309537Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T19:38:49.1310172Z             Install the buildx component to build images with BuildKit:
+2025-11-26T19:38:49.1310704Z             https://docs.docker.com/go/buildx/
+2025-11-26T19:38:49.1310965Z 
+2025-11-26T19:38:49.1339439Z Sending build context to Docker daemon    130kB
+2025-11-26T19:38:49.1339771Z 
+2025-11-26T19:38:49.1344416Z Step 1/3 : FROM ghcr.io/appleboy/drone-scp:1.6.14
+2025-11-26T19:38:50.7211447Z 1.6.14: Pulling from appleboy/drone-scp
+2025-11-26T19:38:51.0839558Z 1207c741d8c9: Pulling fs layer
+2025-11-26T19:38:51.0842053Z 57fce42a8fe3: Pulling fs layer
+2025-11-26T19:38:51.0843948Z a7e706a435c2: Pulling fs layer
+2025-11-26T19:38:51.0845482Z c5ff66ca7e6b: Pulling fs layer
+2025-11-26T19:38:51.0847123Z 103b78775db9: Pulling fs layer
+2025-11-26T19:38:51.0847330Z c5ff66ca7e6b: Waiting
+2025-11-26T19:38:51.0847669Z 103b78775db9: Waiting
+2025-11-26T19:38:51.9535908Z a7e706a435c2: Verifying Checksum
+2025-11-26T19:38:51.9537066Z a7e706a435c2: Download complete
+2025-11-26T19:38:52.5874067Z 57fce42a8fe3: Verifying Checksum
+2025-11-26T19:38:52.5875396Z 57fce42a8fe3: Download complete
+2025-11-26T19:38:52.7623759Z c5ff66ca7e6b: Verifying Checksum
+2025-11-26T19:38:57.5970517Z c5ff66ca7e6b: Download complete
+2025-11-26T19:38:57.5970747Z 1207c741d8c9: Verifying Checksum
+2025-11-26T19:38:57.5973716Z 1207c741d8c9: Download complete
+2025-11-26T19:38:57.7063111Z 103b78775db9: Verifying Checksum
+2025-11-26T19:38:57.7063844Z 103b78775db9: Download complete
+2025-11-26T19:38:57.8206423Z 1207c741d8c9: Pull complete
+2025-11-26T19:38:57.9862523Z 57fce42a8fe3: Pull complete
+2025-11-26T19:38:58.0286315Z a7e706a435c2: Pull complete
+2025-11-26T19:38:58.0702359Z c5ff66ca7e6b: Pull complete
+2025-11-26T19:38:58.1500065Z 103b78775db9: Pull complete
+2025-11-26T19:38:58.1730442Z Digest: sha256:0e0597678b948b0aa09888c66ac75af904cce81baf6af955208527d259c61818
+2025-11-26T19:38:58.1795181Z Status: Downloaded newer image for ghcr.io/appleboy/drone-scp:1.6.14
+2025-11-26T19:38:58.1844597Z  ---> 6e1933d0a1a5
+2025-11-26T19:38:58.1844877Z Step 2/3 : COPY entrypoint.sh /bin/entrypoint.sh
+2025-11-26T19:38:58.2680071Z  ---> 998f60ac885a
+2025-11-26T19:38:58.2680641Z Step 3/3 : ENTRYPOINT ["/bin/entrypoint.sh"]
+2025-11-26T19:38:58.3120113Z  ---> Running in 3fd98d270d13
+2025-11-26T19:38:58.3738632Z  ---> Removed intermediate container 3fd98d270d13
+2025-11-26T19:38:58.3738941Z  ---> ce8f03633c4c
+2025-11-26T19:38:58.3741607Z Successfully built ce8f03633c4c
+2025-11-26T19:38:58.3818797Z Successfully tagged e32b84:2a4db08cd0fe4728aa87fead2a5449c3
+2025-11-26T19:38:58.3836533Z ##[endgroup]
+2025-11-26T19:38:58.4146651Z ##[group]Run actions/checkout@v3
+2025-11-26T19:38:58.4148540Z with:
+2025-11-26T19:38:58.4149066Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:58.4149974Z   token: ***
+2025-11-26T19:38:58.4150316Z   ssh-strict: true
+2025-11-26T19:38:58.4150627Z   persist-credentials: true
+2025-11-26T19:38:58.4150952Z   clean: true
+2025-11-26T19:38:58.4151293Z   sparse-checkout-cone-mode: true
+2025-11-26T19:38:58.4151691Z   fetch-depth: 1
+2025-11-26T19:38:58.4151995Z   fetch-tags: false
+2025-11-26T19:38:58.4152369Z   lfs: false
+2025-11-26T19:38:58.4153339Z   submodules: false
+2025-11-26T19:38:58.4153632Z   set-safe-directory: true
+2025-11-26T19:38:58.4155103Z ##[endgroup]
+2025-11-26T19:38:58.5150832Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:58.5152610Z ##[group]Getting Git version info
+2025-11-26T19:38:58.5153325Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T19:38:58.5521307Z [command]/usr/bin/git version
+2025-11-26T19:38:58.5562335Z git version 2.43.0
+2025-11-26T19:38:58.5598396Z ##[endgroup]
+2025-11-26T19:38:58.5625881Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/61fad754-9dc9-4746-a7fb-8bc7480c0b60' before making global git config changes
+2025-11-26T19:38:58.5627046Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:38:58.5632902Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:58.5680023Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T19:38:58.5703743Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:58.5735126Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T19:38:58.5736001Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T19:38:58.5784027Z refs/heads/main
+2025-11-26T19:38:58.5800320Z [command]/usr/bin/git checkout --detach
+2025-11-26T19:38:58.5975985Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:38:58.6019665Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T19:38:58.6059617Z Deleted branch main (was 4974515).
+2025-11-26T19:38:58.6125174Z ##[endgroup]
+2025-11-26T19:38:58.6125692Z [command]/usr/bin/git submodule status
+2025-11-26T19:38:58.6473380Z ##[group]Cleaning the repository
+2025-11-26T19:38:58.6473912Z [command]/usr/bin/git clean -ffdx
+2025-11-26T19:38:58.6531902Z Removing devops-ci-cd-pipeline-github-actions-.jar
+2025-11-26T19:38:58.6543824Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T19:38:58.6729288Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:38:58.6735209Z ##[endgroup]
+2025-11-26T19:38:58.6740384Z ##[group]Disabling automatic garbage collection
+2025-11-26T19:38:58.6744587Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T19:38:58.6783428Z ##[endgroup]
+2025-11-26T19:38:58.6784023Z ##[group]Setting up auth
+2025-11-26T19:38:58.6787938Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:38:58.6837140Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:38:58.7201576Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:38:58.7240958Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:38:58.7619892Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T19:38:58.7673220Z ##[endgroup]
+2025-11-26T19:38:58.7674357Z ##[group]Fetching the repository
+2025-11-26T19:38:58.7686526Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +497451586471704e9134a95b8802e6232c703f3d:refs/remotes/origin/main
+2025-11-26T19:38:59.4353000Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T19:38:59.4448486Z ##[endgroup]
+2025-11-26T19:38:59.4448936Z ##[group]Determining the checkout info
+2025-11-26T19:38:59.4450105Z ##[endgroup]
+2025-11-26T19:38:59.4450575Z ##[group]Checking out the ref
+2025-11-26T19:38:59.4451153Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T19:38:59.4481791Z Switched to a new branch 'main'
+2025-11-26T19:38:59.4485912Z branch 'main' set up to track 'origin/main'.
+2025-11-26T19:38:59.4494265Z ##[endgroup]
+2025-11-26T19:38:59.4532883Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T19:38:59.4552911Z '497451586471704e9134a95b8802e6232c703f3d'
+2025-11-26T19:38:59.4740634Z ##[group]Run appleboy/ssh-action@v0.1.9
+2025-11-26T19:38:59.4740880Z with:
+2025-11-26T19:38:59.4741064Z   host: ***
+2025-11-26T19:38:59.4741214Z   username: ***
+2025-11-26T19:38:59.4742360Z   key: ***
+
+2025-11-26T19:38:59.4742518Z   port: ***
+2025-11-26T19:38:59.4742706Z   script: mkdir -p ~/devops-ci-cd-github-actions
+
+2025-11-26T19:38:59.4742942Z   sync: false
+2025-11-26T19:38:59.4743143Z   use_insecure_cipher: false
+2025-11-26T19:38:59.4743314Z   timeout: 30s
+2025-11-26T19:38:59.4743454Z   command_timeout: 10m
+2025-11-26T19:38:59.4743600Z   proxy_port: ***
+2025-11-26T19:38:59.4743747Z   proxy_timeout: 30s
+2025-11-26T19:38:59.4743907Z   proxy_use_insecure_cipher: false
+2025-11-26T19:38:59.4744070Z   script_stop: false
+2025-11-26T19:38:59.4744212Z   debug: false
+2025-11-26T19:38:59.4744350Z ##[endgroup]
+2025-11-26T19:38:59.4824326Z ##[command]/usr/bin/docker run --name e32b8455cfc8c8de144901914b6816603a064d_3758c3 --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SCRIPT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_DEBUG" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:55cfc8c8de144901914b6816603a064d
+2025-11-26T19:38:59.8050070Z ======CMD======
+2025-11-26T19:38:59.8050550Z mkdir -p ~/devops-ci-cd-github-actions
+2025-11-26T19:38:59.8050810Z 
+2025-11-26T19:38:59.8050908Z ======END======
+2025-11-26T19:39:00.5660654Z ==============================================
+2025-11-26T19:39:00.5661220Z ✅ Successfully executed commands to all host.
+2025-11-26T19:39:00.5662241Z ==============================================
+2025-11-26T19:39:00.7774785Z ##[group]Run appleboy/scp-action@v0.1.7
+2025-11-26T19:39:00.7775171Z with:
+2025-11-26T19:39:00.7775372Z   host: ***
+2025-11-26T19:39:00.7775580Z   username: ***
+2025-11-26T19:39:00.7776787Z   key: ***
+
+2025-11-26T19:39:00.7776951Z   port: ***
+2025-11-26T19:39:00.7777146Z   source: docker-compose.yml
+2025-11-26T19:39:00.7777562Z   target: ~/devops-ci-cd-github-actions/
+2025-11-26T19:39:00.7777932Z   timeout: 30s
+2025-11-26T19:39:00.7778398Z   command_timeout: 10m
+2025-11-26T19:39:00.7778645Z   use_insecure_cipher: false
+2025-11-26T19:39:00.7779458Z   rm: false
+2025-11-26T19:39:00.7792805Z   debug: false
+2025-11-26T19:39:00.7793014Z   strip_components: 0
+2025-11-26T19:39:00.7793210Z   overwrite: false
+2025-11-26T19:39:00.7793431Z   tar_dereference: false
+2025-11-26T19:39:00.7793617Z   tar_exec: tar
+2025-11-26T19:39:00.7793874Z   proxy_port: ***
+2025-11-26T19:39:00.7794038Z   proxy_timeout: 30s
+2025-11-26T19:39:00.7794204Z   proxy_use_insecure_cipher: false
+2025-11-26T19:39:00.7794499Z ##[endgroup]
+2025-11-26T19:39:00.7810745Z ##[command]/usr/bin/docker run --name e32b842a4db08cd0fe4728aa87fead2a5449c3_393b99 --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SOURCE" -e "INPUT_TARGET" -e "INPUT_PASSWORD" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_PASSPHRASE" -e "INPUT_FINGERPRINT" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_RM" -e "INPUT_DEBUG" -e "INPUT_STRIP_COMPONENTS" -e "INPUT_OVERWRITE" -e "INPUT_TAR_DEREFERENCE" -e "INPUT_TAR_TMP_PATH" -e "INPUT_TAR_EXEC" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:2a4db08cd0fe4728aa87fead2a5449c3
+2025-11-26T19:39:01.1230833Z drone-scp version: v1.6.14
+2025-11-26T19:39:01.1231454Z tar all files into /tmp/zGljDBzJrd.tar.gz
+2025-11-26T19:39:01.7435911Z remote server os type is unix
+2025-11-26T19:39:01.7436188Z scp file to server.
+2025-11-26T19:39:03.2795099Z create folder ~/devops-ci-cd-github-actions/
+2025-11-26T19:39:03.9934466Z untar file zGljDBzJrd.tar.gz
+2025-11-26T19:39:04.5889628Z remove file zGljDBzJrd.tar.gz
+2025-11-26T19:39:04.9433031Z ===================================================
+2025-11-26T19:39:04.9433870Z ✅ Successfully executed transfer data to all host
+2025-11-26T19:39:04.9434884Z ===================================================
+2025-11-26T19:39:05.1837403Z ##[group]Run appleboy/ssh-action@v0.1.9
+2025-11-26T19:39:05.1837637Z with:
+2025-11-26T19:39:05.1837835Z   host: ***
+2025-11-26T19:39:05.1838180Z   username: ***
+2025-11-26T19:39:05.1839549Z   key: ***
+
+2025-11-26T19:39:05.1839722Z   port: ***
+2025-11-26T19:39:05.1840515Z   script: export APP_IMAGE_TAG=latest
+docker pull ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+
+2025-11-26T19:39:05.1841223Z   sync: false
+2025-11-26T19:39:05.1841375Z   use_insecure_cipher: false
+2025-11-26T19:39:05.1841550Z   timeout: 30s
+2025-11-26T19:39:05.1841699Z   command_timeout: 10m
+2025-11-26T19:39:05.1841867Z   proxy_port: ***
+2025-11-26T19:39:05.1842028Z   proxy_timeout: 30s
+2025-11-26T19:39:05.1842194Z   proxy_use_insecure_cipher: false
+2025-11-26T19:39:05.1842389Z   script_stop: false
+2025-11-26T19:39:05.1842554Z   debug: false
+2025-11-26T19:39:05.1842738Z ##[endgroup]
+2025-11-26T19:39:05.1857854Z ##[command]/usr/bin/docker run --name e32b8455cfc8c8de144901914b6816603a064d_91357a --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SCRIPT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_DEBUG" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:55cfc8c8de144901914b6816603a064d
+2025-11-26T19:39:05.4900649Z ======CMD======
+2025-11-26T19:39:05.4901051Z export APP_IMAGE_TAG=latest
+2025-11-26T19:39:05.4901644Z docker pull ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+2025-11-26T19:39:05.4902224Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+2025-11-26T19:39:05.4902757Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+2025-11-26T19:39:05.4903542Z 
+2025-11-26T19:39:05.4904015Z ======END======
+2025-11-26T19:39:10.4184972Z out: latest: Pulling from ***/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:39:10.4246352Z out: 7e49dc6156b0: Pulling fs layer
+2025-11-26T19:39:10.4246658Z out: e106dd8ed6ad: Pulling fs layer
+2025-11-26T19:39:10.4246871Z out: f28a3134bb3a: Pulling fs layer
+2025-11-26T19:39:10.4247062Z out: 837687f10a1f: Pulling fs layer
+2025-11-26T19:39:10.4247257Z out: 2581bc3ff3b6: Pulling fs layer
+2025-11-26T19:39:10.4247445Z out: 13ab95dc5774: Pulling fs layer
+2025-11-26T19:39:10.4304888Z out: 837687f10a1f: Waiting
+2025-11-26T19:39:10.4309046Z out: 2581bc3ff3b6: Waiting
+2025-11-26T19:39:10.4310342Z out: 13ab95dc5774: Waiting
+2025-11-26T19:40:11.8057514Z out: e106dd8ed6ad: Verifying Checksum
+2025-11-26T19:40:11.8057782Z out: e106dd8ed6ad: Download complete
+2025-11-26T19:40:13.2071841Z out: 837687f10a1f: Verifying Checksum
+2025-11-26T19:40:13.2164090Z out: 837687f10a1f: Download complete
+2025-11-26T19:40:14.0569267Z out: 2581bc3ff3b6: Verifying Checksum
+2025-11-26T19:40:14.0655741Z out: 2581bc3ff3b6: Download complete
+2025-11-26T19:40:35.5722524Z out: 7e49dc6156b0: Verifying Checksum
+2025-11-26T19:40:35.5759493Z out: 7e49dc6156b0: Download complete
+2025-11-26T19:40:41.3870759Z out: 7e49dc6156b0: Pull complete
+2025-11-26T19:40:45.4638671Z out: e106dd8ed6ad: Pull complete
+2025-11-26T19:41:25.4473901Z out: 13ab95dc5774: Verifying Checksum
+2025-11-26T19:41:25.4498383Z out: 13ab95dc5774: Download complete
+2025-11-26T19:43:00.0503106Z out: f28a3134bb3a: Verifying Checksum
+2025-11-26T19:43:00.0515762Z out: f28a3134bb3a: Download complete
+2025-11-26T19:43:03.9250097Z out: f28a3134bb3a: Pull complete
+2025-11-26T19:43:03.9802685Z out: 837687f10a1f: Pull complete
+2025-11-26T19:43:04.0358062Z out: 2581bc3ff3b6: Pull complete
+2025-11-26T19:43:04.3673546Z out: 13ab95dc5774: Pull complete
+2025-11-26T19:43:04.4003614Z out: Digest: sha256:afff4460640d604d8bce2634e553c5242594f35562fb118bc47e299e8a117a55
+2025-11-26T19:43:04.4098996Z out: Status: Downloaded newer image for ***/devops-ci-cd-pipeline-github-actions:latest
+2025-11-26T19:43:04.4173588Z out: docker.io/***/devops-ci-cd-pipeline-github-actions:latest
+2025-11-26T19:43:05.1906382Z err: Removing network devops-ci-cd-github-actions_default
+2025-11-26T19:43:06.0199732Z err: Creating network "devops-ci-cd-github-actions_default" with the default driver
+2025-11-26T19:43:06.3264620Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... 
+2025-11-26T19:43:07.7108349Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... done
+2025-11-26T19:43:07.8526297Z ==============================================
+2025-11-26T19:43:07.8527216Z ✅ Successfully executed commands to all host.
+2025-11-26T19:43:07.8527593Z ==============================================
+2025-11-26T19:43:08.2204965Z Post job cleanup.
+2025-11-26T19:43:08.5744221Z [command]/usr/bin/git version
+2025-11-26T19:43:08.6124568Z git version 2.43.0
+2025-11-26T19:43:08.6188259Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/aa8edf81-4ff8-445c-a1f7-05d6926eb871' before making global git config changes
+2025-11-26T19:43:08.6189500Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:43:08.6190736Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:43:08.6248464Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:43:08.6273928Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:43:08.6728050Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:43:08.6748619Z http.https://github.com/.extraheader
+2025-11-26T19:43:08.6762582Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-26T19:43:08.6802581Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:43:08.7438811Z Cleaning up orphan processes

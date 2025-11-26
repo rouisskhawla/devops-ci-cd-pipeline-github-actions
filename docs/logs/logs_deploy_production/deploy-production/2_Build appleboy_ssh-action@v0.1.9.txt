@@ -1,0 +1,37 @@
+﻿2025-11-26T19:38:39.2606518Z ##[group]Build container for action use: '/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile'.
+2025-11-26T19:38:39.2624963Z ##[command]/usr/bin/docker build -t e32b84:55cfc8c8de144901914b6816603a064d -f "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile" "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9"
+2025-11-26T19:38:39.2748960Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T19:38:39.2750224Z             Install the buildx component to build images with BuildKit:
+2025-11-26T19:38:39.2750626Z             https://docs.docker.com/go/buildx/
+2025-11-26T19:38:39.2750894Z 
+2025-11-26T19:38:39.2811263Z Sending build context to Docker daemon  310.3kB
+2025-11-26T19:38:39.2811534Z 
+2025-11-26T19:38:39.2816232Z Step 1/4 : FROM ghcr.io/appleboy/drone-ssh:1.6.12
+2025-11-26T19:38:40.8432672Z 1.6.12: Pulling from appleboy/drone-ssh
+2025-11-26T19:38:41.2567505Z f56be85fc***e: Pulling fs layer
+2025-11-26T19:38:41.2568430Z b1fe783373e5: Pulling fs layer
+2025-11-26T19:38:41.2568800Z 2f37dd8f8965: Pulling fs layer
+2025-11-26T19:38:43.8089216Z b1fe783373e5: Download complete
+2025-11-26T19:38:46.5388112Z 2f37dd8f8965: Verifying Checksum
+2025-11-26T19:38:46.5388670Z 2f37dd8f8965: Download complete
+2025-11-26T19:38:47.9799344Z f56be85fc***e: Verifying Checksum
+2025-11-26T19:38:47.9802204Z f56be85fc***e: Download complete
+2025-11-26T19:38:48.1121677Z f56be85fc***e: Pull complete
+2025-11-26T19:38:48.2190135Z b1fe783373e5: Pull complete
+2025-11-26T19:38:48.2811626Z 2f37dd8f8965: Pull complete
+2025-11-26T19:38:48.3006615Z Digest: sha256:38a5e2aee3808ce1eec4faa933ada29db7044659***9eb6163006667809a6afa0
+2025-11-26T19:38:48.3069532Z Status: Downloaded newer image for ghcr.io/appleboy/drone-ssh:1.6.12
+2025-11-26T19:38:48.3104350Z  ---> 6b9c264b6e97
+2025-11-26T19:38:48.3834622Z Step 2/4 : COPY entrypoint.sh /entrypoint.sh
+2025-11-26T19:38:48.3835108Z  ---> a0252f335a0b
+2025-11-26T19:38:48.3835600Z Step 3/4 : RUN chmod +x /entrypoint.sh
+2025-11-26T19:38:48.4213269Z  ---> Running in 8b5d39909ba0
+2025-11-26T19:38:49.0256079Z  ---> Removed intermediate container 8b5d39909ba0
+2025-11-26T19:38:49.0257329Z  ---> b14620f6e7f1
+2025-11-26T19:38:49.0257538Z Step 4/4 : ENTRYPOINT ["/entrypoint.sh"]
+2025-11-26T19:38:49.0603393Z  ---> Running in ccbd3aae52e5
+2025-11-26T19:38:49.1045996Z  ---> Removed intermediate container ccbd3aae52e5
+2025-11-26T19:38:49.1046536Z  ---> 436a963419fe
+2025-11-26T19:38:49.1048145Z Successfully built 436a963419fe
+2025-11-26T19:38:49.1126077Z Successfully tagged e32b84:55cfc8c8de144901914b6816603a064d
+2025-11-26T19:38:49.1151483Z ##[endgroup]

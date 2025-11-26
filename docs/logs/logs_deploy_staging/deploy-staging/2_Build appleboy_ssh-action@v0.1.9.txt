@@ -1,0 +1,22 @@
+﻿2025-11-26T18:50:11.9433274Z ##[group]Build container for action use: '/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile'.
+2025-11-26T18:50:11.9467279Z ##[command]/usr/bin/docker build -t e32b84:fa49ea742623447cb8ad93b6b82a0ab5 -f "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9/Dockerfile" "/home/worldsoft/actions-runner/_work/_actions/appleboy/ssh-action/v0.1.9"
+2025-11-26T18:50:11.9873859Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T18:50:11.9874992Z             Install the buildx component to build images with BuildKit:
+2025-11-26T18:50:11.9882190Z             https://docs.docker.com/go/buildx/
+2025-11-26T18:50:11.9883251Z 
+2025-11-26T18:50:11.9986844Z Sending build context to Docker daemon  310.3kB
+2025-11-26T18:50:11.9987794Z 
+2025-11-26T18:50:12.0001210Z Step 1/4 : FROM ghcr.io/appleboy/drone-ssh:1.6.12
+2025-11-26T18:50:12.0005623Z  ---> 6b9c264b6e97
+2025-11-26T18:50:12.0008069Z Step 2/4 : COPY entrypoint.sh /entrypoint.sh
+2025-11-26T18:50:12.0019159Z  ---> Using cache
+2025-11-26T18:50:12.0020684Z  ---> eacef9fd4fa1
+2025-11-26T18:50:12.0021257Z Step 3/4 : RUN chmod +x /entrypoint.sh
+2025-11-26T18:50:12.0035692Z  ---> Using cache
+2025-11-26T18:50:12.0036179Z  ---> 2d0d042fb7a0
+2025-11-26T18:50:12.0038054Z Step 4/4 : ENTRYPOINT ["/entrypoint.sh"]
+2025-11-26T18:50:12.0063267Z  ---> Using cache
+2025-11-26T18:50:12.0063895Z  ---> 81a0af38752e
+2025-11-26T18:50:12.0070872Z Successfully built 81a0af38752e
+2025-11-26T18:50:12.0226987Z Successfully tagged e32b84:fa49ea742623447cb8ad93b6b82a0ab5
+2025-11-26T18:50:12.0259577Z ##[endgroup]

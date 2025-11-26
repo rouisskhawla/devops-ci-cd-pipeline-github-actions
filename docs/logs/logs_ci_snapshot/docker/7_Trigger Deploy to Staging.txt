@@ -1,0 +1,31 @@
+﻿2025-11-26T18:49:50.5971217Z ##[group]Run lasith-kg/dispatch-workflow@v1
+2025-11-26T18:49:50.5972073Z with:
+2025-11-26T18:49:50.5972472Z   dispatch-method: workflow_dispatch
+2025-11-26T18:49:50.5972873Z   owner: rouisskhawla
+2025-11-26T18:49:50.5973192Z   repo: devops-ci-cd-pipeline-github-actions
+2025-11-26T18:49:50.5973546Z   workflow: staging.yml
+2025-11-26T18:49:50.5973816Z   ref: main
+2025-11-26T18:49:50.5974183Z   workflow-inputs: {
+  "version": "0.0.2-SNAPSHOT.1",
+  "is_snapshot": "true"
+}
+
+2025-11-26T18:49:50.5974896Z   token: ***
+2025-11-26T18:49:50.5975133Z   discover: false
+2025-11-26T18:49:50.5975402Z   starting-delay-ms: 200
+2025-11-26T18:49:50.5975667Z   max-attempts: 5
+2025-11-26T18:49:50.5975897Z   time-multiple: 2
+2025-11-26T18:49:50.5976132Z ##[endgroup]
+2025-11-26T18:49:51.1362238Z 🔄 Exponential backoff parameters:
+2025-11-26T18:49:51.1363908Z     starting-delay: 200
+2025-11-26T18:49:51.1364719Z     max-attempts: 5
+2025-11-26T18:49:51.1379367Z     time-multiple: 2
+2025-11-26T18:49:51.1381742Z ⌛ Fetching workflow id for staging.yml
+2025-11-26T18:49:51.6949884Z ✅ Fetched workflow id: 209460752
+2025-11-26T18:49:51.9811585Z ✅ Successfully dispatched workflow using workflow_dispatch method:
+2025-11-26T18:49:51.9814002Z     repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:49:51.9816198Z     branch: main
+2025-11-26T18:49:51.9816759Z     workflow-id: 209460752
+2025-11-26T18:49:51.9817239Z     distinct-id: 2e8dd2ec-3db4-4257-a7ac-11221d28de1d
+2025-11-26T18:49:51.9818210Z     workflow-inputs: {"version":"0.0.2-SNAPSHOT.1","is_snapshot":"true"}
+2025-11-26T18:49:51.9820499Z ✅ Workflow dispatched! Skipping the retrieval of the run-id

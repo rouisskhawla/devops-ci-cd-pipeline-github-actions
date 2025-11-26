@@ -1,0 +1,30 @@
+﻿2025-11-26T19:13:06.7237716Z Current runner version: '2.329.0'
+2025-11-26T19:13:06.7252602Z Runner name: 'khawla'
+2025-11-26T19:13:06.7253493Z Runner group name: 'Default'
+2025-11-26T19:13:06.7254454Z Machine name: 'khawla'
+2025-11-26T19:13:06.7258443Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T19:13:06.7261487Z Actions: write
+2025-11-26T19:13:06.7262141Z ArtifactMetadata: write
+2025-11-26T19:13:06.7262766Z Attestations: write
+2025-11-26T19:13:06.7263293Z Checks: write
+2025-11-26T19:13:06.7263749Z Contents: write
+2025-11-26T19:13:06.7264198Z Deployments: write
+2025-11-26T19:13:06.7264879Z Discussions: write
+2025-11-26T19:13:06.7265358Z Issues: write
+2025-11-26T19:13:06.7265822Z Metadata: read
+2025-11-26T19:13:06.7266259Z Models: read
+2025-11-26T19:13:06.7266705Z Packages: write
+2025-11-26T19:13:06.7267183Z Pages: write
+2025-11-26T19:13:06.7267640Z PullRequests: write
+2025-11-26T19:13:06.7268092Z RepositoryProjects: write
+2025-11-26T19:13:06.7268566Z SecurityEvents: write
+2025-11-26T19:13:06.7268995Z Statuses: write
+2025-11-26T19:13:06.7269922Z ##[endgroup]
+2025-11-26T19:13:06.7272772Z Secret source: Actions
+2025-11-26T19:13:06.7273419Z Prepare workflow directory
+2025-11-26T19:13:06.8001377Z Prepare all required actions
+2025-11-26T19:13:06.8056166Z Getting action download info
+2025-11-26T19:13:07.6078289Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T19:13:09.0361458Z Download action repository 'actions/setup-java@v3' (SHA:17f84c3641ba7b8f6deff6309fc4c864478f5d62)
+2025-11-26T19:13:12.4778388Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-11-26T19:13:15.7181663Z Complete job name: test

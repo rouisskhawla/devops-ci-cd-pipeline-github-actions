@@ -1,0 +1,89 @@
+﻿2025-11-26T19:13:18.8085149Z ##[group]Run mvn clean test --no-transfer-progress
+2025-11-26T19:13:18.8085962Z [36;1mmvn clean test --no-transfer-progress[0m
+2025-11-26T19:13:18.8129654Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:13:18.8130124Z env:
+2025-11-26T19:13:18.8130726Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:13:18.8131506Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:13:18.8132057Z ##[endgroup]
+2025-11-26T19:13:34.6343291Z [INFO] Scanning for projects...
+2025-11-26T19:13:35.7379543Z [INFO] 
+2025-11-26T19:13:35.7382140Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T19:13:35.7384194Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T19:13:35.7385531Z [INFO]   from pom.xml
+2025-11-26T19:13:35.7386590Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T19:13:37.0929343Z [INFO] 
+2025-11-26T19:13:37.0933667Z [INFO] --- clean:3.3.2:clean (default-clean) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:37.5191081Z [INFO] 
+2025-11-26T19:13:37.5192463Z [INFO] --- resources:3.3.1:resources (default-resources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:37.6655663Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T19:13:37.6853501Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T19:13:37.6989349Z [INFO] 
+2025-11-26T19:13:37.6991805Z [INFO] --- compiler:3.13.0:compile (default-compile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:38.0431620Z [INFO] Recompiling the module because of changed source code.
+2025-11-26T19:13:38.0609348Z [INFO] Compiling 5 source files with javac [debug parameters release 17] to target/classes
+2025-11-26T19:13:40.8936441Z [INFO] 
+2025-11-26T19:13:40.8939645Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:40.9018941Z [INFO] skip non existing resourceDirectory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/src/test/resources
+2025-11-26T19:13:40.9020986Z [INFO] 
+2025-11-26T19:13:40.9021972Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:40.9262084Z [INFO] Recompiling the module because of changed dependency.
+2025-11-26T19:13:40.9270716Z [INFO] Compiling 3 source files with javac [debug parameters release 17] to target/test-classes
+2025-11-26T19:13:42.2333458Z [INFO] 
+2025-11-26T19:13:42.2335877Z [INFO] --- surefire:3.2.5:test (default-test) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:13:43.0913378Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-11-26T19:13:43.1859057Z [INFO] 
+2025-11-26T19:13:43.1859827Z [INFO] -------------------------------------------------------
+2025-11-26T19:13:43.1860452Z [INFO]  T E S T S
+2025-11-26T19:13:43.1860960Z [INFO] -------------------------------------------------------
+2025-11-26T19:13:44.8242509Z [INFO] Running com.devops.demo.DemoApplicationTests
+2025-11-26T19:13:45.2374416Z 20:13:45.125 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.devops.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T19:13:45.5328434Z 20:13:45.434 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.DemoApplicationTests
+2025-11-26T19:13:46.2347789Z   .   ____          _            __ _ _
+2025-11-26T19:13:46.2349907Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T19:13:46.2352427Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T19:13:46.2356200Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T19:13:46.2357112Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T19:13:46.2357738Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T19:13:46.2358253Z 
+2025-11-26T19:13:46.2360182Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T19:13:46.2360682Z 
+2025-11-26T19:13:46.4398452Z 2025-11-26T20:13:46.334+01:00  INFO 135796 --- [           main] com.devops.demo.DemoApplicationTests     : Starting DemoApplicationTests using Java 17.0.17 with PID 135796 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T19:13:46.4403081Z 2025-11-26T20:13:46.339+01:00  INFO 135796 --- [           main] com.devops.demo.DemoApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T19:13:49.5500622Z 2025-11-26T20:13:49.454+01:00  INFO 135796 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T19:13:51.8875139Z 2025-11-26T20:13:51.873+01:00  INFO 135796 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-26T19:13:52.0881574Z 2025-11-26T20:13:52.041+01:00  INFO 135796 --- [           main] com.devops.demo.DemoApplicationTests     : Started DemoApplicationTests in 6.363 seconds (process running for 8.532)
+2025-11-26T19:13:52.7971591Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-11-26T19:13:54.1159375Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.211 s -- in com.devops.demo.DemoApplicationTests
+2025-11-26T19:13:54.1197677Z [INFO] Running com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:13:54.1204338Z 2025-11-26T20:13:54.063+01:00  INFO 135796 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.devops.demo.controller.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T19:13:54.1943970Z 2025-11-26T20:13:54.130+01:00  INFO 135796 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:13:54.1946390Z   .   ____          _            __ _ _
+2025-11-26T19:13:54.1947005Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T19:13:54.1947567Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T19:13:54.1948128Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T19:13:54.1948733Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T19:13:54.1949331Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T19:13:54.1950683Z 
+2025-11-26T19:13:54.1956098Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T19:13:54.1956638Z 
+2025-11-26T19:13:54.1959866Z 2025-11-26T20:13:54.179+01:00  INFO 135796 --- [           main] c.d.d.controller.CustomerControllerTest  : Starting CustomerControllerTest using Java 17.0.17 with PID 135796 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T19:13:54.1963476Z 2025-11-26T20:13:54.180+01:00  INFO 135796 --- [           main] c.d.d.controller.CustomerControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T19:13:55.0961460Z 2025-11-26T20:13:55.011+01:00  INFO 135796 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T19:13:56.0182837Z 2025-11-26T20:13:56.014+01:00  INFO 135796 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-26T19:13:56.0186345Z 2025-11-26T20:13:56.015+01:00  INFO 135796 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-26T19:13:56.0906529Z 2025-11-26T20:13:56.025+01:00  INFO 135796 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-11-26T19:13:56.0909172Z 2025-11-26T20:13:56.059+01:00  INFO 135796 --- [           main] c.d.d.controller.CustomerControllerTest  : Started CustomerControllerTest in 1.921 seconds (process running for 12.552)
+2025-11-26T19:13:56.7842471Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.713 s -- in com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:13:56.7844778Z [INFO] Running com.devops.demo.service.CustomerServiceTest
+2025-11-26T19:13:56.9005262Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s -- in com.devops.demo.service.CustomerServiceTest
+2025-11-26T19:13:56.9828099Z [INFO] 
+2025-11-26T19:13:56.9829120Z [INFO] Results:
+2025-11-26T19:13:56.9829786Z [INFO] 
+2025-11-26T19:13:56.9830233Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+2025-11-26T19:13:56.9830647Z [INFO] 
+2025-11-26T19:13:56.9972603Z [INFO] ------------------------------------------------------------------------
+2025-11-26T19:13:56.9974021Z [INFO] BUILD SUCCESS
+2025-11-26T19:13:56.9975574Z [INFO] ------------------------------------------------------------------------
+2025-11-26T19:13:57.0053976Z [INFO] Total time:  22.762 s
+2025-11-26T19:13:57.0054937Z [INFO] Finished at: 2025-11-26T20:13:56+01:00
+2025-11-26T19:13:57.0057148Z [INFO] ------------------------------------------------------------------------

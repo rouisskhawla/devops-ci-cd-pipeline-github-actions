@@ -1,0 +1,68 @@
+﻿2025-11-26T19:39:05.1837379Z ##[group]Run appleboy/ssh-action@v0.1.9
+2025-11-26T19:39:05.1837635Z with:
+2025-11-26T19:39:05.1837833Z   host: ***
+2025-11-26T19:39:05.1838177Z   username: ***
+2025-11-26T19:39:05.1839547Z   key: ***
+
+2025-11-26T19:39:05.1839720Z   port: ***
+2025-11-26T19:39:05.1840510Z   script: export APP_IMAGE_TAG=latest
+docker pull ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+
+2025-11-26T19:39:05.1841212Z   sync: false
+2025-11-26T19:39:05.1841373Z   use_insecure_cipher: false
+2025-11-26T19:39:05.1841548Z   timeout: 30s
+2025-11-26T19:39:05.1841697Z   command_timeout: 10m
+2025-11-26T19:39:05.1841866Z   proxy_port: ***
+2025-11-26T19:39:05.1842026Z   proxy_timeout: 30s
+2025-11-26T19:39:05.1842193Z   proxy_use_insecure_cipher: false
+2025-11-26T19:39:05.1842388Z   script_stop: false
+2025-11-26T19:39:05.1842553Z   debug: false
+2025-11-26T19:39:05.1842699Z ##[endgroup]
+2025-11-26T19:39:05.1857815Z ##[command]/usr/bin/docker run --name e32b8455cfc8c8de144901914b6816603a064d_91357a --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SCRIPT" -e "INPUT_PASSPHRASE" -e "INPUT_PASSWORD" -e "INPUT_SYNC" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_CIPHER" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_FINGERPRINT" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_CIPHER" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "INPUT_SCRIPT_STOP" -e "INPUT_ENVS" -e "INPUT_DEBUG" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:55cfc8c8de144901914b6816603a064d
+2025-11-26T19:39:05.4900554Z ======CMD======
+2025-11-26T19:39:05.4901046Z export APP_IMAGE_TAG=latest
+2025-11-26T19:39:05.4901640Z docker pull ***/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+2025-11-26T19:39:05.4902220Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
+2025-11-26T19:39:05.4902753Z docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
+2025-11-26T19:39:05.4903516Z 
+2025-11-26T19:39:05.4904010Z ======END======
+2025-11-26T19:39:10.4184931Z out: latest: Pulling from ***/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:39:10.4245955Z out: 7e49dc6156b0: Pulling fs layer
+2025-11-26T19:39:10.4246656Z out: e106dd8ed6ad: Pulling fs layer
+2025-11-26T19:39:10.4246870Z out: f28a3134bb3a: Pulling fs layer
+2025-11-26T19:39:10.4247060Z out: 837687f10a1f: Pulling fs layer
+2025-11-26T19:39:10.4247256Z out: 2581bc3ff3b6: Pulling fs layer
+2025-11-26T19:39:10.4247444Z out: 13ab95dc5774: Pulling fs layer
+2025-11-26T19:39:10.4304842Z out: 837687f10a1f: Waiting
+2025-11-26T19:39:10.4309013Z out: 2581bc3ff3b6: Waiting
+2025-11-26T19:39:10.4310314Z out: 13ab95dc5774: Waiting
+2025-11-26T19:40:11.8057477Z out: e106dd8ed6ad: Verifying Checksum
+2025-11-26T19:40:11.8057781Z out: e106dd8ed6ad: Download complete
+2025-11-26T19:40:13.2071799Z out: 837687f10a1f: Verifying Checksum
+2025-11-26T19:40:13.2164051Z out: 837687f10a1f: Download complete
+2025-11-26T19:40:14.0569235Z out: 2581bc3ff3b6: Verifying Checksum
+2025-11-26T19:40:14.0655711Z out: 2581bc3ff3b6: Download complete
+2025-11-26T19:40:35.5722483Z out: 7e49dc6156b0: Verifying Checksum
+2025-11-26T19:40:35.5759422Z out: 7e49dc6156b0: Download complete
+2025-11-26T19:40:41.3870721Z out: 7e49dc6156b0: Pull complete
+2025-11-26T19:40:45.4638639Z out: e106dd8ed6ad: Pull complete
+2025-11-26T19:41:25.4473865Z out: 13ab95dc5774: Verifying Checksum
+2025-11-26T19:41:25.4498357Z out: 13ab95dc5774: Download complete
+2025-11-26T19:43:00.0503074Z out: f28a3134bb3a: Verifying Checksum
+2025-11-26T19:43:00.0515727Z out: f28a3134bb3a: Download complete
+2025-11-26T19:43:03.9250067Z out: f28a3134bb3a: Pull complete
+2025-11-26T19:43:03.9802656Z out: 837687f10a1f: Pull complete
+2025-11-26T19:43:04.0358027Z out: 2581bc3ff3b6: Pull complete
+2025-11-26T19:43:04.3673511Z out: 13ab95dc5774: Pull complete
+2025-11-26T19:43:04.4003585Z out: Digest: sha256:afff4460640d604d8bce2634e553c5242594f35562fb118bc47e299e8a117a55
+2025-11-26T19:43:04.4098963Z out: Status: Downloaded newer image for ***/devops-ci-cd-pipeline-github-actions:latest
+2025-11-26T19:43:04.4173561Z out: docker.io/***/devops-ci-cd-pipeline-github-actions:latest
+2025-11-26T19:43:05.1906332Z err: Removing network devops-ci-cd-github-actions_default
+2025-11-26T19:43:06.0199697Z err: Creating network "devops-ci-cd-github-actions_default" with the default driver
+2025-11-26T19:43:06.3264575Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... 
+2025-11-26T19:43:07.7108306Z err: Creating devops-ci-cd-github-actions_devops-ci-cd-pipeline-github-actions_1 ... done
+2025-11-26T19:43:07.8526256Z ==============================================
+2025-11-26T19:43:07.8527209Z ✅ Successfully executed commands to all host.
+2025-11-26T19:43:07.8527588Z ==============================================

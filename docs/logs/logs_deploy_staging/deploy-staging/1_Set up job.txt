@@ -1,0 +1,30 @@
+﻿2025-11-26T18:50:03.4306850Z Current runner version: '2.329.0'
+2025-11-26T18:50:03.4324662Z Runner name: 'khawla'
+2025-11-26T18:50:03.4325507Z Runner group name: 'Default'
+2025-11-26T18:50:03.4326610Z Machine name: 'khawla'
+2025-11-26T18:50:03.4331861Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T18:50:03.4335676Z Actions: write
+2025-11-26T18:50:03.4336372Z ArtifactMetadata: write
+2025-11-26T18:50:03.4337003Z Attestations: write
+2025-11-26T18:50:03.4337558Z Checks: write
+2025-11-26T18:50:03.4338044Z Contents: write
+2025-11-26T18:50:03.4338588Z Deployments: write
+2025-11-26T18:50:03.4339266Z Discussions: write
+2025-11-26T18:50:03.4340092Z Issues: write
+2025-11-26T18:50:03.4340939Z Metadata: read
+2025-11-26T18:50:03.4341743Z Models: read
+2025-11-26T18:50:03.4342587Z Packages: write
+2025-11-26T18:50:03.4343312Z Pages: write
+2025-11-26T18:50:03.4344017Z PullRequests: write
+2025-11-26T18:50:03.4344833Z RepositoryProjects: write
+2025-11-26T18:50:03.4345776Z SecurityEvents: write
+2025-11-26T18:50:03.4346606Z Statuses: write
+2025-11-26T18:50:03.4347986Z ##[endgroup]
+2025-11-26T18:50:03.4352807Z Secret source: Actions
+2025-11-26T18:50:03.4355134Z Prepare workflow directory
+2025-11-26T18:50:03.5998539Z Prepare all required actions
+2025-11-26T18:50:03.6065159Z Getting action download info
+2025-11-26T18:50:04.3072299Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T18:50:05.8662107Z Download action repository 'appleboy/ssh-action@v0.1.9' (SHA:5f64c95280a8e7632da28096e00ccaecb296d200)
+2025-11-26T18:50:06.9158554Z Download action repository 'appleboy/scp-action@v0.1.7' (SHA:917f8b81dfc1ccd331fef9e2d61bdc6c8be94634)
+2025-11-26T18:50:11.9018265Z Complete job name: deploy-***

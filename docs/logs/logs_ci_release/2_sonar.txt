@@ -1,0 +1,574 @@
+﻿2025-11-26T19:15:11.1991743Z Current runner version: '2.329.0'
+2025-11-26T19:15:11.1998874Z Runner name: 'khawla'
+2025-11-26T19:15:11.1999507Z Runner group name: 'Default'
+2025-11-26T19:15:11.2000296Z Machine name: 'khawla'
+2025-11-26T19:15:11.2004233Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T19:15:11.2007431Z Actions: write
+2025-11-26T19:15:11.2008054Z ArtifactMetadata: write
+2025-11-26T19:15:11.2008552Z Attestations: write
+2025-11-26T19:15:11.2008998Z Checks: write
+2025-11-26T19:15:11.2009432Z Contents: write
+2025-11-26T19:15:11.2009875Z Deployments: write
+2025-11-26T19:15:11.2010321Z Discussions: write
+2025-11-26T19:15:11.2010768Z Issues: write
+2025-11-26T19:15:11.2011192Z Metadata: read
+2025-11-26T19:15:11.2011610Z Models: read
+2025-11-26T19:15:11.2012035Z Packages: write
+2025-11-26T19:15:11.2012687Z Pages: write
+2025-11-26T19:15:11.2014068Z PullRequests: write
+2025-11-26T19:15:11.2014890Z RepositoryProjects: write
+2025-11-26T19:15:11.2015757Z SecurityEvents: write
+2025-11-26T19:15:11.2017506Z Statuses: write
+2025-11-26T19:15:11.2018254Z ##[endgroup]
+2025-11-26T19:15:11.2021200Z Secret source: Actions
+2025-11-26T19:15:11.2021904Z Prepare workflow directory
+2025-11-26T19:15:11.2756512Z Prepare all required actions
+2025-11-26T19:15:11.2804537Z Getting action download info
+2025-11-26T19:15:11.9721900Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T19:15:16.7301931Z Download action repository 'actions/setup-java@v3' (SHA:17f84c3641ba7b8f6deff6309fc4c864478f5d62)
+2025-11-26T19:15:22.9840927Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-11-26T19:15:28.3460359Z Complete job name: sonar
+2025-11-26T19:15:28.3997126Z ##[group]Run actions/checkout@v3
+2025-11-26T19:15:28.3997528Z with:
+2025-11-26T19:15:28.3997805Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:15:28.3998306Z   token: ***
+2025-11-26T19:15:28.3998484Z   ssh-strict: true
+2025-11-26T19:15:28.3998688Z   persist-credentials: true
+2025-11-26T19:15:28.3998910Z   clean: true
+2025-11-26T19:15:28.3999091Z   sparse-checkout-cone-mode: true
+2025-11-26T19:15:28.3999288Z   fetch-depth: 1
+2025-11-26T19:15:28.3999447Z   fetch-tags: false
+2025-11-26T19:15:28.3999608Z   lfs: false
+2025-11-26T19:15:28.3999757Z   submodules: false
+2025-11-26T19:15:28.3999942Z   set-safe-directory: true
+2025-11-26T19:15:28.4000211Z ##[endgroup]
+2025-11-26T19:15:28.5088378Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:15:28.5090446Z ##[group]Getting Git version info
+2025-11-26T19:15:28.5091245Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T19:15:28.5536828Z [command]/usr/bin/git version
+2025-11-26T19:15:28.5596825Z git version 2.43.0
+2025-11-26T19:15:28.5625233Z ##[endgroup]
+2025-11-26T19:15:28.5667599Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/efa7d193-2429-4ed0-88cb-cf33f6c48009' before making global git config changes
+2025-11-26T19:15:28.5669095Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:15:28.5674427Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:15:28.5737497Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T19:15:28.5768172Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:15:28.5806419Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T19:15:28.5807682Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T19:15:28.5836478Z refs/heads/main
+2025-11-26T19:15:28.5845478Z [command]/usr/bin/git checkout --detach
+2025-11-26T19:15:28.5891402Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:15:28.5946343Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T19:15:28.5985058Z Deleted branch main (was 4974515).
+2025-11-26T19:15:28.6040931Z ##[endgroup]
+2025-11-26T19:15:28.6041764Z [command]/usr/bin/git submodule status
+2025-11-26T19:15:28.6363772Z ##[group]Cleaning the repository
+2025-11-26T19:15:28.6364828Z [command]/usr/bin/git clean -ffdx
+2025-11-26T19:15:28.6426469Z Removing target/
+2025-11-26T19:15:28.6439636Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T19:15:28.6483586Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:15:28.6493671Z ##[endgroup]
+2025-11-26T19:15:28.6494236Z ##[group]Disabling automatic garbage collection
+2025-11-26T19:15:28.6497455Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T19:15:28.6536008Z ##[endgroup]
+2025-11-26T19:15:28.6536609Z ##[group]Setting up auth
+2025-11-26T19:15:28.6537752Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:15:28.6576975Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:15:28.6902160Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:15:28.6947004Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:15:28.7321341Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T19:15:28.7392205Z ##[endgroup]
+2025-11-26T19:15:28.7394167Z ##[group]Fetching the repository
+2025-11-26T19:15:28.7402023Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +497451586471704e9134a95b8802e6232c703f3d:refs/remotes/origin/main
+2025-11-26T19:15:29.3685029Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T19:15:29.3768510Z ##[endgroup]
+2025-11-26T19:15:29.3769722Z ##[group]Determining the checkout info
+2025-11-26T19:15:29.3770557Z ##[endgroup]
+2025-11-26T19:15:29.3771210Z ##[group]Checking out the ref
+2025-11-26T19:15:29.3772113Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T19:15:29.3823821Z Switched to a new branch 'main'
+2025-11-26T19:15:29.3825040Z branch 'main' set up to track 'origin/main'.
+2025-11-26T19:15:29.3828748Z ##[endgroup]
+2025-11-26T19:15:29.3884099Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T19:15:29.3919583Z '497451586471704e9134a95b8802e6232c703f3d'
+2025-11-26T19:15:29.4281471Z ##[group]Run actions/setup-java@v3
+2025-11-26T19:15:29.4282073Z with:
+2025-11-26T19:15:29.4282468Z   java-version: 17
+2025-11-26T19:15:29.4282785Z   distribution: temurin
+2025-11-26T19:15:29.4283151Z   java-package: jdk
+2025-11-26T19:15:29.4283457Z   check-latest: false
+2025-11-26T19:15:29.4283776Z   server-id: github
+2025-11-26T19:15:29.4284087Z   server-username: GITHUB_ACTOR
+2025-11-26T19:15:29.4284512Z   server-password: GITHUB_TOKEN
+2025-11-26T19:15:29.4284875Z   overwrite-settings: true
+2025-11-26T19:15:29.4285231Z   job-status: success
+2025-11-26T19:15:29.4285804Z   token: ***
+2025-11-26T19:15:29.4286077Z ##[endgroup]
+2025-11-26T19:15:29.7066088Z ##[group]Installed distributions
+2025-11-26T19:15:29.7119307Z Resolved Java 17.0.17+10 from tool-cache
+2025-11-26T19:15:29.7120671Z Setting Java 17.0.17+10 as the default
+2025-11-26T19:15:29.7143601Z Creating toolchains.xml for JDK version 17 from temurin
+2025-11-26T19:15:29.7948406Z Overwriting existing file /home/worldsoft/.m2/toolchains.xml
+2025-11-26T19:15:29.7951954Z 
+2025-11-26T19:15:29.7956629Z Java configuration:
+2025-11-26T19:15:29.7957513Z   Distribution: temurin
+2025-11-26T19:15:29.7958083Z   Version: 17.0.17+10
+2025-11-26T19:15:29.7962271Z   Path: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:15:29.7963771Z 
+2025-11-26T19:15:29.7966741Z ##[endgroup]
+2025-11-26T19:15:29.8000035Z Creating settings.xml with server-id: github
+2025-11-26T19:15:29.8024706Z Overwriting existing file /home/worldsoft/.m2/settings.xml
+2025-11-26T19:15:29.8344156Z ##[group]Run actions/cache@v3
+2025-11-26T19:15:29.8344732Z with:
+2025-11-26T19:15:29.8345044Z   path: ~/.sonar/cache
+2025-11-26T19:15:29.8345361Z   key: Linux-sonar
+2025-11-26T19:15:29.8345838Z   restore-keys: Linux-sonar
+
+2025-11-26T19:15:29.8346416Z   enableCrossOsArchive: false
+2025-11-26T19:15:29.8346797Z   fail-on-cache-miss: false
+2025-11-26T19:15:29.8347154Z   lookup-only: false
+2025-11-26T19:15:29.8347542Z env:
+2025-11-26T19:15:29.8348181Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:15:29.8349514Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:15:29.8350986Z ##[endgroup]
+2025-11-26T19:15:30.6108785Z Cache hit for: Linux-sonar
+2025-11-26T19:15:32.2154783Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:33.2163706Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:34.2172599Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:35.2173565Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:36.2175824Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:37.2175427Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:38.2180245Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:39.2175362Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:40.2176958Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:41.2187380Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:42.2187076Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:45.6448298Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:46.6444550Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:47.6449512Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:48.6451975Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:49.6451350Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:50.6446500Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:51.6443918Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:52.6445759Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:53.6453643Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:54.6456030Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:55.6458060Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:56.6456019Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:57.6461788Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:58.6466465Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:15:59.6468515Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:00.6467952Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:01.6474468Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:02.6466903Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:03.6469793Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:04.6469857Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:05.6470569Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:06.6469844Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:07.6471032Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:08.6480892Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:09.6491332Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:10.6494602Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:11.6495326Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:12.6512595Z Received 0 of 163685267 (0.0%), 0.0 MBs/sec
+2025-11-26T19:16:13.6520388Z Received 4194304 of 163685267 (2.6%), 0.1 MBs/sec
+2025-11-26T19:16:14.6524371Z Received 8388608 of 163685267 (5.1%), 0.2 MBs/sec
+2025-11-26T19:16:15.6528076Z Received 12582912 of 163685267 (7.7%), 0.3 MBs/sec
+2025-11-26T19:16:16.6524068Z Received 12582912 of 163685267 (7.7%), 0.3 MBs/sec
+2025-11-26T19:16:20.0629055Z Received 20971520 of 163685267 (12.8%), 0.4 MBs/sec
+2025-11-26T19:16:21.0638114Z Received 25165824 of 163685267 (15.4%), 0.5 MBs/sec
+2025-11-26T19:16:22.0633339Z Received 29360128 of 163685267 (17.9%), 0.6 MBs/sec
+2025-11-26T19:16:23.0633497Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:24.0640704Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:25.0646774Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:26.0653356Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:27.0660147Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:28.0670738Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:29.0683052Z Received 33554432 of 163685267 (20.5%), 0.6 MBs/sec
+2025-11-26T19:16:30.0687214Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:31.0688231Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:32.0683843Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:33.0701103Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:34.0698906Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:35.0703670Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:36.0711123Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:37.0708912Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:38.0704029Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:39.0710668Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:40.0716029Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:41.0710295Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:42.0725221Z Received 33554432 of 163685267 (20.5%), 0.5 MBs/sec
+2025-11-26T19:16:43.0712924Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:44.0717936Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:45.0714218Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:46.0718124Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:47.0715859Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:48.0720996Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:49.0724668Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:50.0727752Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:51.0727715Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:52.0730399Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:55.4399005Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:56.4402551Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:57.4410516Z Received 33554432 of 163685267 (20.5%), 0.4 MBs/sec
+2025-11-26T19:16:58.4403865Z Received 37748736 of 163685267 (23.1%), 0.4 MBs/sec
+2025-11-26T19:16:59.4412413Z Received 37748736 of 163685267 (23.1%), 0.4 MBs/sec
+2025-11-26T19:17:00.4422854Z Received 41943040 of 163685267 (25.6%), 0.4 MBs/sec
+2025-11-26T19:17:01.4417276Z Received 46137344 of 163685267 (28.2%), 0.5 MBs/sec
+2025-11-26T19:17:02.4412982Z Received 50331648 of 163685267 (30.7%), 0.5 MBs/sec
+2025-11-26T19:17:03.4412410Z Received 54525952 of 163685267 (33.3%), 0.6 MBs/sec
+2025-11-26T19:17:04.4415581Z Received 58720256 of 163685267 (35.9%), 0.6 MBs/sec
+2025-11-26T19:17:05.4416337Z Received 62914560 of 163685267 (38.4%), 0.6 MBs/sec
+2025-11-26T19:17:06.4414691Z Received 62914560 of 163685267 (38.4%), 0.6 MBs/sec
+2025-11-26T19:17:07.4416441Z Received 62914560 of 163685267 (38.4%), 0.6 MBs/sec
+2025-11-26T19:17:08.4414572Z Received 67108864 of 163685267 (41.0%), 0.7 MBs/sec
+2025-11-26T19:17:09.4415539Z Received 67108864 of 163685267 (41.0%), 0.7 MBs/sec
+2025-11-26T19:17:10.4416665Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:11.4416483Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:12.4414551Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:13.4418122Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:14.4416818Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:15.4413310Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:16.4417365Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:17.4418448Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:18.4413536Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:19.4413151Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:20.4418057Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:21.4416457Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:22.4413295Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:23.4417309Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:24.4412859Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:25.4413405Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:26.4422942Z Received 67108864 of 163685267 (41.0%), 0.6 MBs/sec
+2025-11-26T19:17:29.8310420Z Received 67108864 of 163685267 (41.0%), 0.5 MBs/sec
+2025-11-26T19:17:30.8312961Z Received 67108864 of 163685267 (41.0%), 0.5 MBs/sec
+2025-11-26T19:17:31.8318280Z Received 67108864 of 163685267 (41.0%), 0.5 MBs/sec
+2025-11-26T19:17:32.8328034Z Received 67108864 of 163685267 (41.0%), 0.5 MBs/sec
+2025-11-26T19:17:33.8330498Z Received 79691776 of 163685267 (48.7%), 0.6 MBs/sec
+2025-11-26T19:17:34.8336001Z Received 83886080 of 163685267 (51.2%), 0.6 MBs/sec
+2025-11-26T19:17:35.8332196Z Received 83886080 of 163685267 (51.2%), 0.6 MBs/sec
+2025-11-26T19:17:36.8346770Z Received 88080384 of 163685267 (53.8%), 0.7 MBs/sec
+2025-11-26T19:17:37.8340829Z Received 88080384 of 163685267 (53.8%), 0.7 MBs/sec
+2025-11-26T19:17:38.8353669Z Received 92274688 of 163685267 (56.4%), 0.7 MBs/sec
+2025-11-26T19:17:39.8359305Z Received 92274688 of 163685267 (56.4%), 0.7 MBs/sec
+2025-11-26T19:17:40.8362713Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:41.8361806Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:42.8363599Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:43.8362726Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:44.8358027Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:45.8365740Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:46.8365128Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:47.8376273Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:48.8372748Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:49.8376759Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:50.8382802Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:51.8387943Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:52.8390651Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:53.8400559Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:54.8403524Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:55.8406831Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:56.8407991Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:57.8416165Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:58.8415548Z Received 100663296 of 163685267 (61.5%), 0.7 MBs/sec
+2025-11-26T19:17:59.8415268Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:00.8412781Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:04.1392694Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:05.1396369Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:06.1391165Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:07.1397455Z Received 100663296 of 163685267 (61.5%), 0.6 MBs/sec
+2025-11-26T19:18:08.1395127Z Received 104857600 of 163685267 (64.1%), 0.6 MBs/sec
+2025-11-26T19:18:09.1393089Z Received 104857600 of 163685267 (64.1%), 0.6 MBs/sec
+2025-11-26T19:18:10.1391369Z Received 104857600 of 163685267 (64.1%), 0.6 MBs/sec
+2025-11-26T19:18:11.1392267Z Received 113246208 of 163685267 (69.2%), 0.7 MBs/sec
+2025-11-26T19:18:12.1389088Z Received 113246208 of 163685267 (69.2%), 0.7 MBs/sec
+2025-11-26T19:18:13.1393810Z Received 113246208 of 163685267 (69.2%), 0.7 MBs/sec
+2025-11-26T19:18:14.1405663Z Received 121634816 of 163685267 (74.3%), 0.7 MBs/sec
+2025-11-26T19:18:15.1412282Z Received 121634816 of 163685267 (74.3%), 0.7 MBs/sec
+2025-11-26T19:18:16.1410624Z Received 125829120 of 163685267 (76.9%), 0.7 MBs/sec
+2025-11-26T19:18:17.1420414Z Received 134217728 of 163685267 (82.0%), 0.8 MBs/sec
+2025-11-26T19:18:18.1421758Z Received 134325139 of 163685267 (82.1%), 0.8 MBs/sec
+2025-11-26T19:18:19.1427694Z Received 134325139 of 163685267 (82.1%), 0.8 MBs/sec
+2025-11-26T19:18:20.1431402Z Received 134325139 of 163685267 (82.1%), 0.8 MBs/sec
+2025-11-26T19:18:21.1441652Z Received 134325139 of 163685267 (82.1%), 0.8 MBs/sec
+2025-11-26T19:18:22.1435042Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:23.1432261Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:24.1436632Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:25.1437945Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:26.1443205Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:27.1439168Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:28.1448201Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:29.1457486Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:30.1468934Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:31.1475227Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:32.1479015Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:33.1487705Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:34.1496502Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:35.1489740Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:38.1726924Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:39.1721014Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:40.1720269Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:41.1726815Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:42.1727631Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:43.1721958Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:44.1725005Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:45.1723362Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:46.1728462Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:47.1732065Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:48.1734560Z Received 134325139 of 163685267 (82.1%), 0.7 MBs/sec
+2025-11-26T19:18:49.1739341Z Received 134325139 of 163685267 (82.1%), 0.6 MBs/sec
+2025-11-26T19:18:50.1742584Z Received 134325139 of 163685267 (82.1%), 0.6 MBs/sec
+2025-11-26T19:18:51.1748817Z Received 134325139 of 163685267 (82.1%), 0.6 MBs/sec
+2025-11-26T19:18:52.1745948Z Received 138519443 of 163685267 (84.6%), 0.7 MBs/sec
+2025-11-26T19:18:53.1747174Z Received 142713747 of 163685267 (87.2%), 0.7 MBs/sec
+2025-11-26T19:18:54.1748433Z Received 146908051 of 163685267 (89.8%), 0.7 MBs/sec
+2025-11-26T19:18:54.7298233Z Received 163685267 of 163685267 (100.0%), 0.8 MBs/sec
+2025-11-26T19:18:54.7299016Z Cache Size: ~156 MB (163685267 B)
+2025-11-26T19:18:54.8208088Z [command]/usr/bin/tar -xf /home/worldsoft/actions-runner/_work/_temp/d0a27fb4-ac7e-4c8a-9b87-37937cc55600/cache.tgz -P -C /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions -z
+2025-11-26T19:18:56.9827760Z Cache restored successfully
+2025-11-26T19:18:57.0524736Z Cache restored from key: Linux-sonar
+2025-11-26T19:18:57.0988221Z ##[group]Run mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=devops-ci-cd-pipeline-github-actions
+2025-11-26T19:18:57.0993182Z [36;1mmvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=devops-ci-cd-pipeline-github-actions[0m
+2025-11-26T19:18:57.1022264Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:18:57.1022740Z env:
+2025-11-26T19:18:57.1023425Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:18:57.1024415Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:18:57.1050146Z   SONAR_TOKEN: ***
+2025-11-26T19:18:57.1050832Z   SONAR_HOST_URL: ***
+2025-11-26T19:18:57.1051349Z ##[endgroup]
+2025-11-26T19:19:09.9218673Z [INFO] Scanning for projects...
+2025-11-26T19:19:13.4882559Z [INFO] 
+2025-11-26T19:19:13.4892817Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T19:19:13.4906516Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T19:19:13.4907494Z [INFO]   from pom.xml
+2025-11-26T19:19:13.4908256Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T19:19:14.8023004Z [INFO] 
+2025-11-26T19:19:14.8025614Z [INFO] --- resources:3.3.1:resources (default-resources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:15.3707444Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T19:19:15.3889064Z [INFO] Copying 1 resource from src/main/resources to target/classes
+2025-11-26T19:19:15.4032370Z [INFO] 
+2025-11-26T19:19:15.4033168Z [INFO] --- compiler:3.13.0:compile (default-compile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:15.7007000Z [INFO] Recompiling the module because of changed source code.
+2025-11-26T19:19:15.7208563Z [INFO] Compiling 5 source files with javac [debug parameters release 17] to target/classes
+2025-11-26T19:19:18.2627414Z [INFO] 
+2025-11-26T19:19:18.2630304Z [INFO] --- resources:3.3.1:testResources (default-testResources) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:18.2759823Z [INFO] skip non existing resourceDirectory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/src/test/resources
+2025-11-26T19:19:18.2764536Z [INFO] 
+2025-11-26T19:19:18.2767172Z [INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:18.3118127Z [INFO] Recompiling the module because of changed dependency.
+2025-11-26T19:19:18.3155312Z [INFO] Compiling 3 source files with javac [debug parameters release 17] to target/test-classes
+2025-11-26T19:19:19.6051604Z [INFO] 
+2025-11-26T19:19:19.6052893Z [INFO] --- surefire:3.2.5:test (default-test) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:20.4133679Z [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2025-11-26T19:19:20.5918667Z [INFO] 
+2025-11-26T19:19:20.5919428Z [INFO] -------------------------------------------------------
+2025-11-26T19:19:20.5920829Z [INFO]  T E S T S
+2025-11-26T19:19:20.5921556Z [INFO] -------------------------------------------------------
+2025-11-26T19:19:22.2756515Z [INFO] Running com.devops.demo.DemoApplicationTests
+2025-11-26T19:19:22.7241364Z 20:19:22.616 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.devops.demo.DemoApplicationTests]: DemoApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T19:19:22.9163609Z 20:19:22.828 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.DemoApplicationTests
+2025-11-26T19:19:23.6203058Z   .   ____          _            __ _ _
+2025-11-26T19:19:23.6205147Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T19:19:23.6206106Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T19:19:23.6206893Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T19:19:23.6207588Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T19:19:23.6208962Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T19:19:23.6209475Z 
+2025-11-26T19:19:23.6209977Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T19:19:23.6210432Z 
+2025-11-26T19:19:23.7193562Z 2025-11-26T20:19:23.693+01:00  INFO 138372 --- [           main] com.devops.demo.DemoApplicationTests     : Starting DemoApplicationTests using Java 17.0.17 with PID 138372 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T19:19:23.7198511Z 2025-11-26T20:19:23.699+01:00  INFO 138372 --- [           main] com.devops.demo.DemoApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T19:19:27.0320072Z 2025-11-26T20:19:26.985+01:00  INFO 138372 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T19:19:29.8658354Z 2025-11-26T20:19:29.800+01:00  INFO 138372 --- [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2025-11-26T19:19:30.0676528Z 2025-11-26T20:19:29.976+01:00  INFO 138372 --- [           main] com.devops.demo.DemoApplicationTests     : Started DemoApplicationTests in 6.885 seconds (process running for 9.033)
+2025-11-26T19:19:30.6000630Z OpenJDK 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+2025-11-26T19:19:31.6478979Z [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.284 s -- in com.devops.demo.DemoApplicationTests
+2025-11-26T19:19:31.6601224Z [INFO] Running com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:19:31.6725163Z 2025-11-26T20:19:31.570+01:00  INFO 138372 --- [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.devops.demo.controller.CustomerControllerTest]: CustomerControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-11-26T19:19:31.6741539Z 2025-11-26T20:19:31.644+01:00  INFO 138372 --- [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.devops.demo.DemoApplication for test class com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:19:31.7724234Z   .   ____          _            __ _ _
+2025-11-26T19:19:31.7725218Z  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+2025-11-26T19:19:31.7725795Z ( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+2025-11-26T19:19:31.7726352Z  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+2025-11-26T19:19:31.7726930Z   '  |____| .__|_| |_|_| |_\__, | / / / /
+2025-11-26T19:19:31.7727529Z  =========|_|==============|___/=/_/_/_/
+2025-11-26T19:19:31.7727926Z 
+2025-11-26T19:19:31.7728373Z  :: Spring Boot ::                (v3.3.0)
+2025-11-26T19:19:31.7728798Z 
+2025-11-26T19:19:31.7730859Z 2025-11-26T20:19:31.713+01:00  INFO 138372 --- [           main] c.d.d.controller.CustomerControllerTest  : Starting CustomerControllerTest using Java 17.0.17 with PID 138372 (started by worldsoft in /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions)
+2025-11-26T19:19:31.7734109Z 2025-11-26T20:19:31.714+01:00  INFO 138372 --- [           main] c.d.d.controller.CustomerControllerTest  : No active profile set, falling back to 1 default profile: "default"
+2025-11-26T19:19:32.5014880Z 2025-11-26T20:19:32.489+01:00  INFO 138372 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2025-11-26T19:19:33.6007305Z 2025-11-26T20:19:33.530+01:00  INFO 138372 --- [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-11-26T19:19:33.6010009Z 2025-11-26T20:19:33.531+01:00  INFO 138372 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-11-26T19:19:33.6011956Z 2025-11-26T20:19:33.543+01:00  INFO 138372 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 4 ms
+2025-11-26T19:19:33.6016624Z 2025-11-26T20:19:33.574+01:00  INFO 138372 --- [           main] c.d.d.controller.CustomerControllerTest  : Started CustomerControllerTest in 1.922 seconds (process running for 12.631)
+2025-11-26T19:19:34.3306126Z [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.716 s -- in com.devops.demo.controller.CustomerControllerTest
+2025-11-26T19:19:34.3307612Z [INFO] Running com.devops.demo.service.CustomerServiceTest
+2025-11-26T19:19:34.4422944Z [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.140 s -- in com.devops.demo.service.CustomerServiceTest
+2025-11-26T19:19:34.5413155Z [INFO] 
+2025-11-26T19:19:34.5418081Z [INFO] Results:
+2025-11-26T19:19:34.5418799Z [INFO] 
+2025-11-26T19:19:34.5421508Z [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0
+2025-11-26T19:19:34.5422135Z [INFO] 
+2025-11-26T19:19:34.5452243Z [INFO] 
+2025-11-26T19:19:34.5455108Z [INFO] --- jar:3.4.1:jar (default-jar) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:35.1892982Z [INFO] Building jar: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar
+2025-11-26T19:19:35.2983929Z [INFO] 
+2025-11-26T19:19:35.2985057Z [INFO] --- spring-boot:3.3.0:repackage (repackage) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:36.0682416Z [INFO] Replacing main artifact /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+2025-11-26T19:19:36.0692520Z [INFO] The original artifact has been renamed to /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/devops-ci-cd-pipeline-github-actions-0.0.1-SNAPSHOT.jar.original
+2025-11-26T19:19:36.0719697Z [INFO] 
+2025-11-26T19:19:36.0724148Z [INFO] ----------< com.devops:devops-ci-cd-pipeline-github-actions >-----------
+2025-11-26T19:19:36.0728312Z [INFO] Building devops-ci-cd-pipeline-github-actions 0.0.1-SNAPSHOT
+2025-11-26T19:19:36.0729291Z [INFO]   from pom.xml
+2025-11-26T19:19:36.0731399Z [INFO] --------------------------------[ jar ]---------------------------------
+2025-11-26T19:19:36.1194480Z [INFO] 
+2025-11-26T19:19:36.1198049Z [INFO] --- sonar:5.3.0.6276:sonar (default-cli) @ devops-ci-cd-pipeline-github-actions ---
+2025-11-26T19:19:36.3905944Z [WARNING] Using an unspecified version instead of an explicit plugin version may introduce breaking analysis changes at an unwanted time. It is highly recommended to use an explicit version, e.g. 'org.sonarsource.scanner.maven:sonar-maven-plugin:5.3.0.6276'.
+2025-11-26T19:19:36.4329899Z [INFO] Java 17.0.17 Eclipse Adoptium (64-bit)
+2025-11-26T19:19:36.4332390Z [INFO] Linux 6.6.87.2-microsoft-standard-WSL2 (amd64)
+2025-11-26T19:19:38.9325707Z [INFO] Communicating with SonarQube Server 9.9.8.100196
+2025-11-26T19:19:40.1854396Z [INFO] Load global settings
+2025-11-26T19:19:40.4428399Z [INFO] Load global settings (done) | time=260ms
+2025-11-26T19:19:40.4478042Z [INFO] Server id: 147B411E-AZpoa4nNNNKRTpWlQmJf
+2025-11-26T19:19:40.4598151Z [INFO] User cache: /home/worldsoft/.sonar/cache
+2025-11-26T19:19:40.4689604Z [INFO] Load/download plugins
+2025-11-26T19:19:40.4690442Z [INFO] Load plugins index
+2025-11-26T19:19:40.6135689Z [INFO] Load plugins index (done) | time=144ms
+2025-11-26T19:19:40.7282956Z [INFO] Load/download plugins (done) | time=259ms
+2025-11-26T19:19:41.9306555Z [INFO] Process project properties
+2025-11-26T19:19:41.9588133Z [INFO] Process project properties (done) | time=27ms
+2025-11-26T19:19:41.9647356Z [INFO] Execute project builders
+2025-11-26T19:19:41.9671393Z [INFO] Execute project builders (done) | time=3ms
+2025-11-26T19:19:41.9779187Z [INFO] Project key: devops-ci-cd-pipeline-github-actions
+2025-11-26T19:19:41.9783220Z [INFO] Base dir: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:19:41.9787294Z [INFO] Working dir: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/sonar
+2025-11-26T19:19:42.0050413Z [INFO] Load project settings for component key: 'devops-ci-cd-pipeline-github-actions'
+2025-11-26T19:19:42.1273673Z [INFO] Load project settings for component key: 'devops-ci-cd-pipeline-github-actions' (done) | time=122ms
+2025-11-26T19:19:42.5400531Z [INFO] Auto-configuring with CI 'Github Actions'
+2025-11-26T19:19:42.5478087Z [INFO] Load quality profiles
+2025-11-26T19:19:42.7115371Z [INFO] Load quality profiles (done) | time=163ms
+2025-11-26T19:19:42.7273700Z [INFO] Load active rules
+2025-11-26T19:19:55.0209005Z [INFO] Load active rules (done) | time=12293ms
+2025-11-26T19:19:55.0278616Z [INFO] Load analysis cache
+2025-11-26T19:19:55.2555870Z [INFO] Load analysis cache (285 bytes) | time=228ms
+2025-11-26T19:19:55.3635169Z [INFO] Load project repositories
+2025-11-26T19:19:55.4892185Z [INFO] Load project repositories (done) | time=126ms
+2025-11-26T19:19:55.5493371Z [INFO] Indexing files...
+2025-11-26T19:19:55.5499532Z [INFO] Project configuration:
+2025-11-26T19:19:55.7926333Z [INFO] 9 files indexed
+2025-11-26T19:19:55.7927983Z [INFO] 0 files ignored because of scm ignore settings
+2025-11-26T19:19:55.7956235Z [INFO] Quality profile for java: Sonar way
+2025-11-26T19:19:55.7957402Z [INFO] Quality profile for xml: Sonar way
+2025-11-26T19:19:55.7958328Z [INFO] ------------- Run sensors on module devops-ci-cd-pipeline-github-actions
+2025-11-26T19:19:56.0652384Z [INFO] Load metrics repository
+2025-11-26T19:19:56.1902401Z [INFO] Load metrics repository (done) | time=126ms
+2025-11-26T19:19:58.9040415Z [INFO] Sensor JavaSensor [java]
+2025-11-26T19:19:58.9133912Z [INFO] Configured Java source version (sonar.java.source): 17
+2025-11-26T19:19:58.9210195Z [INFO] JavaClasspath initialization
+2025-11-26T19:19:58.9332090Z [INFO] JavaClasspath initialization (done) | time=11ms
+2025-11-26T19:19:58.9333286Z [INFO] JavaTestClasspath initialization
+2025-11-26T19:19:58.9382221Z [INFO] JavaTestClasspath initialization (done) | time=4ms
+2025-11-26T19:19:58.9497264Z [INFO] Server-side caching is enabled. The Java analyzer will not try to leverage data from a previous analysis.
+2025-11-26T19:19:58.9553244Z [INFO] Using ECJ batch to parse 5 Main java source files with batch size 102 KB.
+2025-11-26T19:19:59.3186534Z [INFO] Starting batch processing.
+2025-11-26T19:19:59.9024362Z [INFO] The Java analyzer cannot skip unchanged files in this context. A full analysis is performed for all files.
+2025-11-26T19:20:00.8748389Z [INFO] 100% analyzed
+2025-11-26T19:20:00.8750086Z [INFO] Batch processing: Done.
+2025-11-26T19:20:00.8769332Z [INFO] Did not optimize analysis for any files, performed a full analysis for all 5 files.
+2025-11-26T19:20:00.8814588Z [INFO] Using ECJ batch to parse 3 Test java source files with batch size 102 KB.
+2025-11-26T19:20:00.8912630Z [INFO] Starting batch processing.
+2025-11-26T19:20:01.2497221Z [INFO] 100% analyzed
+2025-11-26T19:20:01.2498454Z [INFO] Batch processing: Done.
+2025-11-26T19:20:01.2511955Z [INFO] Did not optimize analysis for any files, performed a full analysis for all 3 files.
+2025-11-26T19:20:01.2513193Z [INFO] No "Generated" source files to scan.
+2025-11-26T19:20:01.2516568Z [INFO] Sensor JavaSensor [java] (done) | time=2349ms
+2025-11-26T19:20:01.2517486Z [INFO] Sensor JaCoCo XML Report Importer [jacoco]
+2025-11-26T19:20:01.2576020Z [INFO] 'sonar.coverage.jacoco.xmlReportPaths' is not defined. Using default locations: target/site/jacoco/jacoco.xml,target/site/jacoco-it/jacoco.xml,build/reports/jacoco/test/jacocoTestReport.xml
+2025-11-26T19:20:01.2583190Z [INFO] No report imported, no coverage information will be imported by JaCoCo XML Report Importer
+2025-11-26T19:20:01.2584450Z [INFO] Sensor JaCoCo XML Report Importer [jacoco] (done) | time=7ms
+2025-11-26T19:20:01.2585279Z [INFO] Sensor CSS Rules [javascript]
+2025-11-26T19:20:01.2614256Z [INFO] No CSS, PHP, HTML or VueJS files are found in the project. CSS analysis is skipped.
+2025-11-26T19:20:01.2619077Z [INFO] Sensor CSS Rules [javascript] (done) | time=2ms
+2025-11-26T19:20:01.2645925Z [INFO] Sensor C# Project Type Information [csharp]
+2025-11-26T19:20:01.2685849Z [INFO] Sensor C# Project Type Information [csharp] (done) | time=5ms
+2025-11-26T19:20:01.2687292Z [INFO] Sensor C# Analysis Log [csharp]
+2025-11-26T19:20:01.2987220Z [INFO] Sensor C# Analysis Log [csharp] (done) | time=30ms
+2025-11-26T19:20:01.2992094Z [INFO] Sensor C# Properties [csharp]
+2025-11-26T19:20:01.2993872Z [INFO] Sensor C# Properties [csharp] (done) | time=1ms
+2025-11-26T19:20:01.2996039Z [INFO] Sensor SurefireSensor [java]
+2025-11-26T19:20:01.3025846Z [INFO] parsing [/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions/target/surefire-reports]
+2025-11-26T19:20:01.4371320Z [INFO] Sensor SurefireSensor [java] (done) | time=138ms
+2025-11-26T19:20:01.4373730Z [INFO] Sensor HTML [web]
+2025-11-26T19:20:01.4421097Z [INFO] Sensor HTML [web] (done) | time=5ms
+2025-11-26T19:20:01.4421912Z [INFO] Sensor XML Sensor [xml]
+2025-11-26T19:20:01.4533247Z [INFO] 1 source file to be analyzed
+2025-11-26T19:20:01.7521620Z [INFO] 1/1 source file has been analyzed
+2025-11-26T19:20:01.7522501Z [INFO] Sensor XML Sensor [xml] (done) | time=310ms
+2025-11-26T19:20:01.7524196Z [INFO] Sensor TextAndSecretsSensor [text]
+2025-11-26T19:20:01.7685943Z [INFO] 9 source files to be analyzed
+2025-11-26T19:20:01.7899430Z [INFO] 9/9 source files have been analyzed
+2025-11-26T19:20:01.7905463Z [INFO] Sensor TextAndSecretsSensor [text] (done) | time=37ms
+2025-11-26T19:20:01.7906644Z [INFO] Sensor VB.NET Project Type Information [vbnet]
+2025-11-26T19:20:01.7926060Z [INFO] Sensor VB.NET Project Type Information [vbnet] (done) | time=1ms
+2025-11-26T19:20:01.7927268Z [INFO] Sensor VB.NET Analysis Log [vbnet]
+2025-11-26T19:20:01.8226191Z [INFO] Sensor VB.NET Analysis Log [vbnet] (done) | time=29ms
+2025-11-26T19:20:01.8227251Z [INFO] Sensor VB.NET Properties [vbnet]
+2025-11-26T19:20:01.8230074Z [INFO] Sensor VB.NET Properties [vbnet] (done) | time=0ms
+2025-11-26T19:20:01.8268040Z [INFO] Sensor IaC Docker Sensor [iac]
+2025-11-26T19:20:01.8288032Z [INFO] 0 source files to be analyzed
+2025-11-26T19:20:01.9277988Z [INFO] 0/0 source files have been analyzed
+2025-11-26T19:20:01.9280020Z [INFO] Sensor IaC Docker Sensor [iac] (done) | time=105ms
+2025-11-26T19:20:01.9350915Z [INFO] ------------- Run sensors on project
+2025-11-26T19:20:02.0522539Z [INFO] Sensor Analysis Warnings import [csharp]
+2025-11-26T19:20:02.0529841Z [INFO] Sensor Analysis Warnings import [csharp] (done) | time=1ms
+2025-11-26T19:20:02.0531217Z [INFO] Sensor Zero Coverage Sensor
+2025-11-26T19:20:02.0701424Z [INFO] Sensor Zero Coverage Sensor (done) | time=17ms
+2025-11-26T19:20:02.0702453Z [INFO] Sensor Java CPD Block Indexer
+2025-11-26T19:20:02.1056444Z [INFO] Sensor Java CPD Block Indexer (done) | time=35ms
+2025-11-26T19:20:02.1107797Z [INFO] SCM Publisher SCM provider for this project is: git
+2025-11-26T19:20:02.1133346Z [INFO] SCM Publisher 9 source files to be analyzed
+2025-11-26T19:20:02.1196406Z [WARNING] Shallow clone detected, no blame information will be provided. You can convert to non-shallow with 'git fetch --unshallow'.
+2025-11-26T19:20:02.1281823Z [INFO] SCM Publisher 0/9 source files have been analyzed (done) | time=13ms
+2025-11-26T19:20:02.1282875Z [WARNING] Missing blame information for the following files:
+2025-11-26T19:20:02.1284711Z [WARNING]   * src/main/java/com/devops/demo/entity/Customer.java
+2025-11-26T19:20:02.1286680Z [WARNING]   * src/main/java/com/devops/demo/service/CustomerService.java
+2025-11-26T19:20:02.1290530Z [WARNING]   * src/test/java/com/devops/demo/controller/CustomerControllerTest.java
+2025-11-26T19:20:02.1291887Z [WARNING]   * src/main/java/com/devops/demo/repository/CustomerRepository.java
+2025-11-26T19:20:02.1299099Z [WARNING]   * src/main/java/com/devops/demo/controller/Controller.java
+2025-11-26T19:20:02.1300399Z [WARNING]   * src/test/java/com/devops/demo/DemoApplicationTests.java
+2025-11-26T19:20:02.1302172Z [WARNING]   * src/test/java/com/devops/demo/service/CustomerServiceTest.java
+2025-11-26T19:20:02.1305988Z [WARNING]   * src/main/java/com/devops/demo/DemoApplication.java
+2025-11-26T19:20:02.1306915Z [WARNING]   * pom.xml
+2025-11-26T19:20:02.1308791Z [WARNING] This may lead to missing/broken features in SonarQube
+2025-11-26T19:20:02.1375489Z [INFO] CPD Executor 2 files had no CPD blocks
+2025-11-26T19:20:02.1377843Z [INFO] CPD Executor Calculating CPD for 3 files
+2025-11-26T19:20:02.1517716Z [INFO] CPD Executor CPD calculation finished (done) | time=12ms
+2025-11-26T19:20:02.2852390Z [INFO] Analysis report generated in 119ms, dir size=145.9 kB
+2025-11-26T19:20:02.3360739Z [INFO] Analysis report compressed in 50ms, zip size=31.2 kB
+2025-11-26T19:20:02.4276957Z [INFO] Analysis report uploaded in 91ms
+2025-11-26T19:20:02.4321845Z [INFO] ANALYSIS SUCCESSFUL, you can find the results at: ***/dashboard?id=devops-ci-cd-pipeline-github-actions
+2025-11-26T19:20:02.4324205Z [INFO] Note that you will be able to access the updated dashboard once the server has processed the submitted analysis report
+2025-11-26T19:20:02.4326177Z [INFO] More about the report processing at ***/api/ce/task?id=AZrBm8g5y1QrJJHrTrB1
+2025-11-26T19:20:02.4631069Z [INFO] Analysis total time: 21.539 s
+2025-11-26T19:20:02.4647224Z [INFO] ------------------------------------------------------------------------
+2025-11-26T19:20:02.4649060Z [INFO] BUILD SUCCESS
+2025-11-26T19:20:02.4651211Z [INFO] ------------------------------------------------------------------------
+2025-11-26T19:20:02.4653071Z [INFO] Total time:  52.886 s
+2025-11-26T19:20:02.4654677Z [INFO] Finished at: 2025-11-26T20:20:02+01:00
+2025-11-26T19:20:02.4655581Z [INFO] ------------------------------------------------------------------------
+2025-11-26T19:20:02.6460267Z Post job cleanup.
+2025-11-26T19:20:02.8596952Z Cache hit occurred on the primary key Linux-sonar, not saving cache.
+2025-11-26T19:20:02.8779354Z Post job cleanup.
+2025-11-26T19:20:03.2009692Z Post job cleanup.
+2025-11-26T19:20:03.4751621Z [command]/usr/bin/git version
+2025-11-26T19:20:03.4847954Z git version 2.43.0
+2025-11-26T19:20:03.4978674Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/8bc04202-757d-40ac-8c9f-29cc802631b4' before making global git config changes
+2025-11-26T19:20:03.4981638Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:20:03.4987378Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:20:03.5057470Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:20:03.5131251Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:20:03.5699397Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:20:03.5742484Z http.https://github.com/.extraheader
+2025-11-26T19:20:03.5759816Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-26T19:20:03.5818998Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:20:03.6636580Z Cleaning up orphan processes

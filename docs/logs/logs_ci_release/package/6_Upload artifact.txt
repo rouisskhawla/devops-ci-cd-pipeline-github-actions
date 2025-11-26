@@ -1,0 +1,26 @@
+﻿2025-11-26T19:21:51.8339622Z ##[group]Run actions/upload-artifact@v4
+2025-11-26T19:21:51.8340178Z with:
+2025-11-26T19:21:51.8340510Z   name: built-jar
+2025-11-26T19:21:51.8340978Z   path: target/*.jar
+2025-11-26T19:21:51.8341447Z   if-no-files-found: warn
+2025-11-26T19:21:51.8343972Z   compression-level: 6
+2025-11-26T19:21:51.8344639Z   overwrite: false
+2025-11-26T19:21:51.8345127Z   include-hidden-files: false
+2025-11-26T19:21:51.8345651Z env:
+2025-11-26T19:21:51.8346458Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:21:51.8347686Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T19:21:51.8348720Z ##[endgroup]
+2025-11-26T19:21:52.2213912Z With the provided path, there will be 1 file uploaded
+2025-11-26T19:21:52.2224561Z Artifact name is valid!
+2025-11-26T19:21:52.2226296Z Root directory input is valid!
+2025-11-26T19:21:53.9960466Z Beginning upload of artifact content to blob storage
+2025-11-26T19:26:20.2292973Z Uploaded bytes 8388608
+2025-11-26T19:26:46.7751768Z Uploaded bytes 16777216
+2025-11-26T19:26:51.1276954Z Uploaded bytes 25165824
+2025-11-26T19:27:25.3203348Z Uploaded bytes 28067473
+2025-11-26T19:27:25.4745646Z Finished uploading artifact content to blob storage!
+2025-11-26T19:27:25.4749224Z SHA256 digest of uploaded artifact zip is 1a138427414ebceedf9a88bde35f7d932be5863cf0d8647f624f0c49c6fba3c5
+2025-11-26T19:27:25.4751730Z Finalizing artifact upload
+2025-11-26T19:27:26.0307332Z Artifact built-jar.zip successfully finalized. Artifact ID 4690283511
+2025-11-26T19:27:26.0314983Z Artifact built-jar has been successfully uploaded! Final size is 28067473 bytes. Artifact ID is 4690283511
+2025-11-26T19:27:26.0325506Z Artifact download URL: https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions/actions/runs/19714818404/artifacts/4690283511

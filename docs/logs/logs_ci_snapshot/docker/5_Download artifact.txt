@@ -1,0 +1,18 @@
+﻿2025-11-26T18:44:06.3770041Z ##[group]Run actions/download-artifact@v4
+2025-11-26T18:44:06.3770838Z with:
+2025-11-26T18:44:06.3771259Z   name: built-jar
+2025-11-26T18:44:06.3771747Z   merge-multiple: false
+2025-11-26T18:44:06.3773105Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:44:06.3773908Z   run-id: 19713804239
+2025-11-26T18:44:06.3774640Z ##[endgroup]
+2025-11-26T18:44:06.7266971Z Downloading single artifact
+2025-11-26T18:44:07.3076098Z Preparing to download the following artifacts:
+2025-11-26T18:44:07.3077361Z - built-jar (ID: 4689881045, Size: 28067469, Expected Digest: sha256:4eba9b3c7657658f1fdc50f203b0c9481122969d68a62489b1efe4176d49a3b5)
+2025-11-26T18:44:07.6584881Z Redirecting to blob download url: https://productionresultssa19.blob.core.windows.net/actions-results/5f561ba1-3300-4c0c-8fae-82e9d43230b8/workflow-job-run-314c5e81-e63f-53ab-aef4-a5271eb8961d/artifacts/5c85ff73cd0422fd8826ee19d32f0a0fecd19ddf8ec3eb6afa3e93a78cb9b1cd.zip
+2025-11-26T18:44:07.6588573Z Starting download of artifact to: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:44:08.3293249Z (node:124501) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-11-26T18:44:08.3295209Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-26T18:44:33.3761690Z SHA256 digest of downloaded artifact is 4eba9b3c7657658f1fdc50f203b0c9481122969d68a62489b1efe4176d49a3b5
+2025-11-26T18:44:33.3769672Z Artifact download completed successfully.
+2025-11-26T18:44:33.3770222Z Total of 1 artifact(s) downloaded
+2025-11-26T18:44:33.3779793Z Download artifact has finished successfully

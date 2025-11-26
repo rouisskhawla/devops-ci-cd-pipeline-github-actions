@@ -1,0 +1,75 @@
+﻿2025-11-26T18:32:52.4926672Z ##[group]Run actions/checkout@v3
+2025-11-26T18:32:52.4927271Z with:
+2025-11-26T18:32:52.4927661Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.4928552Z   token: ***
+2025-11-26T18:32:52.4928830Z   ssh-strict: true
+2025-11-26T18:32:52.4929115Z   persist-credentials: true
+2025-11-26T18:32:52.4929453Z   clean: true
+2025-11-26T18:32:52.4929720Z   sparse-checkout-cone-mode: true
+2025-11-26T18:32:52.4930022Z   fetch-depth: 1
+2025-11-26T18:32:52.4930265Z   fetch-tags: false
+2025-11-26T18:32:52.4930511Z   lfs: false
+2025-11-26T18:32:52.4930796Z   submodules: false
+2025-11-26T18:32:52.4931030Z   set-safe-directory: true
+2025-11-26T18:32:52.4931441Z ##[endgroup]
+2025-11-26T18:32:52.6426354Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.6428805Z ##[group]Getting Git version info
+2025-11-26T18:32:52.6429648Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:32:52.6917006Z [command]/usr/bin/git version
+2025-11-26T18:32:52.6973769Z git version 2.43.0
+2025-11-26T18:32:52.7006837Z ##[endgroup]
+2025-11-26T18:32:52.7040474Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/b41f8e11-d258-4729-898d-77250778f527' before making global git config changes
+2025-11-26T18:32:52.7041821Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:32:52.7049266Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.7107891Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T18:32:52.7131874Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:52.7163533Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T18:32:52.7167176Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T18:32:52.7199267Z refs/heads/main
+2025-11-26T18:32:52.7215032Z [command]/usr/bin/git checkout --detach
+2025-11-26T18:32:52.7263941Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T18:32:52.7265768Z M	scripts/version.sh
+2025-11-26T18:32:52.7326031Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T18:32:52.7361413Z Deleted branch main (was 4974515).
+2025-11-26T18:32:52.7449272Z ##[endgroup]
+2025-11-26T18:32:52.7450334Z [command]/usr/bin/git submodule status
+2025-11-26T18:32:52.7755951Z ##[group]Cleaning the repository
+2025-11-26T18:32:52.7758963Z [command]/usr/bin/git clean -ffdx
+2025-11-26T18:32:52.7799088Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T18:32:52.7845206Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T18:32:52.7848736Z ##[endgroup]
+2025-11-26T18:32:52.7853770Z ##[group]Disabling automatic garbage collection
+2025-11-26T18:32:52.7863676Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T18:32:52.7903144Z ##[endgroup]
+2025-11-26T18:32:52.7903986Z ##[group]Setting up auth
+2025-11-26T18:32:52.7908105Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:32:52.7946487Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:32:52.8329431Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:32:52.8380880Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:32:52.8863017Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T18:32:52.8950979Z ##[endgroup]
+2025-11-26T18:32:52.8952176Z ##[group]Fetching the repository
+2025-11-26T18:32:52.8965912Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +9ed62df52a1e564e14ff9f8a03b7306b4fe84f77:refs/remotes/origin/main
+2025-11-26T18:32:53.5589630Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T18:32:53.5667444Z From https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:53.5669424Z  + 4974515...9ed62df 9ed62df52a1e564e14ff9f8a03b7306b4fe84f77 -> origin/main  (forced update)
+2025-11-26T18:32:53.5728832Z ##[endgroup]
+2025-11-26T18:32:53.5729826Z ##[group]Determining the checkout info
+2025-11-26T18:32:53.5730751Z ##[endgroup]
+2025-11-26T18:32:53.5731382Z ##[group]Checking out the ref
+2025-11-26T18:32:53.5739710Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T18:32:53.5835173Z Warning: you are leaving 1 commit behind, not connected to
+2025-11-26T18:32:53.5836593Z any of your branches:
+2025-11-26T18:32:53.5838219Z 
+2025-11-26T18:32:53.5839071Z   4974515 Update snapshot version
+2025-11-26T18:32:53.5839549Z 
+2025-11-26T18:32:53.5839942Z If you want to keep it by creating a new branch, this may be a good time
+2025-11-26T18:32:53.5840460Z to do so with:
+2025-11-26T18:32:53.5840647Z 
+2025-11-26T18:32:53.5840894Z  git branch <new-branch-name> 4974515
+2025-11-26T18:32:53.5841201Z 
+2025-11-26T18:32:53.5850467Z Switched to a new branch 'main'
+2025-11-26T18:32:53.5851335Z branch 'main' set up to track 'origin/main'.
+2025-11-26T18:32:53.5862495Z ##[endgroup]
+2025-11-26T18:32:53.5927187Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T18:32:53.5978049Z '9ed62df52a1e564e14ff9f8a03b7306b4fe84f77'

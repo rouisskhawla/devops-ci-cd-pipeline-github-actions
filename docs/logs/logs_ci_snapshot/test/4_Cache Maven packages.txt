@@ -1,0 +1,14 @@
+﻿2025-11-26T18:32:54.5744050Z ##[group]Run actions/cache@v3
+2025-11-26T18:32:54.5744532Z with:
+2025-11-26T18:32:54.5744861Z   path: ~/.m2/repository
+2025-11-26T18:32:54.5745380Z   key: Linux-maven-af12029ea62135e05bf90af9ff60957ef28b9be185dac9f2508243c385424aa7
+2025-11-26T18:32:54.5745936Z   restore-keys: Linux-maven-
+
+2025-11-26T18:32:54.5746284Z   enableCrossOsArchive: false
+2025-11-26T18:32:54.5746594Z   fail-on-cache-miss: false
+2025-11-26T18:32:54.5746890Z   lookup-only: false
+2025-11-26T18:32:54.5747148Z env:
+2025-11-26T18:32:54.5747668Z   JAVA_HOME: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:54.5757451Z   JAVA_HOME_17_X64: /home/worldsoft/actions-runner/_work/_tool/Java_Temurin-Hotspot_jdk/17.0.17-10/x64
+2025-11-26T18:32:54.5758196Z ##[endgroup]
+2025-11-26T18:32:55.5867305Z Cache not found for input keys: Linux-maven-af12029ea62135e05bf90af9ff60957ef28b9be185dac9f2508243c385424aa7, Linux-maven-

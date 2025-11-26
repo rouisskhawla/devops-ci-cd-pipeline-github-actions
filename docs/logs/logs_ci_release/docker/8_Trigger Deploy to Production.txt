@@ -1,0 +1,30 @@
+﻿2025-11-26T19:38:21.9280507Z ##[group]Run lasith-kg/dispatch-workflow@v1
+2025-11-26T19:38:21.9280846Z with:
+2025-11-26T19:38:21.9281011Z   dispatch-method: workflow_dispatch
+2025-11-26T19:38:21.9281177Z   owner: rouisskhawla
+2025-11-26T19:38:21.9281354Z   repo: devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:21.9281549Z   workflow: production.yml
+2025-11-26T19:38:21.9281700Z   ref: main
+2025-11-26T19:38:21.9281849Z   workflow-inputs: {
+  "version": "0.0.3"
+}
+
+2025-11-26T19:38:21.9282351Z   token: ***
+2025-11-26T19:38:21.9282744Z   discover: false
+2025-11-26T19:38:21.9282906Z   starting-delay-ms: 200
+2025-11-26T19:38:21.9283073Z   max-attempts: 5
+2025-11-26T19:38:21.9283210Z   time-multiple: 2
+2025-11-26T19:38:21.9283355Z ##[endgroup]
+2025-11-26T19:38:22.1735071Z 🔄 Exponential backoff parameters:
+2025-11-26T19:38:22.1735399Z     starting-delay: 200
+2025-11-26T19:38:22.1736005Z     max-attempts: 5
+2025-11-26T19:38:22.1736175Z     time-multiple: 2
+2025-11-26T19:38:22.1738077Z ⌛ Fetching workflow id for production.yml
+2025-11-26T19:38:22.7017589Z ✅ Fetched workflow id: 209610777
+2025-11-26T19:38:22.9928903Z ✅ Successfully dispatched workflow using workflow_dispatch method:
+2025-11-26T19:38:22.9929760Z     repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:38:22.9930068Z     branch: main
+2025-11-26T19:38:22.9930229Z     workflow-id: 209610777
+2025-11-26T19:38:22.9930422Z     distinct-id: d098ac84-8eb5-4895-bb6d-471117a0542e
+2025-11-26T19:38:22.9930652Z     workflow-inputs: {"version":"0.0.3"}
+2025-11-26T19:38:22.9931251Z ✅ Workflow dispatched! Skipping the retrieval of the run-id

@@ -1,0 +1,93 @@
+﻿2025-11-26T18:32:28.2823610Z ##[group]Run actions/checkout@v3
+2025-11-26T18:32:28.2826197Z with:
+2025-11-26T18:32:28.2827321Z   fetch-depth: 0
+2025-11-26T18:32:28.2828470Z   fetch-tags: true
+2025-11-26T18:32:28.2831011Z   token: ***
+2025-11-26T18:32:28.2832557Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:28.2834759Z   ssh-strict: true
+2025-11-26T18:32:28.2836034Z   persist-credentials: true
+2025-11-26T18:32:28.2837298Z   clean: true
+2025-11-26T18:32:28.2838425Z   sparse-checkout-cone-mode: true
+2025-11-26T18:32:28.2839737Z   lfs: false
+2025-11-26T18:32:28.2840606Z   submodules: false
+2025-11-26T18:32:28.2841419Z   set-safe-directory: true
+2025-11-26T18:32:28.2842658Z ##[endgroup]
+2025-11-26T18:32:28.5112937Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:28.5122469Z ##[group]Getting Git version info
+2025-11-26T18:32:28.5128631Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:32:28.5964907Z [command]/usr/bin/git version
+2025-11-26T18:32:28.6063907Z git version 2.43.0
+2025-11-26T18:32:28.6138842Z ##[endgroup]
+2025-11-26T18:32:28.6189824Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/f076d4ee-f9d0-4fc9-bd9a-2f651597313b' before making global git config changes
+2025-11-26T18:32:28.6195627Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:32:28.6201946Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:28.6285205Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T18:32:28.6321353Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:28.6372927Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T18:32:28.6377272Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T18:32:28.6470966Z refs/heads/main
+2025-11-26T18:32:28.6503170Z [command]/usr/bin/git checkout --detach
+2025-11-26T18:32:28.6739675Z HEAD is now at 5981a22 Update snapshot version
+2025-11-26T18:32:28.6836975Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T18:32:28.6895653Z Deleted branch main (was 5981a22).
+2025-11-26T18:32:28.7000325Z ##[endgroup]
+2025-11-26T18:32:28.7003253Z [command]/usr/bin/git submodule status
+2025-11-26T18:32:28.7658029Z ##[group]Cleaning the repository
+2025-11-26T18:32:28.7664198Z [command]/usr/bin/git clean -ffdx
+2025-11-26T18:32:28.7670310Z Removing devops-ci-cd-pipeline-github-actions-.jar
+2025-11-26T18:32:28.7676353Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T18:32:28.7993526Z HEAD is now at 5981a22 Update snapshot version
+2025-11-26T18:32:28.8009180Z ##[endgroup]
+2025-11-26T18:32:28.8011888Z ##[group]Disabling automatic garbage collection
+2025-11-26T18:32:28.8015963Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T18:32:28.8078090Z ##[endgroup]
+2025-11-26T18:32:28.8082142Z ##[group]Setting up auth
+2025-11-26T18:32:28.8085000Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:32:28.8144577Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:32:28.8736978Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:32:28.8824511Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:32:28.9375140Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T18:32:28.9465654Z ##[endgroup]
+2025-11-26T18:32:28.9468534Z ##[group]Fetching the repository
+2025-11-26T18:32:28.9483000Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --progress --no-recurse-submodules --unshallow origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-11-26T18:32:29.8978227Z remote: Enumerating objects: 15, done.        
+2025-11-26T18:32:29.8981587Z remote: Counting objects:   7% (1/14)        
+2025-11-26T18:32:29.8983412Z remote: Counting objects:  14% (2/14)        
+2025-11-26T18:32:29.8984903Z remote: Counting objects:  21% (3/14)        
+2025-11-26T18:32:29.8986690Z remote: Counting objects:  28% (4/14)        
+2025-11-26T18:32:29.8988628Z remote: Counting objects:  35% (5/14)        
+2025-11-26T18:32:30.1295405Z remote: Counting objects:  42% (6/14)        
+2025-11-26T18:32:30.1298489Z remote: Counting objects:  50% (7/14)        
+2025-11-26T18:32:30.1299346Z remote: Counting objects:  57% (8/14)        
+2025-11-26T18:32:30.1300820Z remote: Counting objects:  64% (9/14)        
+2025-11-26T18:32:30.1301731Z remote: Counting objects:  71% (10/14)        
+2025-11-26T18:32:30.1302595Z remote: Counting objects:  78% (11/14)        
+2025-11-26T18:32:30.1303768Z remote: Counting objects:  85% (12/14)        
+2025-11-26T18:32:30.1304711Z remote: Counting objects:  92% (13/14)        
+2025-11-26T18:32:30.1305668Z remote: Counting objects: 100% (14/14)        
+2025-11-26T18:32:30.1306451Z remote: Counting objects: 100% (14/14), done.        
+2025-11-26T18:32:30.1307205Z remote: Compressing objects:  16% (1/6)        
+2025-11-26T18:32:30.1308004Z remote: Compressing objects:  33% (2/6)        
+2025-11-26T18:32:30.1309779Z remote: Compressing objects:  50% (3/6)        
+2025-11-26T18:32:30.1311573Z remote: Compressing objects:  66% (4/6)        
+2025-11-26T18:32:30.1312092Z remote: Compressing objects:  83% (5/6)        
+2025-11-26T18:32:30.1312879Z remote: Compressing objects: 100% (6/6)        
+2025-11-26T18:32:30.1313388Z remote: Compressing objects: 100% (6/6), done.        
+2025-11-26T18:32:30.1313989Z remote: Total 7 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T18:32:30.1492397Z From https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:30.1495426Z    5981a22..9ed62df  main       -> origin/main
+2025-11-26T18:32:30.1558221Z [command]/usr/bin/git branch --list --remote origin/main
+2025-11-26T18:32:30.1600640Z   origin/main
+2025-11-26T18:32:30.1611514Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2025-11-26T18:32:30.1636900Z 9ed62df52a1e564e14ff9f8a03b7306b4fe84f77
+2025-11-26T18:32:30.1642021Z ##[endgroup]
+2025-11-26T18:32:30.1642925Z ##[group]Determining the checkout info
+2025-11-26T18:32:30.1645391Z ##[endgroup]
+2025-11-26T18:32:30.1646451Z ##[group]Checking out the ref
+2025-11-26T18:32:30.1654482Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T18:32:30.1704592Z Previous HEAD position was 5981a22 Update snapshot version
+2025-11-26T18:32:30.2036570Z Switched to a new branch 'main'
+2025-11-26T18:32:30.2041532Z branch 'main' set up to track 'origin/main'.
+2025-11-26T18:32:30.2047076Z ##[endgroup]
+2025-11-26T18:32:30.2119194Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T18:32:30.2162977Z '9ed62df52a1e564e14ff9f8a03b7306b4fe84f77'

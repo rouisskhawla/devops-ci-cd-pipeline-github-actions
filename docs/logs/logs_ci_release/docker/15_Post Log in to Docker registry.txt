@@ -1,0 +1,6 @@
+﻿2025-11-26T19:38:23.3054825Z Post job cleanup.
+2025-11-26T19:38:23.5998006Z [command]/usr/bin/docker logout docker.io
+2025-11-26T19:38:23.6158082Z Removing login credentials for docker.io
+2025-11-26T19:38:23.6185703Z ##[group]Post cache
+2025-11-26T19:38:23.6186001Z State not set
+2025-11-26T19:38:23.6187170Z ##[endgroup]

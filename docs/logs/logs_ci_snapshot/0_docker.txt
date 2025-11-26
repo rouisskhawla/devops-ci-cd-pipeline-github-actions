@@ -1,0 +1,252 @@
+﻿2025-11-26T18:43:43.9773932Z Current runner version: '2.329.0'
+2025-11-26T18:43:43.9784082Z Runner name: 'khawla'
+2025-11-26T18:43:43.9784962Z Runner group name: 'Default'
+2025-11-26T18:43:43.9786825Z Machine name: 'khawla'
+2025-11-26T18:43:43.9792515Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T18:43:43.9797063Z Actions: write
+2025-11-26T18:43:43.9797731Z ArtifactMetadata: write
+2025-11-26T18:43:43.9798367Z Attestations: write
+2025-11-26T18:43:43.9798948Z Checks: write
+2025-11-26T18:43:43.9799508Z Contents: write
+2025-11-26T18:43:43.9800066Z Deployments: write
+2025-11-26T18:43:43.9800619Z Discussions: write
+2025-11-26T18:43:43.9801125Z Issues: write
+2025-11-26T18:43:43.9801569Z Metadata: read
+2025-11-26T18:43:43.9801989Z Models: read
+2025-11-26T18:43:43.9802478Z Packages: write
+2025-11-26T18:43:43.9802931Z Pages: write
+2025-11-26T18:43:43.9803448Z PullRequests: write
+2025-11-26T18:43:43.9804005Z RepositoryProjects: write
+2025-11-26T18:43:43.9804589Z SecurityEvents: write
+2025-11-26T18:43:43.9805335Z Statuses: write
+2025-11-26T18:43:43.9805867Z ##[endgroup]
+2025-11-26T18:43:43.9808956Z Secret source: Actions
+2025-11-26T18:43:43.9809528Z Prepare workflow directory
+2025-11-26T18:43:44.0547595Z Prepare all required actions
+2025-11-26T18:43:44.0609717Z Getting action download info
+2025-11-26T18:43:44.8250503Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T18:43:47.1042396Z Download action repository 'docker/login-action@v3' (SHA:5e57cd118135c172c3672efd75eb46360885c0ef)
+2025-11-26T18:43:51.6374064Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-11-26T18:43:55.3235358Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2025-11-26T18:43:57.1433897Z Download action repository 'lasith-kg/dispatch-workflow@v1' (SHA:692cec720c2d07367b512c5f8668e33c3d8f2f13)
+2025-11-26T18:43:58.6713965Z Complete job name: docker
+2025-11-26T18:43:58.7499715Z ##[group]Run actions/checkout@v3
+2025-11-26T18:43:58.7500226Z with:
+2025-11-26T18:43:58.7500471Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:43:58.7500991Z   token: ***
+2025-11-26T18:43:58.7501146Z   ssh-strict: true
+2025-11-26T18:43:58.7501306Z   persist-credentials: true
+2025-11-26T18:43:58.7501481Z   clean: true
+2025-11-26T18:43:58.7501650Z   sparse-checkout-cone-mode: true
+2025-11-26T18:43:58.7501837Z   fetch-depth: 1
+2025-11-26T18:43:58.7501993Z   fetch-tags: false
+2025-11-26T18:43:58.7502156Z   lfs: false
+2025-11-26T18:43:58.7502296Z   submodules: false
+2025-11-26T18:43:58.7502449Z   set-safe-directory: true
+2025-11-26T18:43:58.7502721Z ##[endgroup]
+2025-11-26T18:43:58.8837878Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:43:58.8840710Z ##[group]Getting Git version info
+2025-11-26T18:43:58.8842291Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:43:58.9404415Z [command]/usr/bin/git version
+2025-11-26T18:43:58.9460032Z git version 2.43.0
+2025-11-26T18:43:58.9504862Z ##[endgroup]
+2025-11-26T18:43:58.9550239Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/9fdb5141-910a-4c1f-a2c1-4c75f6294b20' before making global git config changes
+2025-11-26T18:43:58.9551992Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:43:58.9553221Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:43:58.9609669Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T18:43:58.9645550Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:43:58.9676587Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T18:43:58.9683447Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T18:43:58.9728741Z refs/heads/main
+2025-11-26T18:43:58.9742291Z [command]/usr/bin/git checkout --detach
+2025-11-26T18:43:58.9807662Z HEAD is now at 9ed62df Trigger releases by running ci.yml manually
+2025-11-26T18:43:58.9893925Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T18:43:58.9940919Z Deleted branch main (was 9ed62df).
+2025-11-26T18:43:59.0013577Z ##[endgroup]
+2025-11-26T18:43:59.0014281Z [command]/usr/bin/git submodule status
+2025-11-26T18:43:59.0452986Z ##[group]Cleaning the repository
+2025-11-26T18:43:59.0454129Z [command]/usr/bin/git clean -ffdx
+2025-11-26T18:43:59.0568831Z Removing target/
+2025-11-26T18:43:59.0581983Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T18:43:59.0638139Z HEAD is now at 9ed62df Trigger releases by running ci.yml manually
+2025-11-26T18:43:59.0648985Z ##[endgroup]
+2025-11-26T18:43:59.0649926Z ##[group]Disabling automatic garbage collection
+2025-11-26T18:43:59.0656900Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T18:43:59.0704466Z ##[endgroup]
+2025-11-26T18:43:59.0707243Z ##[group]Setting up auth
+2025-11-26T18:43:59.0715164Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:43:59.0764393Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:43:59.1185772Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:43:59.1232951Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:43:59.1721362Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T18:43:59.1815913Z ##[endgroup]
+2025-11-26T18:43:59.1819325Z ##[group]Fetching the repository
+2025-11-26T18:43:59.1828478Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +9ed62df52a1e564e14ff9f8a03b7306b4fe84f77:refs/remotes/origin/main
+2025-11-26T18:43:59.8282223Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T18:43:59.8479079Z ##[endgroup]
+2025-11-26T18:43:59.8480608Z ##[group]Determining the checkout info
+2025-11-26T18:43:59.8481565Z ##[endgroup]
+2025-11-26T18:43:59.8482374Z ##[group]Checking out the ref
+2025-11-26T18:43:59.8483933Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T18:43:59.8586134Z Switched to a new branch 'main'
+2025-11-26T18:43:59.8586865Z branch 'main' set up to track 'origin/main'.
+2025-11-26T18:43:59.8602041Z ##[endgroup]
+2025-11-26T18:43:59.8668738Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T18:43:59.8724665Z '9ed62df52a1e564e14ff9f8a03b7306b4fe84f77'
+2025-11-26T18:43:59.9214314Z ##[group]Run docker/login-action@v3
+2025-11-26T18:43:59.9215332Z with:
+2025-11-26T18:43:59.9216517Z   username: ***
+2025-11-26T18:43:59.9217257Z   password: ***
+2025-11-26T18:43:59.9217720Z   logout: true
+2025-11-26T18:43:59.9218218Z ##[endgroup]
+2025-11-26T18:44:00.6876324Z Logging into docker.io...
+2025-11-26T18:44:05.1831646Z Login Succeeded!
+2025-11-26T18:44:05.4805569Z ##[group]Run actions/cache@v3
+2025-11-26T18:44:05.4806109Z with:
+2025-11-26T18:44:05.4806446Z   path: /tmp/.docker-cache
+2025-11-26T18:44:05.4807317Z   key: Linux-docker-
+2025-11-26T18:44:05.4807785Z   restore-keys: Linux-docker-
+
+2025-11-26T18:44:05.4808319Z   enableCrossOsArchive: false
+2025-11-26T18:44:05.4808820Z   fail-on-cache-miss: false
+2025-11-26T18:44:05.4809207Z   lookup-only: false
+2025-11-26T18:44:05.4809539Z ##[endgroup]
+2025-11-26T18:44:06.3468109Z Cache not found for input keys: Linux-docker-, Linux-docker-
+2025-11-26T18:44:06.3770096Z ##[group]Run actions/download-artifact@v4
+2025-11-26T18:44:06.3770848Z with:
+2025-11-26T18:44:06.3771269Z   name: built-jar
+2025-11-26T18:44:06.3771775Z   merge-multiple: false
+2025-11-26T18:44:06.3773116Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:44:06.3773916Z   run-id: 19713804239
+2025-11-26T18:44:06.3774662Z ##[endgroup]
+2025-11-26T18:44:06.7267014Z Downloading single artifact
+2025-11-26T18:44:07.3076142Z Preparing to download the following artifacts:
+2025-11-26T18:44:07.3077368Z - built-jar (ID: 4689881045, Size: 28067469, Expected Digest: sha256:4eba9b3c7657658f1fdc50f203b0c9481122969d68a62489b1efe4176d49a3b5)
+2025-11-26T18:44:07.6584922Z Redirecting to blob download url: https://productionresultssa19.blob.core.windows.net/actions-results/5f561ba1-3300-4c0c-8fae-82e9d43230b8/workflow-job-run-314c5e81-e63f-53ab-aef4-a5271eb8961d/artifacts/5c85ff73cd0422fd8826ee19d32f0a0fecd19ddf8ec3eb6afa3e93a78cb9b1cd.zip
+2025-11-26T18:44:07.6588770Z Starting download of artifact to: /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:44:08.3293313Z (node:124501) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+2025-11-26T18:44:08.3295216Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2025-11-26T18:44:33.3761742Z SHA256 digest of downloaded artifact is 4eba9b3c7657658f1fdc50f203b0c9481122969d68a62489b1efe4176d49a3b5
+2025-11-26T18:44:33.3769709Z Artifact download completed successfully.
+2025-11-26T18:44:33.3770226Z Total of 1 artifact(s) downloaded
+2025-11-26T18:44:33.3779828Z Download artifact has finished successfully
+2025-11-26T18:44:33.3957802Z ##[group]Run JAR_FILE=$(ls *.jar | head -n 1)
+2025-11-26T18:44:33.3959493Z [36;1mJAR_FILE=$(ls *.jar | head -n 1)[0m
+2025-11-26T18:44:33.3960046Z [36;1mVERSION_TAG=0.0.2-SNAPSHOT.1[0m
+2025-11-26T18:44:33.3960970Z [36;1mIMAGE_NAME=***/devops-ci-cd-pipeline-github-actions[0m
+2025-11-26T18:44:33.3961727Z [36;1mdocker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .[0m
+2025-11-26T18:44:33.3962431Z [36;1mdocker push $IMAGE_NAME:$VERSION_TAG[0m
+2025-11-26T18:44:33.3962963Z [36;1mif [[ "$VERSION_TAG" == *SNAPSHOT* ]]; then[0m
+2025-11-26T18:44:33.3963556Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T18:44:33.3964173Z [36;1m  docker push $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T18:44:33.3964621Z [36;1melse[0m
+2025-11-26T18:44:33.3965064Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest[0m
+2025-11-26T18:44:33.3965595Z [36;1m  docker push $IMAGE_NAME:latest[0m
+2025-11-26T18:44:33.3966096Z [36;1mfi[0m
+2025-11-26T18:44:33.4004293Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:44:33.4004771Z ##[endgroup]
+2025-11-26T18:44:33.4449719Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T18:44:33.4451198Z             Install the buildx component to build images with BuildKit:
+2025-11-26T18:44:33.4452084Z             https://docs.docker.com/go/buildx/
+2025-11-26T18:44:33.4452519Z 
+2025-11-26T18:44:33.7662583Z Sending build context to Docker daemon  32.36MB
+2025-11-26T18:44:33.7663326Z 
+2025-11-26T18:44:33.7712439Z Step 1/5 : FROM eclipse-temurin:17-jdk-jammy
+2025-11-26T18:44:33.7726186Z  ---> 5fa3725ef065
+2025-11-26T18:44:33.7727937Z Step 2/5 : ARG JAR_FILE= *.jar
+2025-11-26T18:44:33.7765820Z  ---> Using cache
+2025-11-26T18:44:33.7766465Z  ---> 56c91e328879
+2025-11-26T18:44:33.7767652Z Step 3/5 : COPY ${JAR_FILE} app.jar
+2025-11-26T18:44:34.9071561Z  ---> 762180fb361b
+2025-11-26T18:44:34.9072302Z Step 4/5 : ENTRYPOINT ["java","-jar","/app.jar"]
+2025-11-26T18:44:35.0449536Z  ---> Running in 02da22b48a4c
+2025-11-26T18:44:35.1428138Z  ---> Removed intermediate container 02da22b48a4c
+2025-11-26T18:44:35.1428979Z  ---> b3fe7962b6ff
+2025-11-26T18:44:35.1429546Z Step 5/5 : EXPOSE 8082
+2025-11-26T18:44:35.2227933Z  ---> Running in ac108d1e2e08
+2025-11-26T18:44:35.3349588Z  ---> Removed intermediate container ac108d1e2e08
+2025-11-26T18:44:35.3350581Z  ---> eed85fe5d35c
+2025-11-26T18:44:35.3512775Z Successfully built eed85fe5d35c
+2025-11-26T18:44:35.4215409Z Successfully tagged ***/devops-ci-cd-pipeline-github-actions:0.0.2-SNAPSHOT.1
+2025-11-26T18:44:35.4691356Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T18:44:35.9400718Z 0dc984c9a94a: Preparing
+2025-11-26T18:44:35.9401321Z d1d6e1a741f5: Preparing
+2025-11-26T18:44:35.9402159Z ed45db2cd56b: Preparing
+2025-11-26T18:44:35.9404369Z 23408c2e9b9e: Preparing
+2025-11-26T18:44:35.9405031Z b160c82ed31f: Preparing
+2025-11-26T18:44:35.9405854Z 73974f74b436: Preparing
+2025-11-26T18:44:35.9406319Z 73974f74b436: Waiting
+2025-11-26T18:44:36.8942679Z b160c82ed31f: Layer already exists
+2025-11-26T18:44:36.9193033Z d1d6e1a741f5: Layer already exists
+2025-11-26T18:44:36.9581479Z 23408c2e9b9e: Layer already exists
+2025-11-26T18:44:39.6759272Z ed45db2cd56b: Layer already exists
+2025-11-26T18:44:40.0418226Z 73974f74b436: Layer already exists
+2025-11-26T18:49:40.9413937Z 0dc984c9a94a: Pushed
+2025-11-26T18:49:46.1556069Z 0.0.2-SNAPSHOT.1: digest: sha256:bc3db7d18643e7d0c82647da1e2fd066305af6e7778fccd0d1bbce55cec9c05f size: 1581
+2025-11-26T18:49:46.3268564Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T18:49:46.7621611Z 0dc984c9a94a: Preparing
+2025-11-26T18:49:46.7625391Z d1d6e1a741f5: Preparing
+2025-11-26T18:49:46.7626363Z ed45db2cd56b: Preparing
+2025-11-26T18:49:46.7626970Z 23408c2e9b9e: Preparing
+2025-11-26T18:49:46.7627347Z b160c82ed31f: Preparing
+2025-11-26T18:49:46.7627651Z 73974f74b436: Preparing
+2025-11-26T18:49:46.7628235Z 73974f74b436: Waiting
+2025-11-26T18:49:47.7281569Z 23408c2e9b9e: Layer already exists
+2025-11-26T18:49:47.7623734Z d1d6e1a741f5: Layer already exists
+2025-11-26T18:49:47.8038861Z b160c82ed31f: Layer already exists
+2025-11-26T18:49:47.8283906Z ed45db2cd56b: Layer already exists
+2025-11-26T18:49:47.8687917Z 0dc984c9a94a: Layer already exists
+2025-11-26T18:49:48.1976776Z 73974f74b436: Layer already exists
+2025-11-26T18:49:50.5742238Z latest-snapshot: digest: sha256:bc3db7d18643e7d0c82647da1e2fd066305af6e7778fccd0d1bbce55cec9c05f size: 1581
+2025-11-26T18:49:50.5971323Z ##[group]Run lasith-kg/dispatch-workflow@v1
+2025-11-26T18:49:50.5972076Z with:
+2025-11-26T18:49:50.5972475Z   dispatch-method: workflow_dispatch
+2025-11-26T18:49:50.5972877Z   owner: rouisskhawla
+2025-11-26T18:49:50.5973196Z   repo: devops-ci-cd-pipeline-github-actions
+2025-11-26T18:49:50.5973549Z   workflow: staging.yml
+2025-11-26T18:49:50.5973854Z   ref: main
+2025-11-26T18:49:50.5974190Z   workflow-inputs: {
+  "version": "0.0.2-SNAPSHOT.1",
+  "is_snapshot": "true"
+}
+
+2025-11-26T18:49:50.5974899Z   token: ***
+2025-11-26T18:49:50.5975136Z   discover: false
+2025-11-26T18:49:50.5975405Z   starting-delay-ms: 200
+2025-11-26T18:49:50.5975669Z   max-attempts: 5
+2025-11-26T18:49:50.5975899Z   time-multiple: 2
+2025-11-26T18:49:50.5976134Z ##[endgroup]
+2025-11-26T18:49:51.1362391Z 🔄 Exponential backoff parameters:
+2025-11-26T18:49:51.1363918Z     starting-delay: 200
+2025-11-26T18:49:51.1364726Z     max-attempts: 5
+2025-11-26T18:49:51.1379415Z     time-multiple: 2
+2025-11-26T18:49:51.1381961Z ⌛ Fetching workflow id for staging.yml
+2025-11-26T18:49:51.6950077Z ✅ Fetched workflow id: 209460752
+2025-11-26T18:49:51.9811643Z ✅ Successfully dispatched workflow using workflow_dispatch method:
+2025-11-26T18:49:51.9814045Z     repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:49:51.9816235Z     branch: main
+2025-11-26T18:49:51.9816763Z     workflow-id: 209460752
+2025-11-26T18:49:51.9817244Z     distinct-id: 2e8dd2ec-3db4-4257-a7ac-11221d28de1d
+2025-11-26T18:49:51.9818244Z     workflow-inputs: {"version":"0.0.2-SNAPSHOT.1","is_snapshot":"true"}
+2025-11-26T18:49:51.9820513Z ✅ Workflow dispatched! Skipping the retrieval of the run-id
+2025-11-26T18:49:52.4030885Z Post job cleanup.
+2025-11-26T18:49:52.7395126Z [warning]Path Validation Error: Path(s) specified in the action for caching do(es) not exist, hence no cache is being saved.
+2025-11-26T18:49:52.7888599Z Post job cleanup.
+2025-11-26T18:49:53.5720774Z [command]/usr/bin/docker logout docker.io
+2025-11-26T18:49:53.5965486Z Removing login credentials for docker.io
+2025-11-26T18:49:53.5998727Z ##[group]Post cache
+2025-11-26T18:49:53.6001037Z State not set
+2025-11-26T18:49:53.6004109Z ##[endgroup]
+2025-11-26T18:49:53.6238837Z Post job cleanup.
+2025-11-26T18:49:53.8616775Z [command]/usr/bin/git version
+2025-11-26T18:49:53.8876440Z git version 2.43.0
+2025-11-26T18:49:53.8961375Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/e6eda502-06d1-4a1d-946d-32b711dfac0b' before making global git config changes
+2025-11-26T18:49:53.8964003Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:49:53.8965266Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:49:53.9080202Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:49:53.9146492Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:49:54.0316569Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:49:54.0351401Z http.https://github.com/.extraheader
+2025-11-26T18:49:54.0365199Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-26T18:49:54.0427763Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:49:54.1015601Z Cleaning up orphan processes

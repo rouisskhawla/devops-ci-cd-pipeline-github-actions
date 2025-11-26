@@ -1,0 +1,15 @@
+﻿2025-11-26T19:12:04.0595678Z ##[group]Run chmod +x scripts/version.sh
+2025-11-26T19:12:04.0596272Z [36;1mchmod +x scripts/version.sh[0m
+2025-11-26T19:12:04.0596586Z [36;1mif [[ "true" == "true" ]]; then[0m
+2025-11-26T19:12:04.0596903Z [36;1m  ./scripts/version.sh patch release[0m
+2025-11-26T19:12:04.0597181Z [36;1m  echo "is_snapshot=false" >> $GITHUB_OUTPUT[0m
+2025-11-26T19:12:04.0597423Z [36;1melse[0m
+2025-11-26T19:12:04.0597787Z [36;1m  ./scripts/version.sh patch snapshot[0m
+2025-11-26T19:12:04.0598080Z [36;1m  echo "is_snapshot=true" >> $GITHUB_OUTPUT[0m
+2025-11-26T19:12:04.0598544Z [36;1mfi[0m
+2025-11-26T19:12:04.0605091Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:12:04.0605341Z ##[endgroup]
+2025-11-26T19:12:04.7191012Z Creating release tag: v0.0.3
+2025-11-26T19:12:05.9339026Z To https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:05.9340838Z  * [new tag]         v0.0.3 -> v0.0.3
+2025-11-26T19:12:05.9459466Z Calculated version: 0.0.3

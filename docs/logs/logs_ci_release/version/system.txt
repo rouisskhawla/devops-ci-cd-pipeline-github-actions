@@ -1,0 +1,4 @@
+2025-11-26T19:11:58.1100000Z Requested labels: self-hosted
+2025-11-26T19:11:58.1100000Z Job defined at: rouisskhawla/devops-ci-cd-pipeline-github-actions/.github/workflows/ci.yml@refs/heads/main
+2025-11-26T19:11:58.1100000Z Waiting for a runner to pick up this job...
+2025-11-26T19:11:58.6310000Z Job is about to start running on the runner: khawla

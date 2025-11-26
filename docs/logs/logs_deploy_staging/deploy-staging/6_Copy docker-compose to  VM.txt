@@ -1,0 +1,33 @@
+﻿2025-11-26T18:50:15.5852307Z ##[group]Run appleboy/scp-action@v0.1.7
+2025-11-26T18:50:15.5852775Z with:
+2025-11-26T18:50:15.5853059Z   host: ***
+2025-11-26T18:50:15.5853366Z   username: ***
+2025-11-26T18:50:15.5855711Z   key: ***
+
+2025-11-26T18:50:15.5856087Z   port: ***
+2025-11-26T18:50:15.5856417Z   source: docker-compose.yml
+2025-11-26T18:50:15.5857058Z   target: ~/devops-ci-cd-github-actions/
+2025-11-26T18:50:15.5857523Z   timeout: 30s
+2025-11-26T18:50:15.5857846Z   command_timeout: 10m
+2025-11-26T18:50:15.5858204Z   use_insecure_cipher: false
+2025-11-26T18:50:15.5858529Z   rm: false
+2025-11-26T18:50:15.5858818Z   debug: false
+2025-11-26T18:50:15.5859262Z   strip_components: 0
+2025-11-26T18:50:15.5859594Z   overwrite: false
+2025-11-26T18:50:15.5859918Z   tar_dereference: false
+2025-11-26T18:50:15.5860261Z   tar_exec: tar
+2025-11-26T18:50:15.5860630Z   proxy_port: ***
+2025-11-26T18:50:15.5861014Z   proxy_timeout: 30s
+2025-11-26T18:50:15.5861365Z   proxy_use_insecure_cipher: false
+2025-11-26T18:50:15.5861732Z ##[endgroup]
+2025-11-26T18:50:15.5919875Z ##[command]/usr/bin/docker run --name e32b843967b8db061d4cb083e7ad6d29e13dce_21e678 --label e32b84 --workdir /github/workspace --rm -e "INPUT_HOST" -e "INPUT_USERNAME" -e "INPUT_KEY" -e "INPUT_PORT" -e "INPUT_SOURCE" -e "INPUT_TARGET" -e "INPUT_PASSWORD" -e "INPUT_TIMEOUT" -e "INPUT_COMMAND_TIMEOUT" -e "INPUT_KEY_PATH" -e "INPUT_PASSPHRASE" -e "INPUT_FINGERPRINT" -e "INPUT_USE_INSECURE_CIPHER" -e "INPUT_RM" -e "INPUT_DEBUG" -e "INPUT_STRIP_COMPONENTS" -e "INPUT_OVERWRITE" -e "INPUT_TAR_DEREFERENCE" -e "INPUT_TAR_TMP_PATH" -e "INPUT_TAR_EXEC" -e "INPUT_PROXY_HOST" -e "INPUT_PROXY_PORT" -e "INPUT_PROXY_USERNAME" -e "INPUT_PROXY_PASSWORD" -e "INPUT_PROXY_PASSPHRASE" -e "INPUT_PROXY_TIMEOUT" -e "INPUT_PROXY_KEY" -e "INPUT_PROXY_KEY_PATH" -e "INPUT_PROXY_FINGERPRINT" -e "INPUT_PROXY_USE_INSECURE_CIPHER" -e "HOME" -e "GITHUB_JOB" -e "GITHUB_REF" -e "GITHUB_SHA" -e "GITHUB_REPOSITORY" -e "GITHUB_REPOSITORY_OWNER" -e "GITHUB_REPOSITORY_OWNER_ID" -e "GITHUB_RUN_ID" -e "GITHUB_RUN_NUMBER" -e "GITHUB_RETENTION_DAYS" -e "GITHUB_RUN_ATTEMPT" -e "GITHUB_ACTOR_ID" -e "GITHUB_ACTOR" -e "GITHUB_WORKFLOW" -e "GITHUB_HEAD_REF" -e "GITHUB_BASE_REF" -e "GITHUB_EVENT_NAME" -e "GITHUB_SERVER_URL" -e "GITHUB_API_URL" -e "GITHUB_GRAPHQL_URL" -e "GITHUB_REF_NAME" -e "GITHUB_REF_PROTECTED" -e "GITHUB_REF_TYPE" -e "GITHUB_WORKFLOW_REF" -e "GITHUB_WORKFLOW_SHA" -e "GITHUB_REPOSITORY_ID" -e "GITHUB_TRIGGERING_ACTOR" -e "GITHUB_WORKSPACE" -e "GITHUB_ACTION" -e "GITHUB_EVENT_PATH" -e "GITHUB_ACTION_REPOSITORY" -e "GITHUB_ACTION_REF" -e "GITHUB_PATH" -e "GITHUB_ENV" -e "GITHUB_STEP_SUMMARY" -e "GITHUB_STATE" -e "GITHUB_OUTPUT" -e "RUNNER_OS" -e "RUNNER_ARCH" -e "RUNNER_NAME" -e "RUNNER_ENVIRONMENT" -e "RUNNER_TOOL_CACHE" -e "RUNNER_TEMP" -e "RUNNER_WORKSPACE" -e "ACTIONS_RUNTIME_URL" -e "ACTIONS_RUNTIME_TOKEN" -e "ACTIONS_CACHE_URL" -e "ACTIONS_RESULTS_URL" -e GITHUB_ACTIONS=true -e CI=true -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/worldsoft/actions-runner/_work/_temp":"/github/runner_temp" -v "/home/worldsoft/actions-runner/_work/_temp/_github_home":"/github/home" -v "/home/worldsoft/actions-runner/_work/_temp/_github_workflow":"/github/workflow" -v "/home/worldsoft/actions-runner/_work/_temp/_runner_file_commands":"/github/file_commands" -v "/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions":"/github/workspace" e32b84:3967b8db061d4cb083e7ad6d29e13dce
+2025-11-26T18:50:16.4186705Z drone-scp version: v1.6.14
+2025-11-26T18:50:16.4188399Z tar all files into /tmp/ZKWMtDFoTE.tar.gz
+2025-11-26T18:50:16.9731331Z remote server os type is unix
+2025-11-26T18:50:16.9732006Z scp file to server.
+2025-11-26T18:50:18.2348567Z create folder ~/devops-ci-cd-github-actions/
+2025-11-26T18:50:19.1441562Z untar file ZKWMtDFoTE.tar.gz
+2025-11-26T18:50:19.6855294Z remove file ZKWMtDFoTE.tar.gz
+2025-11-26T18:50:20.2138294Z ===================================================
+2025-11-26T18:50:20.2143083Z ✅ Successfully executed transfer data to all host
+2025-11-26T18:50:20.2143847Z ===================================================

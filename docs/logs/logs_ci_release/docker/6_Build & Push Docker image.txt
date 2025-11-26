@@ -1,0 +1,92 @@
+﻿2025-11-26T19:29:37.4938745Z ##[group]Run JAR_FILE=$(ls *.jar | head -n 1)
+2025-11-26T19:29:37.4939225Z [36;1mJAR_FILE=$(ls *.jar | head -n 1)[0m
+2025-11-26T19:29:37.4939502Z [36;1mVERSION_TAG=0.0.3[0m
+2025-11-26T19:29:37.4940373Z [36;1mIMAGE_NAME=***/devops-ci-cd-pipeline-github-actions[0m
+2025-11-26T19:29:37.4940893Z [36;1mdocker build --build-arg JAR_FILE=$JAR_FILE -t $IMAGE_NAME:$VERSION_TAG .[0m
+2025-11-26T19:29:37.4941340Z [36;1mdocker push $IMAGE_NAME:$VERSION_TAG[0m
+2025-11-26T19:29:37.4941766Z [36;1mif [[ "$VERSION_TAG" == *SNAPSHOT* ]]; then[0m
+2025-11-26T19:29:37.4942354Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T19:29:37.4942869Z [36;1m  docker push $IMAGE_NAME:latest-snapshot[0m
+2025-11-26T19:29:37.4943256Z [36;1melse[0m
+2025-11-26T19:29:37.4943621Z [36;1m  docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest[0m
+2025-11-26T19:29:37.4944789Z [36;1m  docker push $IMAGE_NAME:latest[0m
+2025-11-26T19:29:37.4945239Z [36;1mfi[0m
+2025-11-26T19:29:37.4961038Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:29:37.4961879Z ##[endgroup]
+2025-11-26T19:29:37.5288521Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T19:29:37.5289378Z             Install the buildx component to build images with BuildKit:
+2025-11-26T19:29:37.5289873Z             https://docs.docker.com/go/buildx/
+2025-11-26T19:29:37.5290139Z 
+2025-11-26T19:29:37.7268801Z Sending build context to Docker daemon  32.36MB
+2025-11-26T19:29:37.7269324Z 
+2025-11-26T19:29:37.7363945Z Step 1/5 : FROM eclipse-temurin:17-jdk-jammy
+2025-11-26T19:29:39.7884198Z 17-jdk-jammy: Pulling from library/eclipse-temurin
+2025-11-26T19:29:40.3819403Z 7e49dc6156b0: Pulling fs layer
+2025-11-26T19:29:40.3820682Z e106dd8ed6ad: Pulling fs layer
+2025-11-26T19:29:40.3821191Z f28a3134bb3a: Pulling fs layer
+2025-11-26T19:29:40.3835743Z 837687f10a1f: Pulling fs layer
+2025-11-26T19:29:40.3836619Z 2581bc3ff3b6: Pulling fs layer
+2025-11-26T19:29:40.3836922Z 837687f10a1f: Waiting
+2025-11-26T19:29:40.3837252Z 2581bc3ff3b6: Waiting
+2025-11-26T19:30:50.0045029Z e106dd8ed6ad: Verifying Checksum
+2025-11-26T19:30:50.0045480Z e106dd8ed6ad: Download complete
+2025-11-26T19:30:50.8174302Z 837687f10a1f: Download complete
+2025-11-26T19:30:51.6458416Z 2581bc3ff3b6: Verifying Checksum
+2025-11-26T19:30:51.6460015Z 2581bc3ff3b6: Download complete
+2025-11-26T19:31:08.1938067Z 7e49dc6156b0: Verifying Checksum
+2025-11-26T19:31:08.1938547Z 7e49dc6156b0: Download complete
+2025-11-26T19:31:11.5431577Z 7e49dc6156b0: Pull complete
+2025-11-26T19:31:14.6993632Z e106dd8ed6ad: Pull complete
+2025-11-26T19:33:07.0661840Z f28a3134bb3a: Download complete
+2025-11-26T19:33:10.1231816Z f28a3134bb3a: Pull complete
+2025-11-26T19:33:10.1670266Z 837687f10a1f: Pull complete
+2025-11-26T19:33:10.2067029Z 2581bc3ff3b6: Pull complete
+2025-11-26T19:33:10.2378308Z Digest: sha256:3b43b9984c60dbf042f0d921850ec1ddfb062ac1741e67f2b4904e336d84e4f0
+2025-11-26T19:33:10.2456915Z Status: Downloaded newer image for eclipse-temurin:17-jdk-jammy
+2025-11-26T19:33:10.2527770Z  ---> 5fa3725ef065
+2025-11-26T19:33:10.2528130Z Step 2/5 : ARG JAR_FILE= *.jar
+2025-11-26T19:33:10.6205373Z  ---> Running in 81c8675a6420
+2025-11-26T19:33:10.6842744Z  ---> Removed intermediate container 81c8675a6420
+2025-11-26T19:33:10.6847116Z  ---> c3cae354d3f1
+2025-11-26T19:33:10.6848165Z Step 3/5 : COPY ${JAR_FILE} app.jar
+2025-11-26T19:33:11.1518595Z  ---> d510a9bd6c5d
+2025-11-26T19:33:11.1520969Z Step 4/5 : ENTRYPOINT ["java","-jar","/app.jar"]
+2025-11-26T19:33:11.1979823Z  ---> Running in a2f08f8b884d
+2025-11-26T19:33:11.2559895Z  ---> Removed intermediate container a2f08f8b884d
+2025-11-26T19:33:11.2563521Z  ---> aabb692b90dc
+2025-11-26T19:33:11.2566650Z Step 5/5 : EXPOSE 8082
+2025-11-26T19:33:11.3101339Z  ---> Running in eba0d3c5306f
+2025-11-26T19:33:11.3673292Z  ---> Removed intermediate container eba0d3c5306f
+2025-11-26T19:33:11.3673792Z  ---> dce5fa4ce27e
+2025-11-26T19:33:11.4019915Z Successfully built dce5fa4ce27e
+2025-11-26T19:33:11.4117714Z Successfully tagged ***/devops-ci-cd-pipeline-github-actions:0.0.3
+2025-11-26T19:33:11.4474279Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T19:33:11.9019133Z 13e4859bf501: Preparing
+2025-11-26T19:33:11.9020147Z d1d6e1a741f5: Preparing
+2025-11-26T19:33:11.9020550Z ed45db2cd56b: Preparing
+2025-11-26T19:33:11.9022452Z 23408c2e9b9e: Preparing
+2025-11-26T19:33:11.9022711Z b160c82ed31f: Preparing
+2025-11-26T19:33:11.9033952Z 73974f74b436: Preparing
+2025-11-26T19:33:11.9046123Z 73974f74b436: Waiting
+2025-11-26T19:33:12.7858689Z 23408c2e9b9e: Layer already exists
+2025-11-26T19:33:12.8200869Z ed45db2cd56b: Layer already exists
+2025-11-26T19:33:12.8607855Z b160c82ed31f: Layer already exists
+2025-11-26T19:33:12.9285017Z d1d6e1a741f5: Layer already exists
+2025-11-26T19:33:13.2571846Z 73974f74b436: Layer already exists
+2025-11-26T19:38:11.8457732Z 13e4859bf501: Pushed
+2025-11-26T19:38:17.4956086Z 0.0.3: digest: sha256:afff4460640d604d8bce2634e553c5242594f35562fb118bc47e299e8a117a55 size: 1581
+2025-11-26T19:38:17.5914162Z The push refers to repository [docker.io/***/devops-ci-cd-pipeline-github-actions]
+2025-11-26T19:38:18.0216853Z 13e4859bf501: Preparing
+2025-11-26T19:38:18.0217108Z d1d6e1a741f5: Preparing
+2025-11-26T19:38:18.0217256Z ed45db2cd56b: Preparing
+2025-11-26T19:38:18.0221029Z 23408c2e9b9e: Preparing
+2025-11-26T19:38:18.0221282Z b160c82ed31f: Preparing
+2025-11-26T19:38:18.0221698Z 73974f74b436: Preparing
+2025-11-26T19:38:18.0221888Z 73974f74b436: Waiting
+2025-11-26T19:38:18.9309316Z b160c82ed31f: Layer already exists
+2025-11-26T19:38:18.9652175Z d1d6e1a741f5: Layer already exists
+2025-11-26T19:38:19.0069549Z 13e4859bf501: Layer already exists
+2025-11-26T19:38:19.0345158Z ed45db2cd56b: Layer already exists
+2025-11-26T19:38:19.0775948Z 23408c2e9b9e: Layer already exists
+2025-11-26T19:38:19.4166783Z 73974f74b436: Layer already exists
+2025-11-26T19:38:21.9117361Z latest: digest: sha256:afff4460640d604d8bce2634e553c5242594f35562fb118bc47e299e8a117a55 size: 1581

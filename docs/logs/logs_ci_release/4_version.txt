@@ -1,0 +1,137 @@
+﻿2025-11-26T19:12:00.3605472Z Current runner version: '2.329.0'
+2025-11-26T19:12:00.3620097Z Runner name: 'khawla'
+2025-11-26T19:12:00.3620966Z Runner group name: 'Default'
+2025-11-26T19:12:00.3621989Z Machine name: 'khawla'
+2025-11-26T19:12:00.3628147Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T19:12:00.3633240Z Actions: write
+2025-11-26T19:12:00.3634172Z ArtifactMetadata: write
+2025-11-26T19:12:00.3634999Z Attestations: write
+2025-11-26T19:12:00.3635697Z Checks: write
+2025-11-26T19:12:00.3636331Z Contents: write
+2025-11-26T19:12:00.3636991Z Deployments: write
+2025-11-26T19:12:00.3638499Z Discussions: write
+2025-11-26T19:12:00.3639164Z Issues: write
+2025-11-26T19:12:00.3639725Z Metadata: read
+2025-11-26T19:12:00.3640228Z Models: read
+2025-11-26T19:12:00.3641147Z Packages: write
+2025-11-26T19:12:00.3641856Z Pages: write
+2025-11-26T19:12:00.3642542Z PullRequests: write
+2025-11-26T19:12:00.3643265Z RepositoryProjects: write
+2025-11-26T19:12:00.3643875Z SecurityEvents: write
+2025-11-26T19:12:00.3644656Z Statuses: write
+2025-11-26T19:12:00.3645195Z ##[endgroup]
+2025-11-26T19:12:00.3648800Z Secret source: Actions
+2025-11-26T19:12:00.3649936Z Prepare workflow directory
+2025-11-26T19:12:00.4526046Z Prepare all required actions
+2025-11-26T19:12:00.4584540Z Getting action download info
+2025-11-26T19:12:01.1143914Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T19:12:02.5134309Z Complete job name: version
+2025-11-26T19:12:02.5918278Z ##[group]Run actions/checkout@v3
+2025-11-26T19:12:02.5919903Z with:
+2025-11-26T19:12:02.5920708Z   fetch-depth: 0
+2025-11-26T19:12:02.5921658Z   fetch-tags: true
+2025-11-26T19:12:02.5923192Z   token: ***
+2025-11-26T19:12:02.5953788Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:02.5955612Z   ssh-strict: true
+2025-11-26T19:12:02.5956608Z   persist-credentials: true
+2025-11-26T19:12:02.5957696Z   clean: true
+2025-11-26T19:12:02.5958594Z   sparse-checkout-cone-mode: true
+2025-11-26T19:12:02.5959690Z   lfs: false
+2025-11-26T19:12:02.5960511Z   submodules: false
+2025-11-26T19:12:02.5961386Z   set-safe-directory: true
+2025-11-26T19:12:02.5963045Z ##[endgroup]
+2025-11-26T19:12:02.7672810Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:02.7678729Z ##[group]Getting Git version info
+2025-11-26T19:12:02.7682622Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T19:12:02.8165378Z [command]/usr/bin/git version
+2025-11-26T19:12:02.8231907Z git version 2.43.0
+2025-11-26T19:12:02.8258579Z ##[endgroup]
+2025-11-26T19:12:02.8299434Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/6116f541-4f9b-4cd5-a66b-3cd7b14ef8e3' before making global git config changes
+2025-11-26T19:12:02.8303517Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:12:02.8312165Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:02.8371163Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T19:12:02.8397600Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:02.8420898Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T19:12:02.8423428Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T19:12:02.8490134Z refs/heads/main
+2025-11-26T19:12:02.8502872Z [command]/usr/bin/git checkout --detach
+2025-11-26T19:12:02.8700832Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:12:02.8762630Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T19:12:02.8801874Z Deleted branch main (was 4974515).
+2025-11-26T19:12:02.8882599Z ##[endgroup]
+2025-11-26T19:12:02.8884650Z [command]/usr/bin/git submodule status
+2025-11-26T19:12:02.9261266Z ##[group]Cleaning the repository
+2025-11-26T19:12:02.9263037Z [command]/usr/bin/git clean -ffdx
+2025-11-26T19:12:02.9420353Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T19:12:02.9560370Z HEAD is now at 4974515 Update snapshot version
+2025-11-26T19:12:02.9569520Z ##[endgroup]
+2025-11-26T19:12:02.9572441Z ##[group]Disabling automatic garbage collection
+2025-11-26T19:12:02.9575248Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T19:12:02.9613444Z ##[endgroup]
+2025-11-26T19:12:02.9616761Z ##[group]Setting up auth
+2025-11-26T19:12:02.9620202Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:12:02.9671762Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:12:03.0045606Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:12:03.0223162Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:12:03.0639454Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T19:12:03.0700314Z ##[endgroup]
+2025-11-26T19:12:03.0702599Z ##[group]Fetching the repository
+2025-11-26T19:12:03.0712720Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --progress --no-recurse-submodules --unshallow origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2025-11-26T19:12:03.9716681Z remote: Enumerating objects: 2, done.        
+2025-11-26T19:12:03.9719757Z remote: Counting objects:  50% (1/2)        
+2025-11-26T19:12:03.9724962Z remote: Counting objects: 100% (2/2)        
+2025-11-26T19:12:03.9726736Z remote: Counting objects: 100% (2/2), done.        
+2025-11-26T19:12:03.9729075Z remote: Compressing objects:  50% (1/2)        
+2025-11-26T19:12:03.9730771Z remote: Compressing objects: 100% (2/2)        
+2025-11-26T19:12:03.9732254Z remote: Compressing objects: 100% (2/2), done.        
+2025-11-26T19:12:03.9733309Z remote: Total 2 (delta 0), reused 2 (delta 0), pack-reused 0 (from 0)        
+2025-11-26T19:12:03.9946348Z [command]/usr/bin/git branch --list --remote origin/main
+2025-11-26T19:12:03.9975130Z   origin/main
+2025-11-26T19:12:03.9984379Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2025-11-26T19:12:04.0012047Z 497451586471704e9134a95b8802e6232c703f3d
+2025-11-26T19:12:04.0013870Z ##[endgroup]
+2025-11-26T19:12:04.0015356Z ##[group]Determining the checkout info
+2025-11-26T19:12:04.0021062Z ##[endgroup]
+2025-11-26T19:12:04.0022905Z ##[group]Checking out the ref
+2025-11-26T19:12:04.0023966Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T19:12:04.0080110Z Switched to a new branch 'main'
+2025-11-26T19:12:04.0082534Z branch 'main' set up to track 'origin/main'.
+2025-11-26T19:12:04.0086273Z ##[endgroup]
+2025-11-26T19:12:04.0142017Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T19:12:04.0173421Z '497451586471704e9134a95b8802e6232c703f3d'
+2025-11-26T19:12:04.0406084Z ##[group]Run git config user.name "github-actions"
+2025-11-26T19:12:04.0406669Z [36;1mgit config user.name "github-actions"[0m
+2025-11-26T19:12:04.0407092Z [36;1mgit config user.email "actions@github.com"[0m
+2025-11-26T19:12:04.0423661Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:12:04.0424053Z ##[endgroup]
+2025-11-26T19:12:04.0595792Z ##[group]Run chmod +x scripts/version.sh
+2025-11-26T19:12:04.0596276Z [36;1mchmod +x scripts/version.sh[0m
+2025-11-26T19:12:04.0596590Z [36;1mif [[ "true" == "true" ]]; then[0m
+2025-11-26T19:12:04.0596905Z [36;1m  ./scripts/version.sh patch release[0m
+2025-11-26T19:12:04.0597184Z [36;1m  echo "is_snapshot=false" >> $GITHUB_OUTPUT[0m
+2025-11-26T19:12:04.0597426Z [36;1melse[0m
+2025-11-26T19:12:04.0597790Z [36;1m  ./scripts/version.sh patch snapshot[0m
+2025-11-26T19:12:04.0598083Z [36;1m  echo "is_snapshot=true" >> $GITHUB_OUTPUT[0m
+2025-11-26T19:12:04.0598548Z [36;1mfi[0m
+2025-11-26T19:12:04.0605111Z shell: /usr/bin/bash -e {0}
+2025-11-26T19:12:04.0605343Z ##[endgroup]
+2025-11-26T19:12:04.7191097Z Creating release tag: v0.0.3
+2025-11-26T19:12:05.9339088Z To https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:05.9340878Z  * [new tag]         v0.0.3 -> v0.0.3
+2025-11-26T19:12:05.9459523Z Calculated version: 0.0.3
+2025-11-26T19:12:05.9581238Z Post job cleanup.
+2025-11-26T19:12:06.1043324Z [command]/usr/bin/git version
+2025-11-26T19:12:06.1090638Z git version 2.43.0
+2025-11-26T19:12:06.1155266Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/13f01b3d-dfe7-4583-a8bc-047e7dc160d4' before making global git config changes
+2025-11-26T19:12:06.1156189Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T19:12:06.1162437Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T19:12:06.1196869Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T19:12:06.1235154Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T19:12:06.1554419Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T19:12:06.1591927Z http.https://github.com/.extraheader
+2025-11-26T19:12:06.1606653Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-11-26T19:12:06.1654171Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T19:12:06.2229196Z Evaluate and set job outputs
+2025-11-26T19:12:06.2235870Z Set output 'version'
+2025-11-26T19:12:06.2237191Z Set output 'is_snapshot'
+2025-11-26T19:12:06.2238242Z Cleaning up orphan processes

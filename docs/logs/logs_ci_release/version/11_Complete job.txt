@@ -1,0 +1,4 @@
+﻿2025-11-26T19:12:06.2229173Z Evaluate and set job outputs
+2025-11-26T19:12:06.2235853Z Set output 'version'
+2025-11-26T19:12:06.2237186Z Set output 'is_snapshot'
+2025-11-26T19:12:06.2238230Z Cleaning up orphan processes

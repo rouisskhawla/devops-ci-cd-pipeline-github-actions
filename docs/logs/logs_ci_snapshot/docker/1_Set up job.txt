@@ -1,0 +1,32 @@
+﻿2025-11-26T18:43:43.9773224Z Current runner version: '2.329.0'
+2025-11-26T18:43:43.9784040Z Runner name: 'khawla'
+2025-11-26T18:43:43.9784956Z Runner group name: 'Default'
+2025-11-26T18:43:43.9786810Z Machine name: 'khawla'
+2025-11-26T18:43:43.9792501Z ##[group]GITHUB_TOKEN Permissions
+2025-11-26T18:43:43.9797006Z Actions: write
+2025-11-26T18:43:43.9797725Z ArtifactMetadata: write
+2025-11-26T18:43:43.9798364Z Attestations: write
+2025-11-26T18:43:43.9798944Z Checks: write
+2025-11-26T18:43:43.9799505Z Contents: write
+2025-11-26T18:43:43.9800063Z Deployments: write
+2025-11-26T18:43:43.9800617Z Discussions: write
+2025-11-26T18:43:43.9801122Z Issues: write
+2025-11-26T18:43:43.9801566Z Metadata: read
+2025-11-26T18:43:43.9801987Z Models: read
+2025-11-26T18:43:43.9802475Z Packages: write
+2025-11-26T18:43:43.9802927Z Pages: write
+2025-11-26T18:43:43.9803444Z PullRequests: write
+2025-11-26T18:43:43.9804001Z RepositoryProjects: write
+2025-11-26T18:43:43.9804585Z SecurityEvents: write
+2025-11-26T18:43:43.9805112Z Statuses: write
+2025-11-26T18:43:43.9805863Z ##[endgroup]
+2025-11-26T18:43:43.9808936Z Secret source: Actions
+2025-11-26T18:43:43.9809525Z Prepare workflow directory
+2025-11-26T18:43:44.0547468Z Prepare all required actions
+2025-11-26T18:43:44.0609332Z Getting action download info
+2025-11-26T18:43:44.8250434Z Download action repository 'actions/checkout@v3' (SHA:f43a0e5ff2bd294095638e18286ca9a3d1956744)
+2025-11-26T18:43:47.1042309Z Download action repository 'docker/login-action@v3' (SHA:5e57cd118135c172c3672efd75eb46360885c0ef)
+2025-11-26T18:43:51.6373990Z Download action repository 'actions/cache@v3' (SHA:6f8efc29b200d32929f49075959781ed54ec270c)
+2025-11-26T18:43:55.3235237Z Download action repository 'actions/download-artifact@v4' (SHA:d3f86a106a0bac45b974a628896c90dbdf5c8093)
+2025-11-26T18:43:57.1433827Z Download action repository 'lasith-kg/dispatch-workflow@v1' (SHA:692cec720c2d07367b512c5f8668e33c3d8f2f13)
+2025-11-26T18:43:58.6713839Z Complete job name: docker

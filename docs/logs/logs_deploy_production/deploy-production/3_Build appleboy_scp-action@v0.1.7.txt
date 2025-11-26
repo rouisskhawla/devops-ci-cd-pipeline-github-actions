@@ -1,0 +1,44 @@
+﻿2025-11-26T19:38:49.1172095Z ##[group]Build container for action use: '/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7/Dockerfile'.
+2025-11-26T19:38:49.1173093Z ##[command]/usr/bin/docker build -t e32b84:2a4db08cd0fe4728aa87fead2a5449c3 -f "/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7/Dockerfile" "/home/worldsoft/actions-runner/_work/_actions/appleboy/scp-action/v0.1.7"
+2025-11-26T19:38:49.1309494Z DEPRECATED: The legacy builder is deprecated and will be removed in a future release.
+2025-11-26T19:38:49.1310168Z             Install the buildx component to build images with BuildKit:
+2025-11-26T19:38:49.1310699Z             https://docs.docker.com/go/buildx/
+2025-11-26T19:38:49.1310961Z 
+2025-11-26T19:38:49.1339405Z Sending build context to Docker daemon    130kB
+2025-11-26T19:38:49.1339766Z 
+2025-11-26T19:38:49.1344397Z Step 1/3 : FROM ghcr.io/appleboy/drone-scp:1.6.14
+2025-11-26T19:38:50.7211406Z 1.6.14: Pulling from appleboy/drone-scp
+2025-11-26T19:38:51.0839453Z 1207c741d8c9: Pulling fs layer
+2025-11-26T19:38:51.0842042Z 57fce42a8fe3: Pulling fs layer
+2025-11-26T19:38:51.0843941Z a7e706a435c2: Pulling fs layer
+2025-11-26T19:38:51.0845477Z c5ff66ca7e6b: Pulling fs layer
+2025-11-26T19:38:51.0847117Z 103b78775db9: Pulling fs layer
+2025-11-26T19:38:51.0847328Z c5ff66ca7e6b: Waiting
+2025-11-26T19:38:51.0847665Z 103b78775db9: Waiting
+2025-11-26T19:38:51.9535871Z a7e706a435c2: Verifying Checksum
+2025-11-26T19:38:51.9537061Z a7e706a435c2: Download complete
+2025-11-26T19:38:52.5874013Z 57fce42a8fe3: Verifying Checksum
+2025-11-26T19:38:52.5875351Z 57fce42a8fe3: Download complete
+2025-11-26T19:38:52.7623720Z c5ff66ca7e6b: Verifying Checksum
+2025-11-26T19:38:57.5970482Z c5ff66ca7e6b: Download complete
+2025-11-26T19:38:57.5970746Z 1207c741d8c9: Verifying Checksum
+2025-11-26T19:38:57.5973704Z 1207c741d8c9: Download complete
+2025-11-26T19:38:57.7063052Z 103b78775db9: Verifying Checksum
+2025-11-26T19:38:57.7063833Z 103b78775db9: Download complete
+2025-11-26T19:38:57.8206327Z 1207c741d8c9: Pull complete
+2025-11-26T19:38:57.9862481Z 57fce42a8fe3: Pull complete
+2025-11-26T19:38:58.0286264Z a7e706a435c2: Pull complete
+2025-11-26T19:38:58.0702312Z c5ff66ca7e6b: Pull complete
+2025-11-26T19:38:58.1500018Z 103b78775db9: Pull complete
+2025-11-26T19:38:58.1730391Z Digest: sha256:0e0597678b948b0aa09888c66ac75af904cce81baf6af955208527d259c61818
+2025-11-26T19:38:58.1795138Z Status: Downloaded newer image for ghcr.io/appleboy/drone-scp:1.6.14
+2025-11-26T19:38:58.1844558Z  ---> 6e1933d0a1a5
+2025-11-26T19:38:58.1844875Z Step 2/3 : COPY entrypoint.sh /bin/entrypoint.sh
+2025-11-26T19:38:58.2680009Z  ---> 998f60ac885a
+2025-11-26T19:38:58.2680635Z Step 3/3 : ENTRYPOINT ["/bin/entrypoint.sh"]
+2025-11-26T19:38:58.3120048Z  ---> Running in 3fd98d270d13
+2025-11-26T19:38:58.3738590Z  ---> Removed intermediate container 3fd98d270d13
+2025-11-26T19:38:58.3738939Z  ---> ce8f03633c4c
+2025-11-26T19:38:58.3741588Z Successfully built ce8f03633c4c
+2025-11-26T19:38:58.3818732Z Successfully tagged e32b84:2a4db08cd0fe4728aa87fead2a5449c3
+2025-11-26T19:38:58.3836517Z ##[endgroup]

@@ -1,0 +1,12 @@
+﻿2025-11-26T18:32:30.9573791Z ##[group]Run git config user.name "github-actions"
+2025-11-26T18:32:30.9574294Z [36;1mgit config user.name "github-actions"[0m
+2025-11-26T18:32:30.9574609Z [36;1mgit config user.email "actions@github.com"[0m
+2025-11-26T18:32:30.9574912Z [36;1mgit add .ci/snapshot-version.json[0m
+2025-11-26T18:32:30.9575293Z [36;1mgit commit -m "Update snapshot version" || echo "No changes"[0m
+2025-11-26T18:32:30.9575615Z [36;1mgit push origin main[0m
+2025-11-26T18:32:30.9589169Z shell: /usr/bin/bash -e {0}
+2025-11-26T18:32:30.9589648Z ##[endgroup]
+2025-11-26T18:32:30.9834794Z [main 4974515] Update snapshot version
+2025-11-26T18:32:30.9837327Z  1 file changed, 1 insertion(+), 1 deletion(-)
+2025-11-26T18:32:32.0430665Z To https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:32:32.0432099Z    9ed62df..4974515  main -> main

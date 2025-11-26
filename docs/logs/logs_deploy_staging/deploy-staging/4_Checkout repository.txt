@@ -1,0 +1,86 @@
+﻿2025-11-26T18:50:12.1310524Z ##[group]Run actions/checkout@v3
+2025-11-26T18:50:12.1311631Z with:
+2025-11-26T18:50:12.1312321Z   repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:12.1313226Z   token: ***
+2025-11-26T18:50:12.1313514Z   ssh-strict: true
+2025-11-26T18:50:12.1313959Z   persist-credentials: true
+2025-11-26T18:50:12.1314389Z   clean: true
+2025-11-26T18:50:12.1314776Z   sparse-checkout-cone-mode: true
+2025-11-26T18:50:12.1315148Z   fetch-depth: 1
+2025-11-26T18:50:12.1315447Z   fetch-tags: false
+2025-11-26T18:50:12.1315774Z   lfs: false
+2025-11-26T18:50:12.1316067Z   submodules: false
+2025-11-26T18:50:12.1316428Z   set-safe-directory: true
+2025-11-26T18:50:12.1317803Z ##[endgroup]
+2025-11-26T18:50:12.2626600Z Syncing repository: rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:12.2628904Z ##[group]Getting Git version info
+2025-11-26T18:50:12.2629788Z Working directory is '/home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions'
+2025-11-26T18:50:12.2987736Z [command]/usr/bin/git version
+2025-11-26T18:50:12.3045998Z git version 2.43.0
+2025-11-26T18:50:12.3069841Z ##[endgroup]
+2025-11-26T18:50:12.3098338Z Temporarily overriding HOME='/home/worldsoft/actions-runner/_work/_temp/f5929deb-767d-4c75-b4e5-e541909a20b7' before making global git config changes
+2025-11-26T18:50:12.3099592Z Adding repository directory to the temporary git global config as a safe directory
+2025-11-26T18:50:12.3103774Z [command]/usr/bin/git config --global --add safe.directory /home/worldsoft/actions-runner/_work/devops-ci-cd-pipeline-github-actions/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:12.3154800Z [command]/usr/bin/git config --local --get remote.origin.url
+2025-11-26T18:50:12.3179372Z https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:12.3210674Z ##[group]Removing previously created refs, to avoid conflicts
+2025-11-26T18:50:12.3213699Z [command]/usr/bin/git rev-parse --symbolic-full-name --verify --quiet HEAD
+2025-11-26T18:50:12.3376861Z refs/heads/main
+2025-11-26T18:50:12.3388924Z [command]/usr/bin/git checkout --detach
+2025-11-26T18:50:12.3619365Z HEAD is now at 9ed62df Trigger releases by running ci.yml manually
+2025-11-26T18:50:12.3681235Z [command]/usr/bin/git branch --delete --force main
+2025-11-26T18:50:12.3719594Z Deleted branch main (was 9ed62df).
+2025-11-26T18:50:12.3798699Z ##[endgroup]
+2025-11-26T18:50:12.3800834Z [command]/usr/bin/git submodule status
+2025-11-26T18:50:12.4204025Z ##[group]Cleaning the repository
+2025-11-26T18:50:12.4206576Z [command]/usr/bin/git clean -ffdx
+2025-11-26T18:50:12.4397632Z Removing devops-ci-cd-pipeline-github-actions-.jar
+2025-11-26T18:50:12.4409401Z [command]/usr/bin/git reset --hard HEAD
+2025-11-26T18:50:12.4540071Z HEAD is now at 9ed62df Trigger releases by running ci.yml manually
+2025-11-26T18:50:12.4542730Z ##[endgroup]
+2025-11-26T18:50:12.4546467Z ##[group]Disabling automatic garbage collection
+2025-11-26T18:50:12.4552119Z [command]/usr/bin/git config --local gc.auto 0
+2025-11-26T18:50:12.4594282Z ##[endgroup]
+2025-11-26T18:50:12.4595163Z ##[group]Setting up auth
+2025-11-26T18:50:12.4599779Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-11-26T18:50:12.4639532Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-11-26T18:50:12.4989788Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-11-26T18:50:12.5033017Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-11-26T18:50:12.5405776Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-11-26T18:50:12.5574420Z ##[endgroup]
+2025-11-26T18:50:12.5575699Z ##[group]Fetching the repository
+2025-11-26T18:50:12.5583574Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --progress --no-recurse-submodules --depth=1 origin +497451586471704e9134a95b8802e6232c703f3d:refs/remotes/origin/main
+2025-11-26T18:50:13.2771711Z remote: Enumerating objects: 7, done.        
+2025-11-26T18:50:13.2772524Z remote: Counting objects:  14% (1/7)        
+2025-11-26T18:50:13.2773072Z remote: Counting objects:  28% (2/7)        
+2025-11-26T18:50:13.2774474Z remote: Counting objects:  42% (3/7)        
+2025-11-26T18:50:13.2775051Z remote: Counting objects:  57% (4/7)        
+2025-11-26T18:50:13.2775592Z remote: Counting objects:  71% (5/7)        
+2025-11-26T18:50:13.2776118Z remote: Counting objects:  85% (6/7)        
+2025-11-26T18:50:13.2776640Z remote: Counting objects: 100% (7/7)        
+2025-11-26T18:50:13.2777220Z remote: Counting objects: 100% (7/7), done.        
+2025-11-26T18:50:13.2777815Z remote: Compressing objects: 100% (1/1)        
+2025-11-26T18:50:13.2778458Z remote: Compressing objects: 100% (1/1), done.        
+2025-11-26T18:50:13.2779948Z remote: Total 4 (delta 1), reused 4 (delta 1), pack-reused 0 (from 0)        
+2025-11-26T18:50:13.3070320Z From https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions
+2025-11-26T18:50:13.3072394Z  + 9ed62df...4974515 497451586471704e9134a95b8802e6232c703f3d -> origin/main  (forced update)
+2025-11-26T18:50:13.3119236Z ##[endgroup]
+2025-11-26T18:50:13.3120069Z ##[group]Determining the checkout info
+2025-11-26T18:50:13.3120776Z ##[endgroup]
+2025-11-26T18:50:13.3121373Z ##[group]Checking out the ref
+2025-11-26T18:50:13.3122163Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-11-26T18:50:13.3176652Z Warning: you are leaving 1 commit behind, not connected to
+2025-11-26T18:50:13.3177375Z any of your branches:
+2025-11-26T18:50:13.3177688Z 
+2025-11-26T18:50:13.3178164Z   9ed62df Trigger releases by running ci.yml manually
+2025-11-26T18:50:13.3178473Z 
+2025-11-26T18:50:13.3178807Z If you want to keep it by creating a new branch, this may be a good time
+2025-11-26T18:50:13.3179353Z to do so with:
+2025-11-26T18:50:13.3179552Z 
+2025-11-26T18:50:13.3179886Z  git branch <new-branch-name> 9ed62df
+2025-11-26T18:50:13.3180155Z 
+2025-11-26T18:50:13.3188814Z Switched to a new branch 'main'
+2025-11-26T18:50:13.3190302Z branch 'main' set up to track 'origin/main'.
+2025-11-26T18:50:13.3200244Z ##[endgroup]
+2025-11-26T18:50:13.3264378Z [command]/usr/bin/git log -1 --format='%H'
+2025-11-26T18:50:13.3296948Z '497451586471704e9134a95b8802e6232c703f3d'
