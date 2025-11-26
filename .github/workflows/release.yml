@@ -12,18 +12,14 @@ jobs:
   trigger-ci-release:
     runs-on: self-hosted
     steps:
-    - name: Trigger CI Pipeline
-      uses: lasith-kg/dispatch-workflow@v1
-      with:
-        dispatch-method: workflow_dispatch
-        owner: rouisskhawla
-        repo: devops-ci-cd-pipeline-github-actions
-        workflow: ci.yml
-        ref: main
-        workflow-inputs: '{ "release_mode": "true" }'
-        token: ${{ secrets.PAT_GITHUB }}
-        discover: false
-        starting-delay-ms: 200
-        max-attempts: 5
-        time-multiple: 2
+      - name: Trigger CI Pipeline
+        uses: lasith-kg/dispatch-workflow@v1
+        with:
+          dispatch-method: workflow_dispatch
+          owner: rouisskhawla
+          repo: devops-ci-cd-pipeline-github-actions
+          workflow: ci.yml
+          ref: main
+          workflow-inputs: '{ "release_mode": "true" }'
+          token: ${{ secrets.PAT_GITHUB }}
 

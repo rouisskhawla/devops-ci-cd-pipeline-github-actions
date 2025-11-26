@@ -7,17 +7,27 @@ on:
 
 jobs:
   deploy-production:
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'workflow_dispatch' &&
-      github.event.workflow_run.inputs.release_mode == 'true' &&
-      github.event.workflow_run.outputs.is_snapshot == 'false'
     runs-on: self-hosted
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-        
-      - name: Prepare production directory
+      - name: Download version artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: version-info
+
+      - name: Read version info
+        run: |
+          VERSION=$(cat version.txt)
+          SNAP=$(cat is_snapshot.txt)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          echo "IS_SNAPSHOT=$SNAP" >> $GITHUB_ENV
+
+      - name: Validate release build
+        if: env.IS_SNAPSHOT != 'false'
+        run: echo "Not a release build. Skipping production deploy." && exit 1
+
+      - name: Ensure production directory
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.PRODUCTION_HOST }}
@@ -26,8 +36,8 @@ jobs:
           port: ${{ secrets.PRODUCTION_PORT }}
           script: |
             mkdir -p ~/devops-ci-cd-github-actions
-            
-      - name: Copy docker-compose to production VM
+
+      - name: Copy docker-compose
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.PRODUCTION_HOST }}
@@ -36,8 +46,8 @@ jobs:
           port: ${{ secrets.PRODUCTION_PORT }}
           source: "docker-compose.yml"
           target: "~/devops-ci-cd-github-actions/"
-  
-      - name: Deploy to production via SSH
+
+      - name: Deploy release
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: ${{ secrets.PRODUCTION_HOST }}
