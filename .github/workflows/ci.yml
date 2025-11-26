@@ -164,3 +164,19 @@ jobs:
             docker tag $IMAGE_NAME:$VERSION_TAG $IMAGE_NAME:latest
             docker push $IMAGE_NAME:latest
           fi
+
+      - name: Trigger Deploy to Staging
+        if: ${{ steps.set-version.outputs.is_snapshot == 'true' }}
+        uses: lasith-kg/dispatch-workflow@v1
+        with:
+          dispatch-method: workflow_dispatch
+          owner: rouisskhawla
+          repo: devops-ci-cd-pipeline-github-actions
+          workflow: staging.yml
+          ref: main
+          workflow-inputs: |
+            {
+              "version": "${{ steps.set-version.outputs.version }}"
+            }
+          token: ${{ secrets.PAT_GITHUB }}
+
