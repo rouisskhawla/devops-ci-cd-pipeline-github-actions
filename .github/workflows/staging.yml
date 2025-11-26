@@ -9,10 +9,10 @@ on:
       is_snapshot:
         required: true
         type: boolean
-        
+
 jobs:
   deploy-staging:
-    if: ${{ github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.outputs.is_snapshot == 'true' }}
+    if: ${{ github.event.inputs.is_snapshot }}
     runs-on: self-hosted
     steps:
       - name: Checkout repository

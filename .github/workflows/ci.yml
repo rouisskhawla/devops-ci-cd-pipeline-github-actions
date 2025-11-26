@@ -166,7 +166,7 @@ jobs:
           fi
 
       - name: Trigger Deploy to Staging
-        if: ${{ steps.set-version.outputs.is_snapshot == 'true' }}
+        if: ${{ needs.version.outputs.is_snapshot == 'true' }}
         uses: lasith-kg/dispatch-workflow@v1
         with:
           dispatch-method: workflow_dispatch
@@ -176,7 +176,7 @@ jobs:
           ref: main
           workflow-inputs: |
             {
-              "version": "${{ steps.set-version.outputs.version }}"
+              "version": "${{ needs.version.outputs.version }}",
+              "is_snapshot": "true"
             }
           token: ${{ secrets.PAT_GITHUB }}
-
