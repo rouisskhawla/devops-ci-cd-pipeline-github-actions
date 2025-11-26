@@ -25,13 +25,6 @@ jobs:
           fetch-tags: true
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Download last snapshot artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: snapshot-info
-          path: snapshot
-        continue-on-error: true
-
       - name: Set Git user
         run: |
           git config user.name "github-actions"
@@ -49,12 +42,14 @@ jobs:
             echo "is_snapshot=true" >> $GITHUB_OUTPUT
           fi
       
-      - name: Upload snapshot artifact
-        if: ${{ needs.version.outputs.is_snapshot == 'true' || github.event.inputs.release_mode != 'true' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: snapshot-info
-          path: snapshot/snapshot-version.txt
+      - name: Commit updated snapshot version
+        if: ${{ steps.set-version.outputs.is_snapshot == 'true' }}
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .ci/snapshot-version.json
+          git commit -m "Update snapshot version" || echo "No changes"
+          git push origin main
           
   test:
     needs: version
