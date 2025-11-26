@@ -6,17 +6,19 @@ RELEASE_TYPE=${2:-snapshot}
 
 git fetch --tags
 
-LAST_RELEASE_TAG=$(git tag --sort=-creatordate | grep -v 'SNAPSHOT' | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
+LAST_RELEASE_TAG=$(git tag --sort=-creatordate | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n1)
 if [[ -z "$LAST_RELEASE_TAG" ]]; then
   LAST_RELEASE_TAG="v0.0.0"
 fi
 LAST_RELEASE_VERSION=${LAST_RELEASE_TAG#v}
 
-LAST_SNAPSHOT_FILE="snapshot-version.txt"
+ARTIFACT_FILE="snapshot-version.txt"
 
-if [[ ! -f "$LAST_SNAPSHOT_FILE" ]]; then
-  echo "BASE_VERSION=$LAST_RELEASE_VERSION" > "$LAST_SNAPSHOT_FILE"
-  echo "COUNTER=0" >> "$LAST_SNAPSHOT_FILE"
+if [[ -f "$ARTIFACT_FILE" ]]; then
+  source "$ARTIFACT_FILE"
+else
+  BASE_VERSION=$LAST_RELEASE_VERSION
+  COUNTER=0
 fi
 
 if [[ "$RELEASE_TYPE" == "release" ]]; then
@@ -39,24 +41,20 @@ if [[ "$RELEASE_TYPE" == "release" ]]; then
   git tag -a "$TAG_NAME" -m "Release $TAG_NAME"
   git push origin "$TAG_NAME"
 
-  echo "BASE_VERSION=$NEW_VERSION" > "$LAST_SNAPSHOT_FILE"
-  echo "COUNTER=0" >> "$LAST_SNAPSHOT_FILE"
-
+  BASE_VERSION=$NEW_VERSION
+  COUNTER=0
 else
-  source "$LAST_SNAPSHOT_FILE"
-
   if [[ "$BASE_VERSION" != "$LAST_RELEASE_VERSION" ]]; then
     BASE_VERSION=$LAST_RELEASE_VERSION
     COUNTER=1
   else
     COUNTER=$((COUNTER+1))
   fi
-
   NEW_VERSION="${BASE_VERSION}-SNAPSHOT.${COUNTER}"
-
-  echo "BASE_VERSION=$BASE_VERSION" > "$LAST_SNAPSHOT_FILE"
-  echo "COUNTER=$COUNTER" >> "$LAST_SNAPSHOT_FILE"
 fi
+
+echo "BASE_VERSION=$BASE_VERSION" > "$ARTIFACT_FILE"
+echo "COUNTER=$COUNTER" >> "$ARTIFACT_FILE"
 
 echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
 echo "Calculated version: $NEW_VERSION"

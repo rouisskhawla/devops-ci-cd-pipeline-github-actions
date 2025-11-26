@@ -24,7 +24,12 @@ jobs:
           fetch-depth: 0
           fetch-tags: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
+      
+      - name: Download last snapshot artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: snapshot-info
+          path: .
 
       - name: Set Git user
         run: |
@@ -42,6 +47,13 @@ jobs:
             ./scripts/version.sh patch snapshot
             echo "is_snapshot=true" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Upload snapshot artifact
+        if: ${{ needs.version.outputs.is_snapshot == 'true' || github.event.inputs.release_mode != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: snapshot-info
+          path: snapshot-version.txt
           
   test:
     needs: version
