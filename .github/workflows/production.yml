@@ -1,22 +1,18 @@
 name: Deploy Release to Production VM
 
 on:
-  workflow_run:
-    workflows: ["CI Pipeline"]
-    types: [completed]
+  workflow_dispatch:
+    inputs:
+      version:
+        required: true
+        type: string
 
 jobs:
   deploy-production:
-    if: >
-      github.event.workflow_run.conclusion == 'success' &&
-      github.event.workflow_run.event == 'workflow_dispatch' &&
-      github.event.workflow_run.inputs.release_mode == 'true' &&
-      github.event.workflow_run.outputs.is_snapshot == 'false'
     runs-on: self-hosted
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
       - name: Prepare production directory
         uses: appleboy/ssh-action@v0.1.9
         with:
@@ -26,7 +22,6 @@ jobs:
           port: ${{ secrets.PRODUCTION_PORT }}
           script: |
             mkdir -p ~/devops-ci-cd-github-actions
-            
       - name: Copy docker-compose to production VM
         uses: appleboy/scp-action@v0.1.7
         with:
@@ -36,7 +31,6 @@ jobs:
           port: ${{ secrets.PRODUCTION_PORT }}
           source: "docker-compose.yml"
           target: "~/devops-ci-cd-github-actions/"
-  
       - name: Deploy to production via SSH
         uses: appleboy/ssh-action@v0.1.9
         with:
@@ -44,8 +38,8 @@ jobs:
           username: ${{ secrets.PRODUCTION_USER }}
           key: ${{ secrets.PRODUCTION_SSH_KEY }}
           port: ${{ secrets.PRODUCTION_PORT }}
-          script: |        
+          script: |
             export APP_IMAGE_TAG=latest
-            docker pull  ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
+            docker pull ${{ secrets.DOCKER_USERNAME }}/devops-ci-cd-pipeline-github-actions:$APP_IMAGE_TAG
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml down
             docker-compose -f ~/devops-ci-cd-github-actions/docker-compose.yml up -d
