@@ -13,6 +13,7 @@ fi
 LAST_RELEASE_VERSION=${LAST_RELEASE_TAG#v}
 
 ARTIFACT_FILE="snapshot/snapshot-version.txt"
+mkdir -p $(dirname "$ARTIFACT_FILE")
 
 if [[ -f "$ARTIFACT_FILE" ]]; then
   source "$ARTIFACT_FILE"
