@@ -29,6 +29,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: snapshot-info
+          path: snapshot
         continue-on-error: true
 
       - name: Set Git user
@@ -53,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: snapshot-info
-          path: snapshot-version.txt
+          path: snapshot/snapshot-version.txt
           
   test:
     needs: version

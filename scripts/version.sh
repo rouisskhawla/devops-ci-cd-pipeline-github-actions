@@ -12,7 +12,7 @@ if [[ -z "$LAST_RELEASE_TAG" ]]; then
 fi
 LAST_RELEASE_VERSION=${LAST_RELEASE_TAG#v}
 
-ARTIFACT_FILE="snapshot-version.txt"
+ARTIFACT_FILE="snapshot/snapshot-version.txt"
 
 if [[ -f "$ARTIFACT_FILE" ]]; then
   source "$ARTIFACT_FILE"
