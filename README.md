@@ -1,3 +1,5 @@
+![CI](https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions/actions/workflows/ci.yml/badge.svg)
+
 # CI/CD Pipeline with GitHub Actions, Docker, SonarQube, and Deployments with Environment Handeling
 
 This project demonstrates a complete CI/CD workflow for a simple Spring Boot application using **GitHub Actions**, **Docker**, **SonarQube**, and automated deployment to **Staging** and **Production** virtual machines.
