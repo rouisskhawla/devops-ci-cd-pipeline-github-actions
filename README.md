@@ -1,4 +1,7 @@
 ![CI](https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions/actions/workflows/production.yml/badge.svg)
+![CI](https://github.com/rouisskhawla/devops-ci-cd-pipeline-github-actions/actions/workflows/staging.yml/badge.svg)
+
 
 # CI/CD Pipeline with GitHub Actions, Docker, SonarQube, and Deployments with Environment Handeling
 
